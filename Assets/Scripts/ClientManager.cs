@@ -50,8 +50,8 @@ public class ClientManager : MonoBehaviour {
         }
     }
 
-    public static Client GenerateClient(CharacterStyle style = CharacterStyle.None) {
-        var styles = (style == CharacterStyle.None ? ~CharacterStyle.None : style).GetStyles();
+    public static Client GenerateClient(CharacterStyle style = CharacterStyle.British) {
+        var styles = style.GetStyles();
 
         //testing
         var randStyle = styles[UnityEngine.Random.Range(0, styles.Length)];
