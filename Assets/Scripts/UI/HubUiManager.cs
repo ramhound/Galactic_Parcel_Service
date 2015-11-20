@@ -13,7 +13,7 @@ public class HubUiManager : MonoBehaviour {
             playerId = GamePlayer.localInstance.name,
             uuids = new string[] { selectedStation.name },
             command = (int)PlayerCommand.Spawn,
-            commandData = "Cargo Ship"
+            commandData = Ship.ShipType.Cargo
         };
         NotifyGamePlayer(packet);
     }

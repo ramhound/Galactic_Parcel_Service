@@ -10,7 +10,7 @@ public class Banner : MonoBehaviour {
     public float closeAfterDuration = 3f;
     private float closeTime;
 
-    public void CreateBanner(Sprite pic, string text, BannerType type, bool fail = false) {
+    public void CreateBanner(Sprite pic, string text, BannerType type) {
         //profilePic.spriteName = pic;
         //this.text.text = text;
         

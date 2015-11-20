@@ -235,7 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f28a7975e1c0f404088ebf87a8cdf0a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clientStyles: 528
+  clientStyles: 0
   rotationSpeed: 3
   rotateLeft: 0
   spawnRate: 6
@@ -1739,7 +1739,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Spawn Ship
 --- !u!222 &1663828786
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1832,7 +1832,7 @@ MonoBehaviour:
   clientStyles: 0
   rotationSpeed: 1
   rotateLeft: 1
-  spawnRate: 6
+  spawnRate: 10
   hubUiManager: {fileID: 2085155091}
   hubMenu: {fileID: 2085155089}
   spawnables:

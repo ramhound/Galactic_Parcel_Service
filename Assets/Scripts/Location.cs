@@ -1,31 +1,26 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
 using System.Collections;
-using System;
+using System.Collections.Generic;
 
 public class Location : NetworkBehaviour, ICommandHandler, ISelectable {
-    [BitMask(typeof(ClientStyle))]
-    public ClientStyle clientStyles = ClientStyle.British;
+    [BitMask(typeof(CharacterStyle))]
+    public CharacterStyle clientStyles = CharacterStyle.British;
     private Transform trans;
     private SpriteRenderer rend;
     public float rotationSpeed;
     public bool rotateLeft;
-    public int spawnRate = 1;
+    public int spawnRate = 60; //seconds
+    public List<Client> clients = new List<Client>();
 
     private void Awake() {
         trans = transform;
         rend = gameObject.GetComponent<SpriteRenderer>();
     }
 
+    //i do not want this tick going off on the local clients
     private void Start() {
-        if(GamePlayer.localInstance.connectionToServer == null || isServer)
-            GameTimer.onGameTick += OnGameTick;
-    }
 
-    public virtual void OnGameTick() {
-        if(clientStyles != 0 && GameTimer.currentTick % spawnRate == 0) {
-            ClientManager.CreateClient(clientStyles);
-        }
     }
 
     private void Update() {
@@ -43,9 +38,6 @@ public class Location : NetworkBehaviour, ICommandHandler, ISelectable {
         }
     }
 
-    public virtual void GenerateClient() {
-
-    }
 
     public virtual void HandleCommand(int command, object commandData) {
         

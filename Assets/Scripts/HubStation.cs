@@ -7,10 +7,13 @@ public class HubStation : Location {
     public HubUiManager hubUiManager;
     public GameObject hubMenu;
     public GameObject[] spawnables;
-    //private void Start() {
-    //    if(GamePlayer.localInstance.connectionToServer == null || isServer)
-    //        GameTimer.onGameTick += OnGameTick; 
-    //}
+    public List<Package> packages = new List<Package>();
+
+    private void Start() {
+        if(GamePlayer.localInstance.connectionToServer == null || isServer) {
+            GameTimer.onGameTick += OnGameTick;
+        }
+    }
 
     public override void OnClick() {
         GamePlayer.localInstance.uuids = new string[] { };
@@ -25,14 +28,32 @@ public class HubStation : Location {
         hubUiManager.selectedStation = selected ? this : null;
     }
 
-    public override void OnGameTick() {
-        base.OnGameTick();
+    public void OnGameTick() {
+        //packageneration here
+        if(GameTimer.currentTick % spawnRate == 0) {
+            packages.Add(CreatePackage());
+
+        }
     }
+
+    private Package CreatePackage() {
+        var package = new Package() {
+            sender = ClientManager.GenerateClient(clientStyles),
+            receiver = ClientManager.GenerateClient(),
+            fragility = 100f,
+            size = Vector2.one
+        };
+
+        PopUp.DisplayBanner(package.receiver.profilePic, "Reveiver", Banner.BannerType.Message);
+        return package;
+    }
+
+    //private void 
 
     public override void HandleCommand(int command, object commandData) {
         if(command == (int)PlayerCommand.Spawn) {
 
-            var ship = Instantiate(spawnables[0]) as GameObject;
+            var ship = Instantiate(spawnables[(int)commandData]) as GameObject;
             if(isServer) NetworkServer.Spawn(ship);
         }
     }

@@ -14,7 +14,7 @@ public delegate void GameTick();
     private void Awake() { instance = this; }
 
     private void Start() {
-        StartTimer();
+        GameTimer.StartTimer();
     }
 
     public static void StartTimer() {

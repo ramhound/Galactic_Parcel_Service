@@ -5,7 +5,8 @@ using System.Collections;
 using System.Collections.Generic;
 
 [Flags]
-public enum ClientStyle {
+public enum CharacterStyle {
+    None = 0,
     [EnumDescription("British")]
     British =  (1 << 0),
     [EnumDescription("Desert")]
@@ -31,11 +32,12 @@ public enum ClientStyle {
 public class ClientManager : MonoBehaviour {
     private static ClientManager instance;
     public CharacterStyleSprites[] characterSprites;
-    public static Dictionary<ClientStyle, Sprite[]> characters = new Dictionary<ClientStyle, Sprite[]>();
+    public static Dictionary<CharacterStyle, Sprite[]> characters = new Dictionary<CharacterStyle, Sprite[]>();
+    public static Dictionary<string, List<Client>> allClients = new Dictionary<string, List<Client>>();
 
     [System.Serializable]
     public struct CharacterStyleSprites {
-        public ClientStyle style;
+        public CharacterStyle style;
         public Sprite[] sprites;
     }
 
@@ -48,8 +50,8 @@ public class ClientManager : MonoBehaviour {
         }
     }
 
-    public static Client CreateClient(ClientStyle style) {
-        var styles = style.GetStyles();
+    public static Client GenerateClient(CharacterStyle style = CharacterStyle.None) {
+        var styles = (style == CharacterStyle.None ? ~CharacterStyle.None : style).GetStyles();
 
         //testing
         var randStyle = styles[UnityEngine.Random.Range(0, styles.Length)];
@@ -58,13 +60,11 @@ public class ClientManager : MonoBehaviour {
         var client = new Client();
         client.profilePic = randSprite;
 
-        PopUp.DisplayBanner(client.profilePic, "Test", Banner.BannerType.Message);
-
         return client;
     }
 }
 
-public static class ClientStyleExtensions {
+public static class CharacterStyleExtensions {
     const BindingFlags flags = BindingFlags.Static | BindingFlags.Public | BindingFlags.Instance;
 
     public static string GetDescription(this Enum prop) {
@@ -77,14 +77,14 @@ public static class ClientStyleExtensions {
         return prop.ToString();
     }
 
-    public static ClientStyle[] GetStyles(this ClientStyle style) {
-        var styles = new List<ClientStyle>((ClientStyle[])Enum.GetValues(typeof(ClientStyle)));
+    public static CharacterStyle[] GetStyles(this CharacterStyle style) {
+        var styles = new List<CharacterStyle>((CharacterStyle[])Enum.GetValues(typeof(CharacterStyle)));
         for(int i = styles.Count - 1; i >= 0; i--) {
             if(!style.Contains(styles[i])) styles.Remove(styles[i]);
         }
         return styles.ToArray();
     }
-    public static bool Contains(this ClientStyle main, ClientStyle prop) {
+    public static bool Contains(this CharacterStyle main, CharacterStyle prop) {
         return (main & prop) == prop;
     }
 }

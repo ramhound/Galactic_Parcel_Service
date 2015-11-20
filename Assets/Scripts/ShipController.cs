@@ -4,7 +4,7 @@ using Pathfinding;
 using System.Collections;
 using System;
 
-public class ShipController : NetworkBehaviour, ICommandHandler, ISelectable {
+public class ShipController : NetworkBehaviour, ICommandHandler {
     private Seeker seeker;
     private Path path;
     private Rigidbody2D body2D;
@@ -19,7 +19,6 @@ public class ShipController : NetworkBehaviour, ICommandHandler, ISelectable {
     private static int idIndex = 0;
 
     public void Start() {
-        //Get a reference to the Seeker component we added earlier
         seeker = GetComponent<Seeker>();
         body2D = GetComponent<Rigidbody2D>();
         name = "Ship " + idIndex++;
@@ -72,20 +71,6 @@ public class ShipController : NetworkBehaviour, ICommandHandler, ISelectable {
     public void SetDestination(Vector2 destination) {
         targetDestination = destination;
         seeker.StartPath(transform.position, targetDestination, OnPathComplete);
-    }
-
-    public void OnClick() {
-        SetSelected(true);
-    }
-
-    public void SetSelected(bool selected) {
-        if(selected) {
-            GamePlayer.localInstance.SetSelectedUnit(this);
-            GamePlayer.localInstance.uuids = new string[] { name };
-            Camera.main.GetComponent<CameraFollow>().SetMainTarget(transform);
-        }
-
-
     }
 
     private void OnDestroy() {
