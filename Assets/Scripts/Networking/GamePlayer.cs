@@ -67,6 +67,7 @@ public class GamePlayer : NetworkBehaviour {
 
     [Command]
     public void CmdHandleCommandPacket(CommandPacket packet) {
+        Debug.Log(connectionToServer);
         HandleCommandPacket(packet);
     }
 
@@ -85,5 +86,9 @@ public class GamePlayer : NetworkBehaviour {
     public void SetSelectedUnit(ISelectable selection) {
         if(selectedUnit != null) selectedUnit.SetSelected(false);
         selectedUnit = selection;
+    }
+
+    public void OnConnected() {
+        Debug.Log("Test");
     }
 }

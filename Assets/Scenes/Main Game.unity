@@ -1027,6 +1027,7 @@ GameObject:
   - 114: {fileID: 1491892271}
   - 114: {fileID: 1491892275}
   - 114: {fileID: 1491892276}
+  - 114: {fileID: 1491892277}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -1040,7 +1041,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1491892270}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fbe75b83e3b14e24c82503ac1ba6f723, type: 3}
   m_Name: 
@@ -1056,7 +1057,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1491892270}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 227461547, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
   m_Name: 
@@ -1092,7 +1093,7 @@ MonoBehaviour:
   m_OfflineScene: 
   m_OnlineScene: 
   m_SpawnPrefabs:
-  - {fileID: 0}
+  - {fileID: 123348, guid: 3b0af82d9ba9f7d4a9ba728b7db29731, type: 2}
   m_CustomConfig: 1
   m_MaxConnections: 4
   m_ConnectionConfig:
@@ -1659,6 +1660,17 @@ MonoBehaviour:
     - {fileID: 21300086, guid: ec8b34f03fab9804fa3e55ff63e4c9b8, type: 3}
     - {fileID: 21300088, guid: ec8b34f03fab9804fa3e55ff63e4c9b8, type: 3}
     - {fileID: 21300090, guid: ec8b34f03fab9804fa3e55ff63e4c9b8, type: 3}
+--- !u!114 &1491892277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1491892270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26ec5c99022ddf54f837df38920c3242, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1543539021 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 178252, guid: a8faded7357f0304fa7cc2f8703ac6dd, type: 2}
