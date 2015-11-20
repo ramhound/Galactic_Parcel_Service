@@ -3,19 +3,14 @@ using UnityEngine.Networking;
 using System.Collections;
 using System;
 
-public class ClientLocation : NetworkBehaviour, ICommandHandler {
+public class Location : NetworkBehaviour, ICommandHandler, ISelectable {
     [BitMask(typeof(ClientStyle))]
     public ClientStyle clientStyles = ClientStyle.British;
     private Transform trans;
     private SpriteRenderer rend;
-    public CameraFollow camFollower;
     public float rotationSpeed;
     public bool rotateLeft;
-    public bool spawnClients = false;
-    public int spawnRate = 6;
-
-    //public int reputation
-
+    public int spawnRate = 1;
 
     private void Awake() {
         trans = transform;
@@ -28,7 +23,7 @@ public class ClientLocation : NetworkBehaviour, ICommandHandler {
     }
 
     public virtual void OnGameTick() {
-        if(spawnClients && GameTimer.currentTick % spawnRate == 0) {
+        if(clientStyles != 0 && GameTimer.currentTick % spawnRate == 0) {
             ClientManager.CreateClient(clientStyles);
         }
     }
@@ -38,28 +33,26 @@ public class ClientLocation : NetworkBehaviour, ICommandHandler {
     }
 
     public virtual void OnClick() {
-        SetSelected();
+        SetSelected(true);
     }
 
-    public virtual void SetSelected() {
-        camFollower.SetMainTarget(trans);
+    public virtual void SetSelected(bool selected) {
+        if(selected) {
+            GamePlayer.localInstance.SetSelectedUnit(this);
+            Camera.main.GetComponent<CameraFollow>().SetMainTarget(trans);
+        }
     }
 
     public virtual void GenerateClient() {
 
     }
 
-    [ClientRpc]
-    public virtual void RpcGenerateClient() {
-
-    }
-
-    public void HandleCommand(int command, object commandData) {
+    public virtual void HandleCommand(int command, object commandData) {
         
     }
 
     [ClientRpc]
-    public void RpcHandleCommand(int command, object commandData) {
+    public virtual void RpcHandleCommand(int command, object commandData) {
         
     }
 

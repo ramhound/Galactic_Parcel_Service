@@ -41,7 +41,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerId: Krooked590
-  shipPrefab: {fileID: 175484, guid: 3b0af82d9ba9f7d4a9ba728b7db29731, type: 2}
+  shipPrefab: {fileID: 123348, guid: 3b0af82d9ba9f7d4a9ba728b7db29731, type: 2}
+  camFollower: {fileID: 11415094, guid: a8faded7357f0304fa7cc2f8703ac6dd, type: 2}
+  uuids: []
 --- !u!114 &11474336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -85,6 +87,15 @@ Prefab:
       propertyPath: m_LocalPlayerAuthority
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: shipPrefab
+      value: 
+      objectReference: {fileID: 123348, guid: 3b0af82d9ba9f7d4a9ba728b7db29731, type: 2}
+    - target: {fileID: 0}
+      propertyPath: camFollower
+      value: 
+      objectReference: {fileID: 11415094, guid: a8faded7357f0304fa7cc2f8703ac6dd,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 131108}

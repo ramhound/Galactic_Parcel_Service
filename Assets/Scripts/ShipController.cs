@@ -4,15 +4,13 @@ using Pathfinding;
 using System.Collections;
 using System;
 
-public class ShipController : NetworkBehaviour, ICommandHandler {
+public class ShipController : NetworkBehaviour, ICommandHandler, ISelectable {
     private Seeker seeker;
     private Path path;
     private Rigidbody2D body2D;
     [SyncVar]
     private Vector2 targetDestination;
     private int nodeIndex = 0;
-
-    public CameraFollow camFollower;
 
     public float speed = 100f;
     public float rotationSpeed = 30f;
@@ -77,12 +75,17 @@ public class ShipController : NetworkBehaviour, ICommandHandler {
     }
 
     public void OnClick() {
-        SetSelected();
-        GamePlayer.localInstance.uuids = new string[] { name };
+        SetSelected(true);
     }
 
-    public void SetSelected() {
-        camFollower.SetMainTarget(transform);
+    public void SetSelected(bool selected) {
+        if(selected) {
+            GamePlayer.localInstance.SetSelectedUnit(this);
+            GamePlayer.localInstance.uuids = new string[] { name };
+            Camera.main.GetComponent<CameraFollow>().SetMainTarget(transform);
+        }
+
+
     }
 
     private void OnDestroy() {

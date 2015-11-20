@@ -11,12 +11,16 @@ public class GamePlayer : NetworkBehaviour {
         private set { _instance = value; }
     }
     public string playerId = "Krooked590";
-    public GameObject shipPrefab;
-    public CameraFollow camFollower;
-    //private GameNetworkHandler networkHandler;
+    private string[] _uuids = new string[] { };
+    public string[] uuids {
+        get { return _uuids; }
+        set {
+            _uuids = value;
+            //somethuing might need to go here not dsure et
+        }
+    }
 
-    //private List<ICommandHandler> units = new List<ICommandHandler>();
-    public string[] uuids;
+    private ISelectable selectedUnit;
     private static int idIndex = 0;
 
     private void Awake() {
@@ -25,16 +29,10 @@ public class GamePlayer : NetworkBehaviour {
     }
 
     private void Start() {
-        StartGameTimer();
+
     }
 
     //make a packet merger function
-    public struct CommandPacket {
-        public string playerId;
-        public string[] uuids;
-        public int command;
-        public object commandData;
-    }
 
     private void Update() {
         if(connectionToServer == null || isLocalPlayer) {
@@ -42,24 +40,29 @@ public class GamePlayer : NetworkBehaviour {
                 var click = Input.mousePosition;
                 var pos = Camera.main.ScreenToWorldPoint(click);
 
-                var packet = new CommandPacket() {
-                    playerId = name,
-                    uuids = this.uuids,
-                    command = (int)PlayerCommand.Move,
-                    commandData = pos
-                };
+                var hit = Physics2D.Raycast(pos, Vector2.zero);
+                if(hit.collider == null) {
+                    var packet = new CommandPacket() {
+                        playerId = name,
+                        uuids = this.uuids,
+                        command = (int)PlayerCommand.Move,
+                        commandData = pos
+                    };
 
-                SendCommandPacket(packet);
+                    SendCommandPacket(packet);
+                } else {
+
+                }
             }
 
             if(Input.GetKeyUp(KeyCode.Escape))
-                camFollower.SetMainTarget(null);
+                Camera.main.GetComponent<CameraFollow>().SetMainTarget(null);
         }
     }
 
-    private void SendCommandPacket(CommandPacket packet) {
-        if(isLocalPlayer) CmdHandleCommandPacket(packet);
-        else HandleCommandPacket(packet);
+    public void SendCommandPacket(CommandPacket packet) {
+        if(connectionToServer != null) CmdHandleCommandPacket(packet); //handle as network
+        else HandleCommandPacket(packet); //or as single player
     }
 
     [Command]
@@ -71,15 +74,16 @@ public class GamePlayer : NetworkBehaviour {
         if(packet.uuids.Length > 0) {
             foreach(var s in packet.uuids) {
                 var unit = GameObject.Find(s).GetComponent<ICommandHandler>();
-                if(isServer) unit.RpcHandleCommand(packet.command, packet.commandData);
-                else unit.HandleCommand(packet.command, packet.commandData);
+                unit.HandleCommand(packet.command, packet.commandData);
+
+                //if(isServer) unit.RpcHandleCommand(packet.command, packet.commandData);
+                //else unit.HandleCommand(packet.command, packet.commandData);
             }
         }
     }
 
-    private void StartGameTimer() {
-        if(connectionToServer == null || isServer) {
-            GameTimer.StartTimer();
-        }
+    public void SetSelectedUnit(ISelectable selection) {
+        if(selectedUnit != null) selectedUnit.SetSelected(false);
+        selectedUnit = selection;
     }
 }

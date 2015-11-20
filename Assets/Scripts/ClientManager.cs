@@ -58,6 +58,8 @@ public class ClientManager : MonoBehaviour {
         var client = new Client();
         client.profilePic = randSprite;
 
+        PopUp.DisplayBanner(client.profilePic, "Test", Banner.BannerType.Message);
+
         return client;
     }
 }

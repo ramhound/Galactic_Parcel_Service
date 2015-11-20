@@ -13,6 +13,10 @@ public delegate void GameTick();
 
     private void Awake() { instance = this; }
 
+    private void Start() {
+        StartTimer();
+    }
+
     public static void StartTimer() {
         stopRequested = false;
         instance.StartCoroutine("Timer");
