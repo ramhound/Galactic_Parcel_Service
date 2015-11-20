@@ -6,7 +6,6 @@ using System.Collections.Generic;
 
 [Flags]
 public enum CharacterStyle {
-    None = 0,
     [EnumDescription("British")]
     British =  (1 << 0),
     [EnumDescription("Desert")]
@@ -31,7 +30,9 @@ public enum CharacterStyle {
 
 public class ClientManager : MonoBehaviour {
     private static ClientManager instance;
+    public Sprite _farnsberg;
     public CharacterStyleSprites[] characterSprites;
+    public static Client farnsberg;
     public static Dictionary<CharacterStyle, Sprite[]> characters = new Dictionary<CharacterStyle, Sprite[]>();
     public static Dictionary<string, List<Client>> allClients = new Dictionary<string, List<Client>>();
 
@@ -43,6 +44,8 @@ public class ClientManager : MonoBehaviour {
 
     private void Awake() {
         instance = this;
+        farnsberg = new Client();
+        farnsberg.profilePic = _farnsberg;
 
         foreach(var cs in characterSprites) {
             var style = cs.style;
@@ -50,7 +53,14 @@ public class ClientManager : MonoBehaviour {
         }
     }
 
-    public static Client GenerateClient(CharacterStyle style = CharacterStyle.British) {
+    public static Client GenerateClient(CharacterStyle style = 0) {
+        int temp = 0;
+        if((int)style == 0) {
+            foreach(var s in Enum.GetValues(typeof(CharacterStyle)) as int[])
+                temp |= s;
+            style = (CharacterStyle)temp;
+        }
+
         var styles = style.GetStyles();
 
         //testing

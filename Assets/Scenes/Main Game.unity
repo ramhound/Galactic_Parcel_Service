@@ -1161,6 +1161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eac08542499e9148ac5655bb9c7015a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _farnsberg: {fileID: 21300000, guid: 8520126b7c179bd43aef4aefb17c2080, type: 3}
   characterSprites:
   - style: 1
     sprites:

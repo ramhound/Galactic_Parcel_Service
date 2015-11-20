@@ -12,6 +12,13 @@ public class HubStation : Location {
     private void Start() {
         if(GamePlayer.localInstance.connectionToServer == null || isServer) {
             GameTimer.onGameTick += OnGameTick;
+
+            packages.Add(new Package() {
+                fragility = 1,
+                sender = ClientManager.farnsberg,
+                receiver = ClientManager.GenerateClient(clientStyles),
+                size = Vector2.one
+            });
         }
     }
 
@@ -30,8 +37,9 @@ public class HubStation : Location {
 
     public void OnGameTick() {
         //packageneration here
+        if(GameTimer.currentTick == 1) PopUp.DisplayBanner(ClientManager.farnsberg.profilePic, "Why not farnsberg?", Banner.BannerType.Package);
         if(GameTimer.currentTick % spawnRate == 0) {
-            packages.Add(CreatePackage());
+            
 
         }
     }
@@ -39,8 +47,8 @@ public class HubStation : Location {
     private Package CreatePackage() {
         var package = new Package() {
             sender = ClientManager.GenerateClient(clientStyles),
-            receiver = ClientManager.GenerateClient(),
-            fragility = 100f,
+            receiver = ClientManager.GenerateClient(clientStyles),
+            fragility = 1f,
             size = Vector2.one
         };
 
