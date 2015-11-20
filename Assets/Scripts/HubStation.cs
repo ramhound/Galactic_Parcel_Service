@@ -10,7 +10,7 @@ public class HubStation : Location {
     public List<Package> packages = new List<Package>();
 
     private void Start() {
-        if(GamePlayer.localInstance.connectionToServer == null || isServer) {
+        if(!NetworkClient.active || isServer) {
             GameTimer.onGameTick += OnGameTick;
 
             packages.Add(new Package() {
@@ -69,5 +69,9 @@ public class HubStation : Location {
     [ClientRpc]
     public override void RpcHandleCommand(int command, object commandData) {
         HandleCommand(command, commandData);
+    }
+
+    public override void OnStartLocalPlayer() {
+        base.OnStartLocalPlayer();
     }
 }

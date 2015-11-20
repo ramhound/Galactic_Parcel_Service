@@ -8,7 +8,6 @@ public class ShipController : NetworkBehaviour, ICommandHandler {
     private Seeker seeker;
     private Path path;
     private Rigidbody2D body2D;
-    [SyncVar]
     private Vector2 targetDestination;
     private int nodeIndex = 0;
 
@@ -52,15 +51,9 @@ public class ShipController : NetworkBehaviour, ICommandHandler {
         }
     }
 
-    //make this more generic and add it to pixel math
-    private Quaternion RotateTowards(Transform trans, Vector2 point) {
-        float angle = Mathf.Atan2(point.y, point.x) * Mathf.Rad2Deg - 90;
-        Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
-        return Quaternion.Slerp(trans.rotation, q, Time.deltaTime * rotationSpeed);
-    }
-
     [ClientRpc]
     public void RpcHandleCommand(int command, object commandData) {
+        Debug.Log(commandData);
         HandleCommand(command, commandData);
     }
 
@@ -75,5 +68,12 @@ public class ShipController : NetworkBehaviour, ICommandHandler {
 
     private void OnDestroy() {
         //used for cleanup
+    }
+
+    //make this more generic and add it to pixel math
+    private Quaternion RotateTowards(Transform trans, Vector2 point) {
+        float angle = Mathf.Atan2(point.y, point.x) * Mathf.Rad2Deg - 90;
+        Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+        return Quaternion.Slerp(trans.rotation, q, Time.deltaTime * rotationSpeed);
     }
 }
