@@ -1,0 +1,562 @@
+fileFormatVersion: 2
+guid: ec8b34f03fab9804fa3e55ff63e4c9b8
+timeCreated: 1447738653
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: WaterAtlas_0
+    21300002: WaterAtlas_1
+    21300004: WaterAtlas_2
+    21300006: WaterAtlas_3
+    21300008: WaterAtlas_4
+    21300010: WaterAtlas_5
+    21300012: WaterAtlas_6
+    21300014: WaterAtlas_7
+    21300016: WaterAtlas_8
+    21300018: WaterAtlas_9
+    21300020: WaterAtlas_10
+    21300022: WaterAtlas_11
+    21300024: WaterAtlas_12
+    21300026: WaterAtlas_13
+    21300028: WaterAtlas_14
+    21300030: WaterAtlas_15
+    21300032: WaterAtlas_16
+    21300034: WaterAtlas_17
+    21300036: WaterAtlas_18
+    21300038: WaterAtlas_19
+    21300040: WaterAtlas_20
+    21300042: WaterAtlas_21
+    21300044: WaterAtlas_22
+    21300046: WaterAtlas_23
+    21300048: WaterAtlas_24
+    21300050: WaterAtlas_25
+    21300052: WaterAtlas_26
+    21300054: WaterAtlas_27
+    21300056: WaterAtlas_28
+    21300058: WaterAtlas_29
+    21300060: WaterAtlas_30
+    21300062: WaterAtlas_31
+    21300064: WaterAtlas_32
+    21300066: WaterAtlas_33
+    21300068: WaterAtlas_34
+    21300070: WaterAtlas_35
+    21300072: WaterAtlas_36
+    21300074: WaterAtlas_37
+    21300076: WaterAtlas_38
+    21300078: WaterAtlas_39
+    21300080: WaterAtlas_40
+    21300082: WaterAtlas_41
+    21300084: WaterAtlas_42
+    21300086: WaterAtlas_43
+    21300088: WaterAtlas_44
+    21300090: WaterAtlas_45
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: WaterAtlas_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 724
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_1
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 724
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_2
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 724
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_3
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 724
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_4
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 724
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_5
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 724
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_6
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 724
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_7
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 724
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 543
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_9
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 543
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_10
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 543
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_11
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 543
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_12
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 543
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_13
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 543
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_14
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 543
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_15
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 543
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 362
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_17
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 362
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_18
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 362
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_19
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 362
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_20
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 362
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_21
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 362
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_22
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 362
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_23
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 362
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 181
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_25
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 181
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_26
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 181
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_27
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 181
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_28
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 181
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_29
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 181
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_30
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 181
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_31
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 181
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_32
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 181
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_33
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_34
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_35
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_36
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_37
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_38
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_39
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_40
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_41
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_42
+      rect:
+        serializedVersion: 2
+        x: 1341
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_43
+      rect:
+        serializedVersion: 2
+        x: 1490
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_44
+      rect:
+        serializedVersion: 2
+        x: 1639
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WaterAtlas_45
+      rect:
+        serializedVersion: 2
+        x: 1788
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

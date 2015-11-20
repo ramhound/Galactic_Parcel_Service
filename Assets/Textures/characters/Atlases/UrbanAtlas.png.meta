@@ -1,0 +1,584 @@
+fileFormatVersion: 2
+guid: b5baa68ff0fac4b41b08f1a4fd65e732
+timeCreated: 1447738646
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: UrbanAtlas_0
+    21300002: UrbanAtlas_1
+    21300004: UrbanAtlas_2
+    21300006: UrbanAtlas_3
+    21300008: UrbanAtlas_4
+    21300010: UrbanAtlas_5
+    21300012: UrbanAtlas_6
+    21300014: UrbanAtlas_7
+    21300016: UrbanAtlas_8
+    21300018: UrbanAtlas_9
+    21300020: UrbanAtlas_10
+    21300022: UrbanAtlas_11
+    21300024: UrbanAtlas_12
+    21300026: UrbanAtlas_13
+    21300028: UrbanAtlas_14
+    21300030: UrbanAtlas_15
+    21300032: UrbanAtlas_16
+    21300034: UrbanAtlas_17
+    21300036: UrbanAtlas_18
+    21300038: UrbanAtlas_19
+    21300040: UrbanAtlas_20
+    21300042: UrbanAtlas_21
+    21300044: UrbanAtlas_22
+    21300046: UrbanAtlas_23
+    21300048: UrbanAtlas_24
+    21300050: UrbanAtlas_25
+    21300052: UrbanAtlas_26
+    21300054: UrbanAtlas_27
+    21300056: UrbanAtlas_28
+    21300058: UrbanAtlas_29
+    21300060: UrbanAtlas_30
+    21300062: UrbanAtlas_31
+    21300064: UrbanAtlas_32
+    21300066: UrbanAtlas_33
+    21300068: UrbanAtlas_34
+    21300070: UrbanAtlas_35
+    21300072: UrbanAtlas_36
+    21300074: UrbanAtlas_37
+    21300076: UrbanAtlas_38
+    21300078: UrbanAtlas_39
+    21300080: UrbanAtlas_40
+    21300082: UrbanAtlas_41
+    21300084: UrbanAtlas_42
+    21300086: UrbanAtlas_43
+    21300088: UrbanAtlas_44
+    21300090: UrbanAtlas_45
+    21300092: UrbanAtlas_46
+    21300094: UrbanAtlas_47
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: UrbanAtlas_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 800
+        width: 159
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_1
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 816
+        width: 151
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_2
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 740
+        width: 147
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_3
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 728
+        width: 147
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_4
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 730
+        width: 147
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_5
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 728
+        width: 147
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_6
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 725
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_7
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 724
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 596
+        width: 159
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_9
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 612
+        width: 154
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_10
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 557
+        width: 147
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_11
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 545
+        width: 147
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_12
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 548
+        width: 147
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_13
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 546
+        width: 147
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_14
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 544
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_15
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 543
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_16
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 543
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 392
+        width: 159
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_18
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 408
+        width: 154
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_19
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 374
+        width: 147
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_20
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 362
+        width: 147
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_21
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 366
+        width: 147
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_22
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 364
+        width: 147
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_23
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 363
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_24
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 362
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_25
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 362
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 196
+        width: 170
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_27
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 204
+        width: 155
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_28
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 191
+        width: 147
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_29
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 181
+        width: 157
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_30
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 183
+        width: 147
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_31
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 182
+        width: 147
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_32
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 182
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_33
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 181
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_34
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 181
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 170
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_36
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 0
+        width: 155
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_37
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 0
+        width: 149
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_38
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 157
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_39
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 0
+        width: 147
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_40
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 0
+        width: 147
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_41
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 0
+        width: 147
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_42
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_43
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_44
+      rect:
+        serializedVersion: 2
+        x: 1384
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_45
+      rect:
+        serializedVersion: 2
+        x: 1533
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_46
+      rect:
+        serializedVersion: 2
+        x: 1682
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UrbanAtlas_47
+      rect:
+        serializedVersion: 2
+        x: 1831
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

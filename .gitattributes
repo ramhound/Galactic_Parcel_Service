@@ -15,3 +15,8 @@
 *.PDF	 diff=astextplain
 *.rtf	 diff=astextplain
 *.RTF	 diff=astextplain
+*.png filter=lfs -crlf
+*.ai filter=lfs -crlf
+*.psd filter=lfs -crlf
+*.aif filter=lfs -crlf
+*.wav filter=lfs -crlf

@@ -1,0 +1,584 @@
+fileFormatVersion: 2
+guid: 3e71ac2fa5dccc34fbd882e2f9777c36
+timeCreated: 1447738614
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: JungleAtlas_0
+    21300002: JungleAtlas_1
+    21300004: JungleAtlas_2
+    21300006: JungleAtlas_3
+    21300008: JungleAtlas_4
+    21300010: JungleAtlas_5
+    21300012: JungleAtlas_6
+    21300014: JungleAtlas_7
+    21300016: JungleAtlas_8
+    21300018: JungleAtlas_9
+    21300020: JungleAtlas_10
+    21300022: JungleAtlas_11
+    21300024: JungleAtlas_12
+    21300026: JungleAtlas_13
+    21300028: JungleAtlas_14
+    21300030: JungleAtlas_15
+    21300032: JungleAtlas_16
+    21300034: JungleAtlas_17
+    21300036: JungleAtlas_18
+    21300038: JungleAtlas_19
+    21300040: JungleAtlas_20
+    21300042: JungleAtlas_21
+    21300044: JungleAtlas_22
+    21300046: JungleAtlas_23
+    21300048: JungleAtlas_24
+    21300050: JungleAtlas_25
+    21300052: JungleAtlas_26
+    21300054: JungleAtlas_27
+    21300056: JungleAtlas_28
+    21300058: JungleAtlas_29
+    21300060: JungleAtlas_30
+    21300062: JungleAtlas_31
+    21300064: JungleAtlas_32
+    21300066: JungleAtlas_33
+    21300068: JungleAtlas_34
+    21300070: JungleAtlas_35
+    21300072: JungleAtlas_36
+    21300074: JungleAtlas_37
+    21300076: JungleAtlas_38
+    21300078: JungleAtlas_39
+    21300080: JungleAtlas_40
+    21300082: JungleAtlas_41
+    21300084: JungleAtlas_42
+    21300086: JungleAtlas_43
+    21300088: JungleAtlas_44
+    21300090: JungleAtlas_45
+    21300092: JungleAtlas_46
+    21300094: JungleAtlas_47
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: JungleAtlas_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 724
+        width: 187
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_1
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 724
+        width: 187
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_2
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 724
+        width: 184
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_3
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 730
+        width: 179
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_4
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 726
+        width: 174
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_5
+      rect:
+        serializedVersion: 2
+        x: 934
+        y: 739
+        width: 168
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_6
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 724
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_7
+      rect:
+        serializedVersion: 2
+        x: 1259
+        y: 724
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 543
+        width: 187
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_9
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 543
+        width: 187
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_10
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 543
+        width: 184
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_11
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 547
+        width: 179
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_12
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 545
+        width: 174
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_13
+      rect:
+        serializedVersion: 2
+        x: 934
+        y: 555
+        width: 168
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_14
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 543
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_15
+      rect:
+        serializedVersion: 2
+        x: 1259
+        y: 543
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 362
+        width: 187
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_17
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 362
+        width: 187
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_18
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 362
+        width: 184
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_19
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 364
+        width: 179
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_20
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 364
+        width: 174
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_21
+      rect:
+        serializedVersion: 2
+        x: 934
+        y: 368
+        width: 168
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_22
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 362
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_23
+      rect:
+        serializedVersion: 2
+        x: 1259
+        y: 362
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 181
+        width: 187
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_25
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 181
+        width: 187
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_26
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 181
+        width: 187
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_27
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 181
+        width: 179
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_28
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 182
+        width: 179
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_29
+      rect:
+        serializedVersion: 2
+        x: 934
+        y: 181
+        width: 168
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_30
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 181
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_31
+      rect:
+        serializedVersion: 2
+        x: 1259
+        y: 181
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_32
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 181
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_33
+      rect:
+        serializedVersion: 2
+        x: 1557
+        y: 181
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_34
+      rect:
+        serializedVersion: 2
+        x: 1706
+        y: 181
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_35
+      rect:
+        serializedVersion: 2
+        x: 1855
+        y: 181
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 187
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_37
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 0
+        width: 187
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_38
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 0
+        width: 187
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_39
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 0
+        width: 184
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_40
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 0
+        width: 179
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_41
+      rect:
+        serializedVersion: 2
+        x: 934
+        y: 0
+        width: 174
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_42
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_43
+      rect:
+        serializedVersion: 2
+        x: 1259
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_44
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_45
+      rect:
+        serializedVersion: 2
+        x: 1557
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_46
+      rect:
+        serializedVersion: 2
+        x: 1706
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: JungleAtlas_47
+      rect:
+        serializedVersion: 2
+        x: 1855
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,133 @@
+fileFormatVersion: 2
+guid: fd8803c38732a924bbbb908d0b0f1eb7
+timeCreated: 1447665965
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Divider
+    21300002: Banner_BG
+    21300004: Banner_3
+    21300006: Stamp_Success
+    21300008: Banner_16
+    21300010: Stamp_Failed
+    21300012: Banner_18
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Divider
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 198
+        width: 312
+        height: 10
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Banner_BG
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 667
+        height: 197
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Banner_3
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 125
+        width: 136
+        height: 70
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 7, z: 0, w: 24}
+    - name: Stamp_Success
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 0
+        width: 142
+        height: 124
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Banner_16
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 98
+        width: 175
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Stamp_Failed
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 0
+        width: 151
+        height: 97
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Banner_18
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 0
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

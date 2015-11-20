@@ -1,0 +1,573 @@
+fileFormatVersion: 2
+guid: b8747469620d5d34da46373843fa09bd
+timeCreated: 1447738606
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: IceAtlas_0
+    21300002: IceAtlas_1
+    21300004: IceAtlas_2
+    21300006: IceAtlas_3
+    21300008: IceAtlas_4
+    21300010: IceAtlas_5
+    21300012: IceAtlas_6
+    21300014: IceAtlas_7
+    21300016: IceAtlas_8
+    21300018: IceAtlas_9
+    21300020: IceAtlas_10
+    21300022: IceAtlas_11
+    21300024: IceAtlas_12
+    21300026: IceAtlas_13
+    21300028: IceAtlas_14
+    21300030: IceAtlas_15
+    21300032: IceAtlas_16
+    21300034: IceAtlas_17
+    21300036: IceAtlas_18
+    21300038: IceAtlas_19
+    21300040: IceAtlas_20
+    21300042: IceAtlas_21
+    21300044: IceAtlas_22
+    21300046: IceAtlas_23
+    21300048: IceAtlas_24
+    21300050: IceAtlas_25
+    21300052: IceAtlas_26
+    21300054: IceAtlas_27
+    21300056: IceAtlas_28
+    21300058: IceAtlas_29
+    21300060: IceAtlas_30
+    21300062: IceAtlas_31
+    21300064: IceAtlas_32
+    21300066: IceAtlas_33
+    21300068: IceAtlas_34
+    21300070: IceAtlas_35
+    21300072: IceAtlas_36
+    21300074: IceAtlas_37
+    21300076: IceAtlas_38
+    21300078: IceAtlas_39
+    21300080: IceAtlas_40
+    21300082: IceAtlas_41
+    21300084: IceAtlas_42
+    21300086: IceAtlas_43
+    21300088: IceAtlas_44
+    21300090: IceAtlas_45
+    21300092: IceAtlas_46
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: IceAtlas_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 724
+        width: 159
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_1
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 724
+        width: 152
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_2
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 724
+        width: 152
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_3
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 724
+        width: 149
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_4
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 724
+        width: 148
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_5
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 724
+        width: 148
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_6
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 724
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_7
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 724
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 543
+        width: 159
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_9
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 543
+        width: 152
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_10
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 543
+        width: 152
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_11
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 543
+        width: 151
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_12
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 543
+        width: 148
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_13
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 543
+        width: 148
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_14
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 543
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_15
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 543
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 362
+        width: 159
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_17
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 362
+        width: 152
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_18
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 362
+        width: 152
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_19
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 362
+        width: 151
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_20
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 362
+        width: 148
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_21
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 362
+        width: 148
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_22
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 362
+        width: 148
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_23
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 362
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_24
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 362
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 181
+        width: 163
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_26
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 181
+        width: 156
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_27
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 181
+        width: 152
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_28
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 181
+        width: 151
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_29
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 181
+        width: 148
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_30
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 181
+        width: 148
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_31
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 181
+        width: 148
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_32
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 181
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_33
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 181
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 163
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_35
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 0
+        width: 156
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_36
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 0
+        width: 152
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_37
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 0
+        width: 151
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_38
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 0
+        width: 149
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_39
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 0
+        width: 148
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_40
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 0
+        width: 148
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_41
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_42
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_43
+      rect:
+        serializedVersion: 2
+        x: 1379
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_44
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_45
+      rect:
+        serializedVersion: 2
+        x: 1677
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: IceAtlas_46
+      rect:
+        serializedVersion: 2
+        x: 1826
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

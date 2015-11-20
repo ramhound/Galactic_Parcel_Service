@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Space_BG_4_Clouds
+  m_Shader: {fileID: 4800000, guid: b639c009752a1354c8e0e4be896d918a, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 0
+  m_CustomRenderQueue: 3000
+  stringTagMap: {}
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 2800000, guid: 87f82d476cd279b4ca8a33e5a4a89e2f, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _node_4927
+        second:
+          m_Texture: {fileID: 2800000, guid: fa7a90b55a82bc049b4078924536dab5, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: -4.63000011, y: -5.84000015}
+      data:
+        first:
+          name: _node_1960
+        second:
+          m_Texture: {fileID: 2800000, guid: fa7a90b55a82bc049b4078924536dab5, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _Cutoff
+        second: .5
+    m_Colors: {}

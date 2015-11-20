@@ -1,0 +1,584 @@
+fileFormatVersion: 2
+guid: 5a7cba60fbecd064c8bd9bdc226c98d0
+timeCreated: 1447738573
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: BritishAtlas_0
+    21300002: BritishAtlas_1
+    21300004: BritishAtlas_2
+    21300006: BritishAtlas_3
+    21300008: BritishAtlas_4
+    21300010: BritishAtlas_5
+    21300012: BritishAtlas_6
+    21300014: BritishAtlas_7
+    21300016: BritishAtlas_8
+    21300018: BritishAtlas_9
+    21300020: BritishAtlas_10
+    21300022: BritishAtlas_11
+    21300024: BritishAtlas_12
+    21300026: BritishAtlas_13
+    21300028: BritishAtlas_14
+    21300030: BritishAtlas_15
+    21300032: BritishAtlas_16
+    21300034: BritishAtlas_17
+    21300036: BritishAtlas_18
+    21300038: BritishAtlas_19
+    21300040: BritishAtlas_20
+    21300042: BritishAtlas_21
+    21300044: BritishAtlas_22
+    21300046: BritishAtlas_23
+    21300048: BritishAtlas_24
+    21300050: BritishAtlas_25
+    21300052: BritishAtlas_26
+    21300054: BritishAtlas_27
+    21300056: BritishAtlas_28
+    21300058: BritishAtlas_29
+    21300060: BritishAtlas_30
+    21300062: BritishAtlas_31
+    21300064: BritishAtlas_32
+    21300066: BritishAtlas_33
+    21300068: BritishAtlas_34
+    21300070: BritishAtlas_35
+    21300072: BritishAtlas_36
+    21300074: BritishAtlas_37
+    21300076: BritishAtlas_38
+    21300078: BritishAtlas_39
+    21300080: BritishAtlas_40
+    21300082: BritishAtlas_41
+    21300084: BritishAtlas_42
+    21300086: BritishAtlas_43
+    21300088: BritishAtlas_44
+    21300090: BritishAtlas_45
+    21300092: BritishAtlas_46
+    21300094: BritishAtlas_47
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: BritishAtlas_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 724
+        width: 151
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_1
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 759
+        width: 147
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_2
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 724
+        width: 154
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_3
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 724
+        width: 148
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_4
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 724
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_5
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 724
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_6
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 724
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_7
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 724
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 543
+        width: 162
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_9
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 573
+        width: 147
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_10
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 543
+        width: 157
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_11
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 543
+        width: 148
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_12
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 543
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_13
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 543
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_14
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 543
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_15
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 543
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_16
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 543
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 362
+        width: 162
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_18
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 382
+        width: 149
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_19
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 362
+        width: 157
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_20
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 362
+        width: 153
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_21
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 362
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_22
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 362
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_23
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 362
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_24
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 362
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_25
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 362
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 181
+        width: 163
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_27
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 191
+        width: 149
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_28
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 181
+        width: 158
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_29
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 181
+        width: 153
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_30
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 181
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_31
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 181
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_32
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 181
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_33
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 181
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_34
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 181
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 163
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_36
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 0
+        width: 151
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_37
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 0
+        width: 158
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_38
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 0
+        width: 154
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_39
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_40
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_41
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_42
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_43
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_44
+      rect:
+        serializedVersion: 2
+        x: 1379
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_45
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_46
+      rect:
+        serializedVersion: 2
+        x: 1677
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BritishAtlas_47
+      rect:
+        serializedVersion: 2
+        x: 1826
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

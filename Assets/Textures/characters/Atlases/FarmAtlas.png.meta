@@ -1,0 +1,584 @@
+fileFormatVersion: 2
+guid: 68d84af7be9c9c74c86978011c9a34b0
+timeCreated: 1447738593
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: FarmAtlas_0
+    21300002: FarmAtlas_1
+    21300004: FarmAtlas_2
+    21300006: FarmAtlas_3
+    21300008: FarmAtlas_4
+    21300010: FarmAtlas_5
+    21300012: FarmAtlas_6
+    21300014: FarmAtlas_7
+    21300016: FarmAtlas_8
+    21300018: FarmAtlas_9
+    21300020: FarmAtlas_10
+    21300022: FarmAtlas_11
+    21300024: FarmAtlas_12
+    21300026: FarmAtlas_13
+    21300028: FarmAtlas_14
+    21300030: FarmAtlas_15
+    21300032: FarmAtlas_16
+    21300034: FarmAtlas_17
+    21300036: FarmAtlas_18
+    21300038: FarmAtlas_19
+    21300040: FarmAtlas_20
+    21300042: FarmAtlas_21
+    21300044: FarmAtlas_22
+    21300046: FarmAtlas_23
+    21300048: FarmAtlas_24
+    21300050: FarmAtlas_25
+    21300052: FarmAtlas_26
+    21300054: FarmAtlas_27
+    21300056: FarmAtlas_28
+    21300058: FarmAtlas_29
+    21300060: FarmAtlas_30
+    21300062: FarmAtlas_31
+    21300064: FarmAtlas_32
+    21300066: FarmAtlas_33
+    21300068: FarmAtlas_34
+    21300070: FarmAtlas_35
+    21300072: FarmAtlas_36
+    21300074: FarmAtlas_37
+    21300076: FarmAtlas_38
+    21300078: FarmAtlas_39
+    21300080: FarmAtlas_40
+    21300082: FarmAtlas_41
+    21300084: FarmAtlas_42
+    21300086: FarmAtlas_43
+    21300088: FarmAtlas_44
+    21300090: FarmAtlas_45
+    21300092: FarmAtlas_46
+    21300094: FarmAtlas_47
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: FarmAtlas_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 724
+        width: 187
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_1
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 724
+        width: 160
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_2
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 724
+        width: 157
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_3
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 724
+        width: 156
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_4
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 724
+        width: 151
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_5
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 724
+        width: 151
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_6
+      rect:
+        serializedVersion: 2
+        x: 1007
+        y: 732
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_7
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 724
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 543
+        width: 187
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_9
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 543
+        width: 160
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_10
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 543
+        width: 157
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_11
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 543
+        width: 156
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_12
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 543
+        width: 155
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_13
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 543
+        width: 151
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_14
+      rect:
+        serializedVersion: 2
+        x: 1007
+        y: 551
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_15
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 543
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 362
+        width: 187
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_17
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 362
+        width: 160
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_18
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 362
+        width: 157
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_19
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 362
+        width: 157
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_20
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 362
+        width: 155
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_21
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 362
+        width: 151
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_22
+      rect:
+        serializedVersion: 2
+        x: 1007
+        y: 370
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_23
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 362
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 181
+        width: 187
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_25
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 181
+        width: 160
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_26
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 181
+        width: 157
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_27
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 181
+        width: 157
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_28
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 181
+        width: 156
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_29
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 181
+        width: 151
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_30
+      rect:
+        serializedVersion: 2
+        x: 1007
+        y: 185
+        width: 147
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_31
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 181
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_32
+      rect:
+        serializedVersion: 2
+        x: 1305
+        y: 181
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_33
+      rect:
+        serializedVersion: 2
+        x: 1454
+        y: 181
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_34
+      rect:
+        serializedVersion: 2
+        x: 1603
+        y: 181
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_35
+      rect:
+        serializedVersion: 2
+        x: 1752
+        y: 181
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 187
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_37
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 0
+        width: 187
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_38
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 0
+        width: 157
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_39
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 0
+        width: 157
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_40
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 0
+        width: 156
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_41
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 0
+        width: 151
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_42
+      rect:
+        serializedVersion: 2
+        x: 1007
+        y: 0
+        width: 147
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_43
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_44
+      rect:
+        serializedVersion: 2
+        x: 1305
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_45
+      rect:
+        serializedVersion: 2
+        x: 1454
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_46
+      rect:
+        serializedVersion: 2
+        x: 1603
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FarmAtlas_47
+      rect:
+        serializedVersion: 2
+        x: 1752
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,353 @@
+fileFormatVersion: 2
+guid: 2e39c2ec796947c48b3b175413615938
+timeCreated: 1447562756
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: E_Defense
+    21300002: Attack_Left
+    21300004: E_Attack_Right
+    21300006: Cargo
+    21300008: Speed_Left
+    21300010: Attack_Right
+    21300012: E_Attack_Left
+    21300014: E_Speed_Left
+    21300016: Speed_Right
+    21300018: Defense_Right
+    21300020: E_Attack
+    21300022: E_Speed
+    21300024: Defense_Left
+    21300026: E_Defense_Right
+    21300028: Cargo_Left
+    21300030: Cargo_Right
+    21300032: Shuttle_Left
+    21300034: Shuttle_Right
+    21300036: Shuttle
+    21300038: Speed
+    21300040: Special_Left
+    21300042: Attack
+    21300044: E_Defense_Left
+    21300046: Defense
+    21300048: Special
+    21300050: Special_Right
+    21300052: E_Speed_Right
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: E_Defense
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1752
+        width: 278
+        height: 264
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Attack_Left
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1700
+        width: 331
+        height: 330
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: E_Attack_Right
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 1587
+        width: 240
+        height: 383
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Cargo
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 1837
+        width: 129
+        height: 173
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Speed_Left
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1183
+        width: 388
+        height: 567
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Attack_Right
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1368
+        width: 331
+        height: 330
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: E_Attack_Left
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 1202
+        width: 240
+        height: 383
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: E_Speed_Left
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 1477
+        width: 180
+        height: 358
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Speed_Right
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 614
+        width: 388
+        height: 567
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Defense_Right
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 909
+        width: 419
+        height: 457
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: E_Attack
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 817
+        width: 272
+        height: 383
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: E_Speed
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 1116
+        width: 205
+        height: 359
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Defense_Left
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 450
+        width: 419
+        height: 457
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: E_Defense_Right
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 817
+        width: 279
+        height: 297
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Cargo_Left
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 817
+        width: 125
+        height: 183
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Cargo_Right
+      rect:
+        serializedVersion: 2
+        x: 1503
+        y: 817
+        width: 125
+        height: 183
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Shuttle_Left
+      rect:
+        serializedVersion: 2
+        x: 1630
+        y: 817
+        width: 125
+        height: 183
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Shuttle_Right
+      rect:
+        serializedVersion: 2
+        x: 1757
+        y: 817
+        width: 125
+        height: 183
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Shuttle
+      rect:
+        serializedVersion: 2
+        x: 1884
+        y: 817
+        width: 131
+        height: 174
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Speed
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 398
+        height: 612
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Special_Left
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 450
+        width: 428
+        height: 365
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Attack
+      rect:
+        serializedVersion: 2
+        x: 1251
+        y: 450
+        width: 437
+        height: 331
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: E_Defense_Left
+      rect:
+        serializedVersion: 2
+        x: 1690
+        y: 450
+        width: 279
+        height: 297
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Defense
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 465
+        height: 448
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Special
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 0
+        width: 543
+        height: 366
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Special_Right
+      rect:
+        serializedVersion: 2
+        x: 1412
+        y: 0
+        width: 428
+        height: 365
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: E_Speed_Right
+      rect:
+        serializedVersion: 2
+        x: 1842
+        y: 0
+        width: 180
+        height: 358
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

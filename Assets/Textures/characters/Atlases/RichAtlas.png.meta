@@ -1,0 +1,584 @@
+fileFormatVersion: 2
+guid: 32c37808904cd8143badf204f7419b22
+timeCreated: 1447738631
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: RichAtlas_0
+    21300002: RichAtlas_1
+    21300004: RichAtlas_2
+    21300006: RichAtlas_3
+    21300008: RichAtlas_4
+    21300010: RichAtlas_5
+    21300012: RichAtlas_6
+    21300014: RichAtlas_7
+    21300016: RichAtlas_8
+    21300018: RichAtlas_9
+    21300020: RichAtlas_10
+    21300022: RichAtlas_11
+    21300024: RichAtlas_12
+    21300026: RichAtlas_13
+    21300028: RichAtlas_14
+    21300030: RichAtlas_15
+    21300032: RichAtlas_16
+    21300034: RichAtlas_17
+    21300036: RichAtlas_18
+    21300038: RichAtlas_19
+    21300040: RichAtlas_20
+    21300042: RichAtlas_21
+    21300044: RichAtlas_22
+    21300046: RichAtlas_23
+    21300048: RichAtlas_24
+    21300050: RichAtlas_25
+    21300052: RichAtlas_26
+    21300054: RichAtlas_27
+    21300056: RichAtlas_28
+    21300058: RichAtlas_29
+    21300060: RichAtlas_30
+    21300062: RichAtlas_31
+    21300064: RichAtlas_32
+    21300066: RichAtlas_33
+    21300068: RichAtlas_34
+    21300070: RichAtlas_35
+    21300072: RichAtlas_36
+    21300074: RichAtlas_37
+    21300076: RichAtlas_38
+    21300078: RichAtlas_39
+    21300080: RichAtlas_40
+    21300082: RichAtlas_41
+    21300084: RichAtlas_42
+    21300086: RichAtlas_43
+    21300088: RichAtlas_44
+    21300090: RichAtlas_45
+    21300092: RichAtlas_46
+    21300094: RichAtlas_47
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: RichAtlas_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 758
+        width: 179
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_1
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 726
+        width: 173
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_2
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 776
+        width: 147
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_3
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 792
+        width: 147
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_4
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 754
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_5
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 724
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_6
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 724
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_7
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 724
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 573
+        width: 180
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_9
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 545
+        width: 173
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_10
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 572
+        width: 147
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_11
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 596
+        width: 147
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_12
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 573
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_13
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 543
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_14
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 543
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_15
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 543
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 388
+        width: 180
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_17
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 364
+        width: 179
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_18
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 368
+        width: 147
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_19
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 400
+        width: 147
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_20
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 392
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_21
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 362
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_22
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 362
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_23
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 362
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 194
+        width: 187
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_25
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 183
+        width: 179
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_26
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 184
+        width: 168
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_27
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 204
+        width: 147
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_28
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 196
+        width: 147
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_29
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 181
+        width: 154
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_30
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 181
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_31
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 181
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_32
+      rect:
+        serializedVersion: 2
+        x: 1292
+        y: 181
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_33
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 181
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_34
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 181
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 187
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_36
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 0
+        width: 179
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_37
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 0
+        width: 168
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_38
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 0
+        width: 147
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_39
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 0
+        width: 147
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_40
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 0
+        width: 154
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_41
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_42
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_43
+      rect:
+        serializedVersion: 2
+        x: 1292
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_44
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_45
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_46
+      rect:
+        serializedVersion: 2
+        x: 1739
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RichAtlas_47
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 0
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

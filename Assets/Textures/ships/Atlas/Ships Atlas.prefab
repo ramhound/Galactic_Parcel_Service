@@ -1,0 +1,409 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &103906
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 460066}
+  - 114: {fileID: 11467008}
+  m_Layer: 0
+  m_Name: Ships Atlas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &460066
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 103906}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11467008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 103906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0c51bb0b6e93049af5e88f93826e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 1af0628be5c349a44b0e6e4c3b099b6c, type: 2}
+  mSprites:
+  - name: pirate_attack
+    x: 821
+    y: 848
+    width: 272
+    height: 383
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: pirate_attack_tilt1
+    x: 821
+    y: 78
+    width: 240
+    height: 383
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 16
+    paddingRight: 16
+    paddingTop: 0
+    paddingBottom: 0
+  - name: pirate_attack_tilt2
+    x: 821
+    y: 463
+    width: 240
+    height: 383
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 16
+    paddingRight: 16
+    paddingTop: 0
+    paddingBottom: 0
+  - name: pirate_defense
+    x: 0
+    y: 32
+    width: 278
+    height: 264
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 29
+    paddingRight: 17
+    paddingTop: 22
+    paddingBottom: 11
+  - name: pirate_defense_tilt1
+    x: 1095
+    y: 934
+    width: 279
+    height: 297
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 45
+    paddingTop: 0
+    paddingBottom: 0
+  - name: pirate_defense_tilt2
+    x: 1690
+    y: 1301
+    width: 279
+    height: 297
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 45
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: pirate_speed
+    x: 1095
+    y: 573
+    width: 205
+    height: 359
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 13
+    paddingBottom: 0
+  - name: pirate_speed_tilt1
+    x: 1842
+    y: 1690
+    width: 180
+    height: 358
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 1
+    paddingRight: 24
+    paddingTop: 0
+    paddingBottom: 14
+  - name: pirate_speed_tilt2
+    x: 1095
+    y: 213
+    width: 180
+    height: 358
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 25
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 14
+  - name: ship_attack
+    x: 1251
+    y: 1267
+    width: 437
+    height: 331
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: ship_attack_tilt1
+    x: 400
+    y: 350
+    width: 331
+    height: 330
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 28
+    paddingRight: 78
+    paddingTop: 1
+    paddingBottom: 0
+  - name: ship_attack_tilt2
+    x: 400
+    y: 18
+    width: 331
+    height: 330
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 76
+    paddingRight: 30
+    paddingTop: 1
+    paddingBottom: 0
+  - name: ship_defense
+    x: 400
+    y: 1600
+    width: 465
+    height: 448
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 5
+    paddingRight: 6
+    paddingTop: 7
+    paddingBottom: 2
+  - name: ship_defense_tilt1
+    x: 400
+    y: 682
+    width: 419
+    height: 457
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 57
+    paddingTop: 0
+    paddingBottom: 0
+  - name: ship_defense_tilt2
+    x: 400
+    y: 1141
+    width: 419
+    height: 457
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 57
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: ship_special
+    x: 867
+    y: 1682
+    width: 543
+    height: 366
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: ship_special_tilt1
+    x: 1412
+    y: 1683
+    width: 428
+    height: 365
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 115
+    paddingTop: 0
+    paddingBottom: 1
+  - name: ship_special_tilt2
+    x: 821
+    y: 1233
+    width: 428
+    height: 365
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 96
+    paddingRight: 19
+    paddingTop: 0
+    paddingBottom: 1
+  - name: ship_speed
+    x: 0
+    y: 1436
+    width: 398
+    height: 612
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 50
+    paddingRight: 44
+    paddingTop: 2
+    paddingBottom: 0
+  - name: ship_speed_tilt1
+    x: 0
+    y: 867
+    width: 388
+    height: 567
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 104
+    paddingTop: 0
+    paddingBottom: 47
+  - name: ship_speed_tilt2
+    x: 0
+    y: 298
+    width: 388
+    height: 567
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 104
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 47
+  - name: ship_standard
+    x: 1095
+    y: 38
+    width: 129
+    height: 173
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 5
+    paddingRight: 9
+    paddingTop: 2
+    paddingBottom: 14
+  - name: ship_standard_tilt1
+    x: 1503
+    y: 1048
+    width: 125
+    height: 183
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 7
+    paddingRight: 11
+    paddingTop: 3
+    paddingBottom: 3
+  - name: ship_standard_tilt2
+    x: 1376
+    y: 1048
+    width: 125
+    height: 183
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 7
+    paddingRight: 11
+    paddingTop: 3
+    paddingBottom: 3
+  - name: thief
+    x: 1884
+    y: 1057
+    width: 131
+    height: 174
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 4
+    paddingBottom: 5
+  - name: thief_tilt1
+    x: 1757
+    y: 1048
+    width: 125
+    height: 183
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 3
+    paddingTop: 0
+    paddingBottom: 0
+  - name: thief_tilt2
+    x: 1630
+    y: 1048
+    width: 125
+    height: 183
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 3
+    paddingTop: 0
+    paddingBottom: 0
+  mPixelSize: 1
+  mReplacement: {fileID: 0}
+  mCoordinates: 0
+  sprites: []
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 103906}
+  m_IsPrefabParent: 1

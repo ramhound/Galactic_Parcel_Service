@@ -1,0 +1,573 @@
+fileFormatVersion: 2
+guid: d35fd3b73d995764b9b20f7f745ee5d6
+timeCreated: 1447738582
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: DesertAtlas_0
+    21300002: DesertAtlas_1
+    21300004: DesertAtlas_2
+    21300006: DesertAtlas_3
+    21300008: DesertAtlas_4
+    21300010: DesertAtlas_5
+    21300012: DesertAtlas_6
+    21300014: DesertAtlas_7
+    21300016: DesertAtlas_8
+    21300018: DesertAtlas_9
+    21300020: DesertAtlas_10
+    21300022: DesertAtlas_11
+    21300024: DesertAtlas_12
+    21300026: DesertAtlas_13
+    21300028: DesertAtlas_14
+    21300030: DesertAtlas_15
+    21300032: DesertAtlas_16
+    21300034: DesertAtlas_17
+    21300036: DesertAtlas_18
+    21300038: DesertAtlas_19
+    21300040: DesertAtlas_20
+    21300042: DesertAtlas_21
+    21300044: DesertAtlas_22
+    21300046: DesertAtlas_23
+    21300048: DesertAtlas_24
+    21300050: DesertAtlas_25
+    21300052: DesertAtlas_26
+    21300054: DesertAtlas_27
+    21300056: DesertAtlas_28
+    21300058: DesertAtlas_29
+    21300060: DesertAtlas_30
+    21300062: DesertAtlas_31
+    21300064: DesertAtlas_32
+    21300066: DesertAtlas_33
+    21300068: DesertAtlas_34
+    21300070: DesertAtlas_35
+    21300072: DesertAtlas_36
+    21300074: DesertAtlas_37
+    21300076: DesertAtlas_38
+    21300078: DesertAtlas_39
+    21300080: DesertAtlas_40
+    21300082: DesertAtlas_41
+    21300084: DesertAtlas_42
+    21300086: DesertAtlas_43
+    21300088: DesertAtlas_44
+    21300090: DesertAtlas_45
+    21300092: DesertAtlas_46
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: DesertAtlas_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 808
+        width: 147
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_1
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 781
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_2
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 724
+        width: 159
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_3
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 724
+        width: 158
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_4
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 724
+        width: 158
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_5
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 724
+        width: 155
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_6
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 724
+        width: 151
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_7
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 724
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 608
+        width: 147
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_9
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 600
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_10
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 543
+        width: 162
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_11
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 543
+        width: 158
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_12
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 543
+        width: 158
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_13
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 543
+        width: 155
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_14
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 543
+        width: 154
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_15
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 543
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 408
+        width: 147
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_17
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 400
+        width: 147
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_18
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 362
+        width: 162
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_19
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 362
+        width: 159
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_20
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 362
+        width: 158
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_21
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 362
+        width: 155
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_22
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 362
+        width: 154
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_23
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 362
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 204
+        width: 155
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_25
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 200
+        width: 147
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_26
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 181
+        width: 162
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_27
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 181
+        width: 159
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_28
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 181
+        width: 158
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_29
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 181
+        width: 155
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_30
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 181
+        width: 155
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_31
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 181
+        width: 151
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_32
+      rect:
+        serializedVersion: 2
+        x: 1261
+        y: 181
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_33
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 181
+        width: 147
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 155
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_35
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 0
+        width: 147
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_36
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 0
+        width: 162
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_37
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 0
+        width: 159
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_38
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 0
+        width: 158
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_39
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 0
+        width: 158
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_40
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 0
+        width: 155
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_41
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 0
+        width: 151
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_42
+      rect:
+        serializedVersion: 2
+        x: 1261
+        y: 0
+        width: 151
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_43
+      rect:
+        serializedVersion: 2
+        x: 1414
+        y: 0
+        width: 151
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_44
+      rect:
+        serializedVersion: 2
+        x: 1567
+        y: 0
+        width: 151
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_45
+      rect:
+        serializedVersion: 2
+        x: 1720
+        y: 0
+        width: 151
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DesertAtlas_46
+      rect:
+        serializedVersion: 2
+        x: 1873
+        y: 0
+        width: 151
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
