@@ -3,5 +3,8 @@ using UnityEngine.Networking;
 using System.Collections;
 using System.Collections.Generic;
 
-public class GameNetworkHandler : NetworkBehaviour { 
+public class GameNetworkHandler : NetworkManagerHUD { 
+     private void Start() {
+        manager.StartHost();
+    }
 }

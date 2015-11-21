@@ -3,18 +3,24 @@ using UnityEngine.Networking;
 using System.Collections;
 using System.Collections.Generic;
 
-public class GameTimer : MonoBehaviour {
-public delegate void GameTick();
+public class GameTimer : NetworkBehaviour {
+    public delegate void GameTick();
     private static GameTimer instance;
     private static bool stopRequested = false;
     public static GameTick onGameTick;
     public static int currentTick = 0;
-    public float tickRate = .1f;
+    private static Dictionary<PlayerCommandHandler, int> playerCmdHandlers = new Dictionary<PlayerCommandHandler, int>();
+    public float tickRate = .2f;
 
-    private void Awake() { instance = this; }
+    private void Awake() {
+
+    }
 
     private void Start() {
-        GameTimer.StartTimer();
+        if(!NetworkClient.active || isServer) {
+            instance = this;
+            GameTimer.StartTimer();
+        }
     }
 
     public static void StartTimer() {
@@ -31,7 +37,20 @@ public delegate void GameTick();
         while(!stopRequested) {
             yield return new WaitForSeconds(tickRate);
             currentTick++;
-            if(onGameTick != null) onGameTick();
+            //if(onGameTick != null) onGameTick();
+            foreach(var e in playerCmdHandlers) {
+                if(currentTick % e.Value == 0) {
+                    e.Key.OnGameTick();
+                }
+            }
         }
+    }
+
+    public static void AddPlayerCmdHandler(PlayerCommandHandler pch, int eTick) {
+        playerCmdHandlers.Add(pch, eTick);
+    }
+
+    public static void RemovePlayerCmdHandler(PlayerCommandHandler pch) {
+        playerCmdHandlers.Remove(pch);
     }
 }

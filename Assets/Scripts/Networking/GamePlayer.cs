@@ -6,6 +6,7 @@ using System;
 
 public class GamePlayer : NetworkBehaviour {
     private static GamePlayer _instance;
+    //private static NetworkClient networkClient;
     public static GamePlayer localInstance {
         get { return _instance; }
         private set { _instance = value; }
@@ -23,19 +24,17 @@ public class GamePlayer : NetworkBehaviour {
     private ISelectable selectedUnit;
     private static int idIndex = 0;
 
-    private void Awake() {
-        name = playerId + idIndex++;
-        localInstance = this;
-    }
-
     private void Start() {
+        if(!NetworkClient.active || isLocalPlayer)
+            localInstance = this;
+        name = playerId + idIndex++;
 
     }
 
     //make a packet merger function
 
     private void Update() {
-        if(connectionToServer == null || isLocalPlayer) {
+        if(!NetworkClient.active || isLocalPlayer) {
             if(Input.GetMouseButtonDown(0) && uuids.Length > 0) {
                 var click = Input.mousePosition;
                 var pos = Camera.main.ScreenToWorldPoint(click);
@@ -61,7 +60,7 @@ public class GamePlayer : NetworkBehaviour {
     }
 
     public void SendCommandPacket(CommandPacket packet) {
-        if(connectionToServer != null) CmdHandleCommandPacket(packet); //handle as network
+        if(NetworkClient.active) CmdHandleCommandPacket(packet); //handle as network
         else HandleCommandPacket(packet); //or as single player
     }
 
@@ -70,14 +69,12 @@ public class GamePlayer : NetworkBehaviour {
         HandleCommandPacket(packet);
     }
 
+    //this is implied to be run on the server and single player if you follow it
     private void HandleCommandPacket(CommandPacket packet) {
         if(packet.uuids.Length > 0) {
             foreach(var s in packet.uuids) {
-                var unit = GameObject.Find(s).GetComponent<ICommandHandler>();
-                unit.HandleCommand(packet.command, packet.commandData);
-
-                //if(isServer) unit.RpcHandleCommand(packet.command, packet.commandData);
-                //else unit.HandleCommand(packet.command, packet.commandData);
+                var unit = GameObject.Find(s).GetComponent<PlayerCommandHandler>();
+                unit.HandleCommand(packet);
             }
         }
     }
@@ -85,5 +82,15 @@ public class GamePlayer : NetworkBehaviour {
     public void SetSelectedUnit(ISelectable selection) {
         if(selectedUnit != null) selectedUnit.SetSelected(false);
         selectedUnit = selection;
+    }
+
+    public void DisplayBanner(Vector2 characterIndex, string text, Banner.BannerType bannerType) {
+        if(isServer) RpcDisplayBanner(characterIndex, text, bannerType);
+        else PopUp.DisplayBanner(ClientManager.GenerateClient(characterIndex).profilePic, text, bannerType);
+    }
+
+    [ClientRpc]
+    public void RpcDisplayBanner(Vector2 characterIndex, string text, Banner.BannerType bannerType) {
+        PopUp.DisplayBanner(ClientManager.GenerateClient(characterIndex).profilePic, text, bannerType);
     }
 }

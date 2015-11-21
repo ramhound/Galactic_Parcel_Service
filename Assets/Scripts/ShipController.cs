@@ -4,7 +4,7 @@ using Pathfinding;
 using System.Collections;
 using System;
 
-public class ShipController : NetworkBehaviour, ICommandHandler {
+public class ShipController : PlayerCommandHandler {
     private Seeker seeker;
     private Path path;
     private Rigidbody2D body2D;
@@ -18,7 +18,9 @@ public class ShipController : NetworkBehaviour, ICommandHandler {
     public float pathRefreshRate = 0.1f;
     private static int idIndex = 0;
 
-    public void Start() {
+    public override void Start() {
+        base.Start();
+
         seeker = GetComponent<Seeker>();
         body2D = GetComponent<Rigidbody2D>();
         name = "Ship " + idIndex++;
@@ -31,41 +33,41 @@ public class ShipController : NetworkBehaviour, ICommandHandler {
         }
     }
 
-    private void FixedUpdate() {
-        //i will have to eventually have to rewrite this to make a bit more sense
-        if(path != null) {
-            //completed trip
-            if(nodeIndex >= path.vectorPath.Count) {
-                body2D.velocity = Vector2.zero;
-                return;
-            }
+    public override void OnGameTick() {
+        base.OnGameTick();
 
-            var dir = (path.vectorPath[nodeIndex] - transform.position).normalized;
-            dir *= speed * Time.fixedDeltaTime;
-            body2D.velocity = dir;
-            transform.rotation = RotateTowards(transform, dir);
+        HandleCommand(currentCommand);
+    }
 
-            if(Vector2.Distance(transform.position, path.vectorPath[nodeIndex]) < endPointDistance) {
-                nodeIndex++;
-                return;
-            }
+    public override void HandleCommand(CommandPacket packet) {
+        if(packet.command == (int)PlayerCommand.None) return;
+
+        if(packet.command == (int)PlayerCommand.Move) {
+            SetDestination(packet.commandData);
         }
     }
 
-    //make this more generic and add it to pixel math
-    private Quaternion RotateTowards(Transform trans, Vector2 point) {
-        float angle = Mathf.Atan2(point.y, point.x) * Mathf.Rad2Deg - 90;
-        Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
-        return Quaternion.Slerp(trans.rotation, q, Time.deltaTime * rotationSpeed);
-    }
+    private void FixedUpdate() {
+        //i will have to eventually have to rewrite this to make a bit more sense
+        if(!NetworkClient.active || isServer) {
+            if(path != null) {
+                //completed trip
+                if(nodeIndex >= path.vectorPath.Count) {
+                    body2D.velocity = Vector2.zero;
+                    return;
+                }
 
-    [ClientRpc]
-    public void RpcHandleCommand(int command, object commandData) {
-        HandleCommand(command, commandData);
-    }
+                var dir = (path.vectorPath[nodeIndex] - transform.position).normalized;
+                dir *= speed * Time.fixedDeltaTime;
+                body2D.velocity = dir;
+                transform.rotation = RotateTowards(transform, dir);
 
-    public void HandleCommand(int command, object commandData) {
-        SetDestination((Vector3)commandData);
+                if(Vector2.Distance(transform.position, path.vectorPath[nodeIndex]) < endPointDistance) {
+                    nodeIndex++;
+                    return;
+                }
+            }
+        }
     }
 
     public void SetDestination(Vector2 destination) {
@@ -73,7 +75,10 @@ public class ShipController : NetworkBehaviour, ICommandHandler {
         seeker.StartPath(transform.position, targetDestination, OnPathComplete);
     }
 
-    private void OnDestroy() {
-        //used for cleanup
+    //make this more generic and add it to pixel math
+    private Quaternion RotateTowards(Transform trans, Vector2 point) {
+        float angle = Mathf.Atan2(point.y, point.x) * Mathf.Rad2Deg - 90;
+        Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+        return Quaternion.Slerp(trans.rotation, q, Time.deltaTime * rotationSpeed);
     }
 }

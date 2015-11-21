@@ -2,8 +2,9 @@
 using System.Collections;
 
 public class Client {
+    public string name;
     public Sprite profilePic;
-    public Package package;
+    public Location location;
 
     //called on the sender client when the package arrives
     public void PackageDelivered() {
