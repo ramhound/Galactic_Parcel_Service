@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class Client {
+    public string name;
     public Sprite profilePic;
     public Location location;
 

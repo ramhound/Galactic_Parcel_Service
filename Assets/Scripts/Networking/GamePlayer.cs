@@ -83,4 +83,14 @@ public class GamePlayer : NetworkBehaviour {
         if(selectedUnit != null) selectedUnit.SetSelected(false);
         selectedUnit = selection;
     }
+
+    public void DisplayBanner(Vector2 characterIndex, string text, Banner.BannerType bannerType) {
+        if(isServer) RpcDisplayBanner(characterIndex, text, bannerType);
+        else PopUp.DisplayBanner(ClientManager.GenerateClient(characterIndex).profilePic, text, bannerType);
+    }
+
+    [ClientRpc]
+    public void RpcDisplayBanner(Vector2 characterIndex, string text, Banner.BannerType bannerType) {
+        PopUp.DisplayBanner(ClientManager.GenerateClient(characterIndex).profilePic, text, bannerType);
+    }
 }

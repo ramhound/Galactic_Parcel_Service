@@ -32,6 +32,12 @@ public class Location : PlayerCommandHandler, ISelectable {
         }
     }
 
+    public override void OnGameTick() {
+        base.OnGameTick();
+
+        GamePlayer.localInstance.DisplayBanner(new Vector2(-1, 0), "test", Banner.BannerType.Message);
+    }
+
     private void Rotate() {
         var rot = trans.rotation.eulerAngles;
         trans.rotation = Quaternion.Euler(rot.x, rot.y, rot.z + (rotateLeft ? (rotationSpeed * Time.deltaTime) : -(rotationSpeed * Time.deltaTime)));

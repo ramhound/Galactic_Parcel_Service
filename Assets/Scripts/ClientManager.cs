@@ -34,7 +34,7 @@ public class ClientManager : MonoBehaviour {
     public CharacterStyleSprites[] characterSprites;
     public static Client farnsberg;
     public static Dictionary<CharacterStyle, Sprite[]> characters = new Dictionary<CharacterStyle, Sprite[]>();
-    public static Dictionary<string, List<Client>> allClients = new Dictionary<string, List<Client>>();
+    public static Dictionary<string, Client> namedClients = new Dictionary<string, Client>();
 
     [System.Serializable]
     public struct CharacterStyleSprites {
@@ -51,6 +51,19 @@ public class ClientManager : MonoBehaviour {
             var style = cs.style;
             characters[style] = cs.sprites;
         }
+    }
+
+    public static Client GetClient(string name) {
+        //will eventually be able to get a preexidting client by name
+        return null;
+    }
+
+    public static Client GenerateClient(Vector2 index) {
+        if(index.x == -1) return ClientManager.farnsberg;
+        var client = new Client();
+        client.profilePic = characters[(CharacterStyle)((int)index.x)][(int)index.y];
+
+        return client;
     }
 
     public static Client GenerateClient(CharacterStyle style = 0) {

@@ -36,7 +36,8 @@ public class HubStation : Location {
 
     public override void OnGameTick() {
         //packageneration here
-        if(GameTimer.currentTick == 1) PopUp.DisplayBanner(ClientManager.farnsberg.profilePic, "Why not farnsberg?", Banner.BannerType.Package);
+        if(GameTimer.currentTick == 1)
+            GamePlayer.localInstance.DisplayBanner(new Vector2(-1, 0), "Why not farnsberg?", Banner.BannerType.Package);
 
     }
 
