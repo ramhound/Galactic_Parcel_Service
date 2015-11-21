@@ -235,10 +235,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f28a7975e1c0f404088ebf87a8cdf0a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  commandRate: 5
   clientStyles: 0
   rotationSpeed: 3
   rotateLeft: 0
-  spawnRate: 6
 --- !u!114 &126458121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -902,7 +902,7 @@ RectTransform:
   - {fileID: 1233651340}
   - {fileID: 2085155090}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -969,7 +969,6 @@ GameObject:
   - 114: {fileID: 1491892273}
   - 114: {fileID: 1491892272}
   - 114: {fileID: 1491892271}
-  - 114: {fileID: 1491892275}
   - 114: {fileID: 1491892276}
   - 114: {fileID: 1491892277}
   m_Layer: 0
@@ -1083,18 +1082,6 @@ Transform:
   - {fileID: 7757443}
   m_Father: {fileID: 0}
   m_RootOrder: 3
---- !u!114 &1491892275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1491892270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 488fe0b7fb96fd24bb4ce7e6403c5aa8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tickRate: 1
 --- !u!114 &1491892276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1631,6 +1618,79 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1595027429
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1595027430}
+  - 114: {fileID: 1595027432}
+  - 114: {fileID: 1595027431}
+  m_Layer: 0
+  m_Name: Game Timer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1595027430
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1595027429}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+--- !u!114 &1595027431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1595027429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 488fe0b7fb96fd24bb4ce7e6403c5aa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tickRate: .200000003
+--- !u!114 &1595027432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1595027429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 0
+    i1: 0
+    i2: 0
+    i3: 0
+    i4: 0
+    i5: 0
+    i6: 0
+    i7: 0
+    i8: 0
+    i9: 0
+    i10: 0
+    i11: 0
+    i12: 0
+    i13: 0
+    i14: 0
+    i15: 0
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!1 &1663828783
 GameObject:
   m_ObjectHideFlags: 0
@@ -1786,10 +1846,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89886e7d3f3705440a375146dfa1ba97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  commandRate: 1
   clientStyles: 9
   rotationSpeed: 1
   rotateLeft: 1
-  spawnRate: 10
   hubUiManager: {fileID: 2085155091}
   hubMenu: {fileID: 2085155089}
   spawnables:

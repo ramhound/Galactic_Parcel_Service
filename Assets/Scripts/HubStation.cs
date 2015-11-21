@@ -9,10 +9,9 @@ public class HubStation : Location {
     public GameObject[] spawnables;
     public List<Package> packages = new List<Package>();
 
-    private void Start() {
+    public override void Start() {
+        base.Start();
         if(!NetworkClient.active || isServer) {
-            GameTimer.onGameTick += OnGameTick;
-
             packages.Add(new Package() {
                 fragility = 1,
                 sender = ClientManager.farnsberg,
@@ -35,13 +34,17 @@ public class HubStation : Location {
         hubUiManager.selectedStation = selected ? this : null;
     }
 
-    public void OnGameTick() {
+    public override void OnGameTick() {
         //packageneration here
         if(GameTimer.currentTick == 1) PopUp.DisplayBanner(ClientManager.farnsberg.profilePic, "Why not farnsberg?", Banner.BannerType.Package);
-        if(GameTimer.currentTick % spawnRate == 0) {
-            
 
-        }
+    }
+
+    public override void HandleCommand(CommandPacket packet) {
+        base.HandleCommand(packet);
+
+        var ship = Instantiate(spawnables[(int)(packet.commandData.x)]) as GameObject;
+        if(isServer) NetworkServer.Spawn(ship);
     }
 
     private Package CreatePackage() {
@@ -54,21 +57,6 @@ public class HubStation : Location {
 
         PopUp.DisplayBanner(package.receiver.profilePic, "Reveiver", Banner.BannerType.Message);
         return package;
-    }
-
-    //private void 
-
-    public override void HandleCommand(int command, object commandData) {
-        if(command == (int)PlayerCommand.Spawn) {
-
-            var ship = Instantiate(spawnables[(int)commandData]) as GameObject;
-            if(isServer) NetworkServer.Spawn(ship);
-        }
-    }
-
-    [ClientRpc]
-    public override void RpcHandleCommand(int command, object commandData) {
-        HandleCommand(command, commandData);
     }
 
     public override void OnStartLocalPlayer() {

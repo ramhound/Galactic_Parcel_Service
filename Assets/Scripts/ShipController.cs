@@ -4,10 +4,11 @@ using Pathfinding;
 using System.Collections;
 using System;
 
-public class ShipController : NetworkBehaviour, ICommandHandler {
+public class ShipController : PlayerCommandHandler {
     private Seeker seeker;
     private Path path;
     private Rigidbody2D body2D;
+    [SyncVar]
     private Vector2 targetDestination;
     private int nodeIndex = 0;
 
@@ -17,7 +18,9 @@ public class ShipController : NetworkBehaviour, ICommandHandler {
     public float pathRefreshRate = 0.1f;
     private static int idIndex = 0;
 
-    public void Start() {
+    public override void Start() {
+        base.Start();
+
         seeker = GetComponent<Seeker>();
         body2D = GetComponent<Rigidbody2D>();
         name = "Ship " + idIndex++;
@@ -30,44 +33,46 @@ public class ShipController : NetworkBehaviour, ICommandHandler {
         }
     }
 
-    private void FixedUpdate() {
-        //i will have to eventually have to rewrite this to make a bit more sense
-        if(path != null) {
-            //completed trip
-            if(nodeIndex >= path.vectorPath.Count) {
-                body2D.velocity = Vector2.zero;
-                return;
-            }
+    public override void OnGameTick() {
+        base.OnGameTick();
 
-            var dir = (path.vectorPath[nodeIndex] - transform.position).normalized;
-            dir *= speed * Time.fixedDeltaTime;
-            body2D.velocity = dir;
-            transform.rotation = RotateTowards(transform, dir);
+        HandleCommand(currentCommand);
+    }
 
-            if(Vector2.Distance(transform.position, path.vectorPath[nodeIndex]) < endPointDistance) {
-                nodeIndex++;
-                return;
-            }
+    public override void HandleCommand(CommandPacket packet) {
+        if(packet.command == (int)PlayerCommand.None) return;
+
+        if(packet.command == (int)PlayerCommand.Move) {
+            SetDestination(packet.commandData);
         }
     }
 
-    [ClientRpc]
-    public void RpcHandleCommand(int command, object commandData) {
-        Debug.Log(commandData);
-        HandleCommand(command, commandData);
-    }
+    private void FixedUpdate() {
+        //i will have to eventually have to rewrite this to make a bit more sense
+        if(!NetworkClient.active || isServer) {
+            if(path != null) {
+                //completed trip
+                if(nodeIndex >= path.vectorPath.Count) {
+                    body2D.velocity = Vector2.zero;
+                    return;
+                }
 
-    public void HandleCommand(int command, object commandData) {
-        SetDestination((Vector3)commandData);
+                var dir = (path.vectorPath[nodeIndex] - transform.position).normalized;
+                dir *= speed * Time.fixedDeltaTime;
+                body2D.velocity = dir;
+                transform.rotation = RotateTowards(transform, dir);
+
+                if(Vector2.Distance(transform.position, path.vectorPath[nodeIndex]) < endPointDistance) {
+                    nodeIndex++;
+                    return;
+                }
+            }
+        }
     }
 
     public void SetDestination(Vector2 destination) {
         targetDestination = destination;
         seeker.StartPath(transform.position, targetDestination, OnPathComplete);
-    }
-
-    private void OnDestroy() {
-        //used for cleanup
     }
 
     //make this more generic and add it to pixel math

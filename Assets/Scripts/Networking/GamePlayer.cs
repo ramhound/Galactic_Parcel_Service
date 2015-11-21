@@ -73,11 +73,8 @@ public class GamePlayer : NetworkBehaviour {
     private void HandleCommandPacket(CommandPacket packet) {
         if(packet.uuids.Length > 0) {
             foreach(var s in packet.uuids) {
-                var unit = GameObject.Find(s).GetComponent<ICommandHandler>();
-                unit.HandleCommand(packet.command, packet.commandData);
-
-                //if(isServer) unit.RpcHandleCommand(packet.command, packet.commandData);
-                //else unit.HandleCommand(packet.command, packet.commandData);
+                var unit = GameObject.Find(s).GetComponent<PlayerCommandHandler>();
+                unit.HandleCommand(packet);
             }
         }
     }
