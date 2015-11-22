@@ -48,7 +48,7 @@ public class ShipController : GameCommandHandler {
         } else if(currentCommand == GameCommand.PickUp) {
             SetDestination(commandData);
         } else if(currentCommand == GameCommand.Deliver) {
-
+            SetDestination(commandData);
         }
     }
 
@@ -98,15 +98,19 @@ public class ShipController : GameCommandHandler {
                 foreach(var p in loc.packages) {
                     packages.Add(p);
                 }
-                body2D.velocity = Vector2.zero;
 
                 loc.packages.Clear();
-                //if(packages.Count > 0) {
-                //    Debug.Log("Heading out for delivery");
-                //    currentCommand = GameCommand.Deliver;
-                //    commandData = packages[0].receiver.location.transform.position;
-                //    commandSenderId = packages[0].receiver.location.name;
-                //}
+                CompletedCommand(currentCommand);
+
+                //set new command
+                if(packages.Count > 0) {
+                    Debug.Log("Heading out for delivery");
+                    ReceiveCommand(new CommandPacket() {
+                        command = GameCommand.Deliver,
+                        commandData = packages[0].receiver.location.transform.position,
+                        senderId = packages[0].receiver.location.name
+                    });
+                }
             } else if(currentCommand == GameCommand.Deliver && col.name == commandSenderId) {
                 body2D.velocity = Vector2.zero;
                 CompletedCommand(currentCommand);
