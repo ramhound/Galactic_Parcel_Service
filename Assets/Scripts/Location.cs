@@ -27,7 +27,7 @@ public class Location : PlayerCommandHandler, ISelectable {
 
     public virtual void SetSelected(bool selected) {
         if(selected) {
-            GamePlayer.localInstance.SetSelectedUnit(this);
+            GamePlayer.localInstance.SetSelectedUnits(new ISelectable[] { this });
             Camera.main.GetComponent<CameraFollow>().SetMainTarget(trans);
         }
     }

@@ -235,7 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f28a7975e1c0f404088ebf87a8cdf0a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  commandRate: 150
+  commandRate: 300
   clientStyles: 0
   rotationSpeed: 3
   rotateLeft: 0
@@ -323,7 +323,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!4 &359963153
 Transform:
   m_ObjectHideFlags: 0
@@ -873,7 +873,7 @@ RectTransform:
   - {fileID: 1233651340}
   - {fileID: 2085155090}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -1591,6 +1591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26ec5c99022ddf54f837df38920c3242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dontDestroyOnLoad: 1
 --- !u!1 &1543539021 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 178252, guid: a8faded7357f0304fa7cc2f8703ac6dd, type: 2}

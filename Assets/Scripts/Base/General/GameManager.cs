@@ -13,4 +13,8 @@ public class GameManager : MonoBehaviour {
             } else { Destroy(gameObject); }
         } else instance = this;
     }
+
+    private void Start() {
+
+    }
 }

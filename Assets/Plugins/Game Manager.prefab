@@ -29,7 +29,7 @@ GameObject:
   - 114: {fileID: 11444468}
   - 114: {fileID: 11489222}
   - 114: {fileID: 11414930}
-  - 114: {fileID: 11444522}
+  - 114: {fileID: 11414050}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -77,6 +77,27 @@ MonoBehaviour:
   _emailTemplateFiles: {fileID: 11400000, guid: ea6f0e1a2a68d46fa9318b98b0dbc388,
     type: 2}
   _settings: {fileID: 11400000, guid: d7bceaf4f914d400eb7989c7bbe1aa56, type: 2}
+--- !u!114 &11414050
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 160230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4455d85e830a5ef4083c2aae26f11197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BroadcastPort: 47777
+  m_BroadcastKey: 2222
+  m_BroadcastVersion: 1
+  m_BroadcastSubVersion: 1
+  m_BroadcastInterval: 1000
+  m_UseNetworkManager: 1
+  m_BroadcastData: HELLO
+  m_ShowGUI: 0
+  m_OffsetX: 0
+  m_OffsetY: 0
 --- !u!114 &11414930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -88,6 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26ec5c99022ddf54f837df38920c3242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dontDestroyOnLoad: 1
 --- !u!114 &11444468
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -104,27 +126,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   spawn: 1
---- !u!114 &11444522
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 160230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1553936188, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_BroadcastPort: 47777
-  m_BroadcastKey: 2222
-  m_BroadcastVersion: 1
-  m_BroadcastSubVersion: 1
-  m_BroadcastInterval: 1000
-  m_UseNetworkManager: 1
-  m_BroadcastData: HELLO
-  m_ShowGUI: 1
-  m_OffsetX: 0
-  m_OffsetY: 0
 --- !u!114 &11489222
 MonoBehaviour:
   m_ObjectHideFlags: 1

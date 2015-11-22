@@ -21,7 +21,7 @@ public class GamePlayer : NetworkBehaviour {
         }
     }
 
-    private ISelectable selectedUnit;
+    private ISelectable[] selectedUnits = new ISelectable[] { };
     private static int idIndex = 0;
 
     private void Start() {
@@ -55,7 +55,7 @@ public class GamePlayer : NetworkBehaviour {
             }
 
             if(Input.GetKeyUp(KeyCode.Escape))
-                Camera.main.GetComponent<CameraFollow>().SetMainTarget(null);
+                SetSelectedUnits(new ISelectable[] { });
         }
     }
 
@@ -79,9 +79,12 @@ public class GamePlayer : NetworkBehaviour {
         }
     }
 
-    public void SetSelectedUnit(ISelectable selection) {
-        if(selectedUnit != null) selectedUnit.SetSelected(false);
-        selectedUnit = selection;
+    public void SetSelectedUnits(ISelectable[] selections) {
+        if(selectedUnits.Length > 0) {
+            foreach(var u in selectedUnits)
+                u.SetSelected(false);
+        }
+        selectedUnits = selections;
     }
 
     public void DisplayBanner(Vector2 characterIndex, string text, Banner.BannerType bannerType) {
