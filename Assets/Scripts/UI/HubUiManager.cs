@@ -8,7 +8,7 @@ public class HubUiManager : MonoBehaviour {
         var packet = new CommandPacket() {
             senderId = GamePlayer.localInstance.name,
             uuids = new string[] { selectedStation.name },
-            command = (int)GameCommand.Spawn,
+            command = GameCommand.Spawn,
             commandData = new Vector3((int)(Ship.ShipType.Cargo), 0, 0)
         };
         GamePlayer.localInstance.SendCommandPacket(packet);

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Collections;
 using System;
 
-public class GamePlayer : NetworkBehaviour {
+public class GamePlayer : GameCommandHandler {
     private static GamePlayer _instance;
     //private static NetworkClient networkClient;
     public static GamePlayer localInstance {
@@ -12,19 +12,13 @@ public class GamePlayer : NetworkBehaviour {
         private set { _instance = value; }
     }
     public string playerId = "Krooked590";
-    private string[] _uuids = new string[] { };
-    public string[] uuids {
-        get { return _uuids; }
-        set {
-            _uuids = value;
-            //somethuing might need to go here not dsure et
-        }
-    }
+    public string[] uuids = new string[] { };
 
     private ISelectable[] selectedUnits = new ISelectable[] { };
     private static int idIndex = 0;
 
-    private void Start() {
+    public override void Start() {
+        base.Start();
         if(!NetworkClient.active)
             localInstance = this;
         name = playerId + idIndex++;
@@ -43,39 +37,40 @@ public class GamePlayer : NetworkBehaviour {
                     var packet = new CommandPacket() {
                         senderId = name,
                         uuids = this.uuids,
-                        command = (int)GameCommand.Move,
+                        command = GameCommand.Move,
                         commandData = pos
                     };
 
                     SendCommandPacket(packet);
-                } else {
-
                 }
             }
-
-            if(Input.GetKeyUp(KeyCode.Escape))
-                SetSelectedUnits(new ISelectable[] { });
         }
     }
 
     public void SendCommandPacket(CommandPacket packet) {
-        if(NetworkClient.active) CmdHandleCommandPacket(packet); //handle as network
-        else HandleCommandPacket(packet); //or as single player
+        if(NetworkClient.active) CmdReceiveCommand(packet); //handle as network
+        else ReceiveCommand(packet); //or as single player
     }
 
     [Command]
-    public void CmdHandleCommandPacket(CommandPacket packet) {
-        HandleCommandPacket(packet);
+    public void CmdReceiveCommand(CommandPacket packet) {
+        ReceiveCommand(packet);
     }
 
     //this is implied to be run on the server and single player if you follow it
-    private void HandleCommandPacket(CommandPacket packet) {
+    public override void ReceiveCommand(CommandPacket packet) {
+        base.ReceiveCommand(packet);
+
         if(packet.uuids.Length > 0) {
             foreach(var s in packet.uuids) {
                 var unit = GameObject.Find(s).GetComponent<GameCommandHandler>();
-                unit.HandleCommand(packet);
+                unit.ReceiveCommand(packet);
             }
         }
+    }
+
+    public void SetSelectedUnits() {
+        SetSelectedUnits(new ISelectable[] { });
     }
 
     public void SetSelectedUnits(ISelectable[] selections) {

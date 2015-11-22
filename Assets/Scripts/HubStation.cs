@@ -28,6 +28,7 @@ public class HubStation : Location {
 
     public override void OnGameTick() {
         //packageneration here
+        base.OnGameTick();
 
         if(GameTimer.currentTick == 1) {
             packages.Add(new Package() {
@@ -41,9 +42,9 @@ public class HubStation : Location {
         //broadcast pickup request to nearby ships not in route 
         if(packages.Count > 0) {
             foreach(var s in activeFleet) {
-                if(s.currentCommand.command == (int)GameCommand.None) {
-                    s.HandleCommand(new CommandPacket() {
-                        command = (int)GameCommand.PickUp,
+                if(s.currentCommand == GameCommand.None) {
+                    s.ReceiveCommand(new CommandPacket() {
+                        command = GameCommand.PickUp,
                         senderId = name,
                         commandData = transform.position
                     });
@@ -52,15 +53,20 @@ public class HubStation : Location {
         }
     }
 
-    public override void HandleCommand(CommandPacket packet) {
-        base.HandleCommand(packet);
+    public override void ExecuteCommand(GameCommand command) {
+        base.ExecuteCommand(command);
 
-        if(packet.command == (int)GameCommand.Spawn) {
-            var ship = Instantiate(spawnables[(int)(packet.commandData.x)]) as GameObject;
-            activeFleet.Add(ship.GetComponent<ShipController>());            
-
+        if(currentCommand == GameCommand.Spawn) {
+            var ship = Instantiate(spawnables[(int)(commandData.x)]) as GameObject;
+            activeFleet.Add(ship.GetComponent<ShipController>());
             if(isServer) NetworkServer.Spawn(ship);
+
+            CompletedCommand(command);
         }
+    }
+
+    public override void ReceiveCommand(CommandPacket packet) {
+        base.ReceiveCommand(packet);
     }
 
     private Package CreatePackage() {

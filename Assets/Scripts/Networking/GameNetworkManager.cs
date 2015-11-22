@@ -6,12 +6,16 @@ using System.Collections.Generic;
 public class GameNetworkManager : NetworkManager {
     public static GameNetworkManager instance;
     public bool startOnStart = false;
+    private bool started = false;
 
      private void Start() {
         instance = this;
+    }
 
-        if(startOnStart) {
+    private void Update() {
+        if(startOnStart && !started) {
             StartHost();
+            started = true;
         }
     }
 

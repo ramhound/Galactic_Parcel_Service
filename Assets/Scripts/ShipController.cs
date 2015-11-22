@@ -37,25 +37,29 @@ public class ShipController : GameCommandHandler {
 
     public override void OnGameTick() {
         base.OnGameTick();
-        HandleCommand(currentCommand);
+        ExecuteGameCommand();
     }
 
-    public override void HandleCommand(CommandPacket packet) {
-        base.HandleCommand(packet);
-
-        if(packet.command == (int)GameCommand.None) {
+    public void ExecuteGameCommand() {
+        if(currentCommand == GameCommand.None) {
             return;
-        } else if(packet.command == (int)GameCommand.Move) {
-            SetDestination(packet.commandData);
-        } else if(packet.command == (int)GameCommand.PickUp) {
-            SetDestination(packet.commandData);
+        } else if(currentCommand == GameCommand.Move) {
+            SetDestination(commandData);
+        } else if(currentCommand == GameCommand.PickUp) {
+            SetDestination(commandData);
+        } else if(currentCommand == GameCommand.Deliver) {
+
         }
     }
+
+    //public override void HandleCommand(CommandPacket packet) {
+    //    base.HandleCommand(packet);
+    //}
 
     private void FixedUpdate() {
         //i will have to eventually have to rewrite this to make a bit more sense
         if(!NetworkClient.active || isServer) {
-            if(path != null && currentCommand.command != (int)GameCommand.None) {
+            if(path != null && currentCommand != GameCommand.None) {
                 //completed trip
                 if(nodeIndex >= path.vectorPath.Count) {
                     body2D.velocity = Vector2.zero;
@@ -88,22 +92,25 @@ public class ShipController : GameCommandHandler {
     }
 
     private void OnTriggerEnter2D(Collider2D col) {
-        if(currentCommand.command == (int)GameCommand.PickUp && col.name ==  currentCommand.senderId) {
-            var loc = col.GetComponent<Location>();
-            foreach(var p in loc.packages) {
-                packages.Add(p);
-            }
+        if(!NetworkClient.active || isServer) {
+            if(currentCommand == GameCommand.PickUp && col.name == commandSenderId) {
+                var loc = col.GetComponent<Location>();
+                foreach(var p in loc.packages) {
+                    packages.Add(p);
+                }
+                body2D.velocity = Vector2.zero;
 
-            loc.packages.Clear();
-            if(packages.Count > 0) {
-                currentCommand = new CommandPacket() {
-                    command = (int)GameCommand.Deliver,
-                    commandData = packages[0].receiver.location.transform.position,
-                    senderId = packages[0].receiver.location.name
-                };
+                loc.packages.Clear();
+                //if(packages.Count > 0) {
+                //    Debug.Log("Heading out for delivery");
+                //    currentCommand = GameCommand.Deliver;
+                //    commandData = packages[0].receiver.location.transform.position;
+                //    commandSenderId = packages[0].receiver.location.name;
+                //}
+            } else if(currentCommand == GameCommand.Deliver && col.name == commandSenderId) {
+                body2D.velocity = Vector2.zero;
+                CompletedCommand(currentCommand);
             }
-        } else if(currentCommand.command == (int)GameCommand.Deliver && col.name == currentCommand.senderId) {
-
         }
     }
 }
