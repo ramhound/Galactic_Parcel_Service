@@ -7,7 +7,7 @@ public class MainMenuManager : MonoBehaviour {
         //Application.LoadLevel("Main Game"); //maybe use load level async for no delay. 
         //i am already used to manually managing scene objects
         //so it seems like it would be the best of both worlds
-        GameNetworkHandler.instance.manager.StartHost();
+        GameNetworkManager.instance.StartHost();
         GameNetworkDiscovery.instance.Initialize();
         GameNetworkDiscovery.instance.StartAsServer();
     }

@@ -25,10 +25,9 @@ public class GamePlayer : NetworkBehaviour {
     private static int idIndex = 0;
 
     private void Start() {
-        if(!NetworkClient.active || isLocalPlayer)
+        if(!NetworkClient.active)
             localInstance = this;
         name = playerId + idIndex++;
-
     }
 
     //make a packet merger function
@@ -42,7 +41,7 @@ public class GamePlayer : NetworkBehaviour {
                 var hit = Physics2D.Raycast(pos, Vector2.zero);
                 if(hit.collider == null) {
                     var packet = new CommandPacket() {
-                        playerId = name,
+                        senderId = name,
                         uuids = this.uuids,
                         command = (int)GameCommand.Move,
                         commandData = pos
@@ -95,5 +94,11 @@ public class GamePlayer : NetworkBehaviour {
     [ClientRpc]
     public void RpcDisplayBanner(Vector2 characterIndex, string text, Banner.BannerType bannerType) {
         PopUp.DisplayBanner(ClientManager.GenerateClient(characterIndex).profilePic, text, bannerType);
+    }
+
+    public override void OnStartLocalPlayer() {
+        base.OnStartLocalPlayer();
+        localInstance = this;
+        Debug.Log(isLocalPlayer);
     }
 }

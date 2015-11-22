@@ -9,8 +9,9 @@ public class GameCommandHandler : NetworkBehaviour, ICommandHandler {
     public CommandPacket currentCommand;
 
     public virtual void Start() {
-        if(!NetworkClient.active || isServer)
-            GameTimer.AddPlayerCmdHandler(this, commandRate);
+        if(!NetworkClient.active || isServer) {
+            GameTimer.AddGameCmdHandler(this);
+        }
     }
 
     public virtual void OnGameTick() {
@@ -19,5 +20,11 @@ public class GameCommandHandler : NetworkBehaviour, ICommandHandler {
 
     public virtual void HandleCommand(CommandPacket packet) {
         currentCommand = packet;
+    }
+
+    public override void OnStartServer() {
+        base.OnStartServer();
+        //GameTimer.AddGameCmdHandler(this);
+        //Debug.Log(name);
     }
 }

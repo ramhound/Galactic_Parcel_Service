@@ -9,15 +9,11 @@ public class GameTimer : NetworkBehaviour {
     private static bool stopRequested = false;
     public static GameTick onGameTick;
     public static int currentTick = 0;
-    private static Dictionary<GameCommandHandler, int> playerCmdHandlers = new Dictionary<GameCommandHandler, int>();
+    public static List<GameCommandHandler> gameCmdHandlers = new List<GameCommandHandler>();
     public float tickRate = .2f;
 
-    private void Awake() {
-
-    }
-
     private void Start() {
-        if(!NetworkClient.active || isServer) {
+        if(!NetworkClient.active) {
             instance = this;
             GameTimer.StartTimer();
         }
@@ -38,19 +34,34 @@ public class GameTimer : NetworkBehaviour {
             yield return new WaitForSeconds(tickRate);
             currentTick++;
             //if(onGameTick != null) onGameTick();
-            foreach(var e in playerCmdHandlers) {
-                if(currentTick % e.Value == 0) {
-                    e.Key.OnGameTick();
+            foreach(var h in gameCmdHandlers) {
+                if(currentTick % h.commandRate == 0) {
+                    h.OnGameTick();
                 }
             }
         }
     }
 
-    public static void AddPlayerCmdHandler(GameCommandHandler pch, int eTick) {
-        playerCmdHandlers.Add(pch, eTick);
+    public static void AddGameCmdHandler(GameCommandHandler h) {
+        if(!gameCmdHandlers.Contains(h))
+            gameCmdHandlers.Add(h);
     }
 
-    public static void RemovePlayerCmdHandler(GameCommandHandler pch) {
-        playerCmdHandlers.Remove(pch);
+    public static void RemoveGameCmdHandler(GameCommandHandler h) {
+        if(gameCmdHandlers.Contains(h))
+            gameCmdHandlers.Remove(h);
+    }
+
+    public override void OnStartServer() {
+        base.OnStartServer();
+        instance = this;
+    }
+
+    public override void OnStartLocalPlayer() {
+        base.OnStartLocalPlayer();
+        if(isServer) {
+            Debug.Log(isServer);
+            GameTimer.StartTimer();
+        }
     }
 }

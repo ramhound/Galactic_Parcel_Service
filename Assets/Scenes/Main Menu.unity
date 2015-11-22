@@ -85,47 +85,51 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &1154689534
+--- !u!1001 &627549942
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 407900, guid: 76564e06f0234ab4b90d6a947e116acd, type: 2}
+    - target: {fileID: 401274, guid: 209ac2e8bdc4f0f4085907de5f9da656, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 407900, guid: 76564e06f0234ab4b90d6a947e116acd, type: 2}
+    - target: {fileID: 401274, guid: 209ac2e8bdc4f0f4085907de5f9da656, type: 2}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 407900, guid: 76564e06f0234ab4b90d6a947e116acd, type: 2}
+    - target: {fileID: 401274, guid: 209ac2e8bdc4f0f4085907de5f9da656, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 407900, guid: 76564e06f0234ab4b90d6a947e116acd, type: 2}
+    - target: {fileID: 401274, guid: 209ac2e8bdc4f0f4085907de5f9da656, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 407900, guid: 76564e06f0234ab4b90d6a947e116acd, type: 2}
+    - target: {fileID: 401274, guid: 209ac2e8bdc4f0f4085907de5f9da656, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 407900, guid: 76564e06f0234ab4b90d6a947e116acd, type: 2}
+    - target: {fileID: 401274, guid: 209ac2e8bdc4f0f4085907de5f9da656, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 407900, guid: 76564e06f0234ab4b90d6a947e116acd, type: 2}
+    - target: {fileID: 401274, guid: 209ac2e8bdc4f0f4085907de5f9da656, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 407900, guid: 76564e06f0234ab4b90d6a947e116acd, type: 2}
+    - target: {fileID: 401274, guid: 209ac2e8bdc4f0f4085907de5f9da656, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 173020, guid: 209ac2e8bdc4f0f4085907de5f9da656, type: 2}
+      propertyPath: m_Name
+      value: Game Manager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 76564e06f0234ab4b90d6a947e116acd, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: 209ac2e8bdc4f0f4085907de5f9da656, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1278563353
 GameObject:
@@ -490,6 +494,10 @@ Prefab:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11415094, guid: a8faded7357f0304fa7cc2f8703ac6dd, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11422016, guid: a8faded7357f0304fa7cc2f8703ac6dd, type: 2}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}

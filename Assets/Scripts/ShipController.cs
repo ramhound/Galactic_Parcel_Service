@@ -9,8 +9,6 @@ public class ShipController : GameCommandHandler {
     private Path path;
     private Rigidbody2D body2D;
     private Vector2 targetDestination;
-    public struct Route { } //placeholder for var
-    public Route currentRoute;
     private int nodeIndex = 0;
 
     public float speed = 100f;
@@ -25,6 +23,8 @@ public class ShipController : GameCommandHandler {
         seeker = GetComponent<Seeker>();
         body2D = GetComponent<Rigidbody2D>();
         name = "Ship " + idIndex++;
+
+        //setup ship based on the hub that hired it
     }
 
     private void OnPathComplete(Path path) {
@@ -36,14 +36,16 @@ public class ShipController : GameCommandHandler {
 
     public override void OnGameTick() {
         base.OnGameTick();
-
         HandleCommand(currentCommand);
     }
 
     public override void HandleCommand(CommandPacket packet) {
-        if(packet.command == (int)GameCommand.None) return;
-
-        if(packet.command == (int)GameCommand.Move) {
+        Debug.Log((GameCommand)packet.command);
+        if(packet.command == (int)GameCommand.None) {
+            return;
+        } else if(packet.command == (int)GameCommand.Move) {
+            SetDestination(packet.commandData);
+        } else if(packet.command == (int)GameCommand.PickUp) {
             SetDestination(packet.commandData);
         }
     }
@@ -81,5 +83,13 @@ public class ShipController : GameCommandHandler {
         float angle = Mathf.Atan2(point.y, point.x) * Mathf.Rad2Deg - 90;
         Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
         return Quaternion.Slerp(trans.rotation, q, Time.deltaTime * rotationSpeed);
+    }
+
+    private void OnTriggerEnter2D(Collider2D col) {
+        if(currentCommand.command == (int)GameCommand.PickUp &&
+            col.name.EqualsIgnoreCase(currentCommand.senderId)) {
+
+            currentCommand = new CommandPacket() { command = (int)GameCommand.None};
+        }
     }
 }

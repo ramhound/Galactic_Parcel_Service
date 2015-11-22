@@ -8,17 +8,9 @@ public class HubStation : Location {
     public GameObject hubMenu;
     public GameObject[] spawnables;
     public List<Package> packages = new List<Package>();
-
+    public List<ShipController> activeFleet = new List<ShipController>();
     public override void Start() {
         base.Start();
-        if(!NetworkClient.active || isServer) {
-            packages.Add(new Package() {
-                fragility = 1,
-                sender = ClientManager.farnsberg,
-                receiver = ClientManager.GenerateClient(clientStyles),
-                size = Vector2.one
-            });
-        }
     }
 
     public override void OnClick() {
@@ -36,16 +28,39 @@ public class HubStation : Location {
 
     public override void OnGameTick() {
         //packageneration here
-        if(GameTimer.currentTick == 1)
-            GamePlayer.localInstance.DisplayBanner(new Vector2(-1, 0), "Why not farnsberg?", Banner.BannerType.Package);
+        Debug.Log(isServer);
 
+        if(GameTimer.currentTick == 1) {
+            packages.Add(new Package() {
+                fragility = 1,
+                sender = ClientManager.farnsberg,
+                receiver = ClientManager.GenerateClient(clientStyles),
+                size = Vector2.one
+            });
+        }
+
+        //broadcast pickup request to nearby ships not in route 
+        if(packages.Count > 0) {
+            foreach(var s in activeFleet) {
+                if(s.currentCommand.command == (int)GameCommand.None) {
+                    s.HandleCommand(new CommandPacket() {
+                        command = (int)GameCommand.PickUp,
+                        senderId = name
+                    });
+                }
+            }
+        }
     }
 
     public override void HandleCommand(CommandPacket packet) {
         base.HandleCommand(packet);
 
-        var ship = Instantiate(spawnables[(int)(packet.commandData.x)]) as GameObject;
-        if(isServer) NetworkServer.Spawn(ship);
+        if(packet.command == (int)GameCommand.Spawn) {
+            var ship = Instantiate(spawnables[(int)(packet.commandData.x)]) as GameObject;
+            activeFleet.Add(ship.GetComponent<ShipController>());            
+
+            if(isServer) NetworkServer.Spawn(ship);
+        }
     }
 
     private Package CreatePackage() {
@@ -58,9 +73,5 @@ public class HubStation : Location {
 
         PopUp.DisplayBanner(package.receiver.profilePic, "Reveiver", Banner.BannerType.Message);
         return package;
-    }
-
-    public override void OnStartLocalPlayer() {
-        base.OnStartLocalPlayer();
     }
 }
