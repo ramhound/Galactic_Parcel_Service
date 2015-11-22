@@ -1,42 +1,42 @@
 fileFormatVersion: 2
 guid: bacea3b3252fd484fb8d405a9a26c066
+timeCreated: 1448151501
+licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Explosion1_0
     21300002: Explosion1_1
     21300004: Explosion1_2
-    21300006: Explosion1_3
-    21300008: Explosion1_4
-    21300010: Explosion1_5
-    21300012: Explosion1_6
-    21300014: Explosion1_7
-    21300016: Explosion1_8
-    21300018: Explosion1_9
-    21300020: Explosion1_10
-    21300022: Explosion1_12
-    21300024: Explosion1_13
-    21300026: Explosion1_14
-    21300028: Explosion1_15
-    21300030: Explosion1_16
-    21300032: Explosion1_17
-    21300034: Explosion1_19
-    21300036: Explosion1_20
-    21300038: Explosion1_21
-    21300040: Explosion1_22
-    21300042: Explosion1_23
-    21300044: Explosion1_24
-    21300046: Explosion1_25
-    21300048: Explosion1_26
-    21300050: Explosion1_27
-    21300052: Explosion1_28
-    21300054: Explosion1_29
-    21300056: Explosion1_30
-    21300058: Explosion1_31
-    21300060: Explosion1_32
-    21300062: Explosion1_33
-    21300064: Explosion1_34
-    21300066: Explosion1_35
-    21300068: Explosion1_36
+    21300006: Explosion1_4
+    21300008: Explosion1_6
+    21300010: Explosion1_7
+    21300012: Explosion1_8
+    21300014: Explosion1_9
+    21300016: Explosion1_10
+    21300018: Explosion1_11
+    21300020: Explosion1_12
+    21300022: Explosion1_13
+    21300024: Explosion1_14
+    21300026: Explosion1_15
+    21300028: Explosion1_16
+    21300030: Explosion1_18
+    21300032: Explosion1_19
+    21300034: Explosion1_20
+    21300036: Explosion1_21
+    21300038: Explosion1_22
+    21300040: Explosion1_24
+    21300042: Explosion1_25
+    21300044: Explosion1_26
+    21300046: Explosion1_27
+    21300048: Explosion1_28
+    21300050: Explosion1_29
+    21300052: Explosion1_30
+    21300054: Explosion1_31
+    21300056: Explosion1_32
+    21300058: Explosion1_33
+    21300060: Explosion1_34
+    21300062: Explosion1_35
+    21300064: Explosion1_36
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -55,17 +55,22 @@ TextureImporter:
   isReadable: 0
   grayScaleToAlpha: 0
   generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -3
   maxTextureSize: 4096
   textureSettings:
-    filterMode: 2
-    aniso: 1
+    filterMode: 0
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
+  rGBM: 0
   compressionQuality: 50
+  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
@@ -81,18 +86,18 @@ TextureImporter:
     - name: Explosion1_0
       rect:
         serializedVersion: 2
-        x: 21
-        y: 806
-        width: 88
-        height: 63
+        x: 0
+        y: 433
+        width: 114
+        height: 68
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Explosion1_1
       rect:
         serializedVersion: 2
-        x: 183
-        y: 829
+        x: 123
+        y: 488
         width: 25
         height: 18
       alignment: 0
@@ -101,332 +106,314 @@ TextureImporter:
     - name: Explosion1_2
       rect:
         serializedVersion: 2
-        x: 26
-        y: 678
-        width: 79
-        height: 61
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Explosion1_3
-      rect:
-        serializedVersion: 2
-        x: 133
-        y: 677
-        width: 121
-        height: 64
+        x: 236
+        y: 465
+        width: 43
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Explosion1_4
       rect:
         serializedVersion: 2
-        x: 269
-        y: 675
-        width: 108
-        height: 67
+        x: 123
+        y: 420
+        width: 97
+        height: 66
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Explosion1_5
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 564
-        width: 37
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Explosion1_6
       rect:
         serializedVersion: 2
-        x: 135
-        y: 545
-        width: 114
-        height: 69
+        x: 0
+        y: 363
+        width: 116
+        height: 68
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Explosion1_7
       rect:
         serializedVersion: 2
-        x: 250
-        y: 595
-        width: 4
-        height: 4
+        x: 123
+        y: 352
+        width: 102
+        height: 66
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Explosion1_8
       rect:
         serializedVersion: 2
-        x: 262
-        y: 544
-        width: 121
-        height: 71
+        x: 236
+        y: 405
+        width: 59
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Explosion1_9
       rect:
         serializedVersion: 2
-        x: 16
-        y: 461
-        width: 5
-        height: 6
+        x: 0
+        y: 292
+        width: 117
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Explosion1_10
       rect:
         serializedVersion: 2
-        x: 21
-        y: 418
-        width: 92
-        height: 66
+        x: 123
+        y: 283
+        width: 108
+        height: 67
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Explosion1_11
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 344
+        width: 66
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Explosion1_12
       rect:
         serializedVersion: 2
-        x: 130
-        y: 416
-        width: 126
+        x: 0
+        y: 221
+        width: 118
         height: 69
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Explosion1_13
       rect:
         serializedVersion: 2
-        x: 272
-        y: 418
-        width: 102
-        height: 66
+        x: 236
+        y: 281
+        width: 79
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Explosion1_14
       rect:
         serializedVersion: 2
-        x: 41
-        y: 297
-        width: 51
-        height: 50
+        x: 317
+        y: 281
+        width: 56
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Explosion1_15
       rect:
         serializedVersion: 2
-        x: 133
-        y: 287
-        width: 122
-        height: 69
+        x: 375
+        y: 281
+        width: 51
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Explosion1_16
       rect:
         serializedVersion: 2
-        x: 297
-        y: 294
-        width: 56
-        height: 55
+        x: 428
+        y: 281
+        width: 37
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Explosion1_17
+    - name: Explosion1_18
       rect:
         serializedVersion: 2
-        x: 391
-        y: 287
-        width: 120
-        height: 69
+        x: 123
+        y: 214
+        width: 111
+        height: 67
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Explosion1_19
       rect:
         serializedVersion: 2
-        x: 523
-        y: 287
-        width: 117
-        height: 69
+        x: 236
+        y: 214
+        width: 96
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Explosion1_20
       rect:
         serializedVersion: 2
-        x: 646
-        y: 287
-        width: 127
-        height: 69
+        x: 334
+        y: 214
+        width: 88
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Explosion1_21
       rect:
         serializedVersion: 2
-        x: 782
-        y: 288
-        width: 114
-        height: 68
+        x: 424
+        y: 214
+        width: 81
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Explosion1_22
       rect:
         serializedVersion: 2
-        x: 24
-        y: 162
-        width: 81
-        height: 62
+        x: 0
+        y: 150
+        width: 118
+        height: 69
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Explosion1_23
-      rect:
-        serializedVersion: 2
-        x: 167
-        y: 164
-        width: 59
-        height: 58
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Explosion1_24
       rect:
         serializedVersion: 2
-        x: 277
-        y: 161
-        width: 92
-        height: 63
+        x: 123
+        y: 148
+        width: 121
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Explosion1_25
       rect:
         serializedVersion: 2
-        x: 432
-        y: 172
-        width: 43
-        height: 42
+        x: 255
+        y: 148
+        width: 84
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Explosion1_26
       rect:
         serializedVersion: 2
-        x: 550
-        y: 163
-        width: 66
-        height: 59
+        x: 341
+        y: 148
+        width: 92
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Explosion1_27
       rect:
         serializedVersion: 2
-        x: 665
-        y: 202
-        width: 8
-        height: 6
+        x: 435
+        y: 148
+        width: 72
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Explosion1_28
       rect:
         serializedVersion: 2
-        x: 674
-        y: 161
-        width: 84
-        height: 64
+        x: 246
+        y: 189
+        width: 8
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Explosion1_29
       rect:
         serializedVersion: 2
-        x: 805
-        y: 163
-        width: 72
-        height: 60
+        x: 0
+        y: 77
+        width: 126
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Explosion1_30
       rect:
         serializedVersion: 2
-        x: 10
-        y: 30
-        width: 111
-        height: 67
+        x: 128
+        y: 77
+        width: 119
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Explosion1_31
       rect:
         serializedVersion: 2
-        x: 147
-        y: 31
-        width: 96
-        height: 65
+        x: 249
+        y: 77
+        width: 125
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Explosion1_32
       rect:
         serializedVersion: 2
-        x: 265
-        y: 30
-        width: 116
-        height: 68
+        x: 378
+        y: 77
+        width: 117
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Explosion1_33
       rect:
         serializedVersion: 2
-        x: 391
-        y: 29
-        width: 122
-        height: 69
+        x: 0
+        y: 0
+        width: 121
+        height: 75
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Explosion1_34
       rect:
         serializedVersion: 2
-        x: 520
-        y: 26
-        width: 121
-        height: 75
+        x: 123
+        y: 0
+        width: 125
+        height: 73
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Explosion1_35
       rect:
         serializedVersion: 2
-        x: 649
-        y: 27
-        width: 121
-        height: 73
+        x: 250
+        y: 0
+        width: 127
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Explosion1_36
       rect:
         serializedVersion: 2
-        x: 777
-        y: 29
-        width: 124
+        x: 379
+        y: 0
+        width: 122
         height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 
