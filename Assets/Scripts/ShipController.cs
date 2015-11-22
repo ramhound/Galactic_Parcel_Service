@@ -4,12 +4,13 @@ using Pathfinding;
 using System.Collections;
 using System;
 
-public class ShipController : PlayerCommandHandler {
+public class ShipController : GameCommandHandler {
     private Seeker seeker;
     private Path path;
     private Rigidbody2D body2D;
-    [SyncVar]
     private Vector2 targetDestination;
+    public struct Route { } //placeholder for var
+    public Route currentRoute;
     private int nodeIndex = 0;
 
     public float speed = 100f;
@@ -40,9 +41,9 @@ public class ShipController : PlayerCommandHandler {
     }
 
     public override void HandleCommand(CommandPacket packet) {
-        if(packet.command == (int)PlayerCommand.None) return;
+        if(packet.command == (int)GameCommand.None) return;
 
-        if(packet.command == (int)PlayerCommand.Move) {
+        if(packet.command == (int)GameCommand.Move) {
             SetDestination(packet.commandData);
         }
     }

@@ -44,7 +44,7 @@ public class GamePlayer : NetworkBehaviour {
                     var packet = new CommandPacket() {
                         playerId = name,
                         uuids = this.uuids,
-                        command = (int)PlayerCommand.Move,
+                        command = (int)GameCommand.Move,
                         commandData = pos
                     };
 
@@ -73,7 +73,7 @@ public class GamePlayer : NetworkBehaviour {
     private void HandleCommandPacket(CommandPacket packet) {
         if(packet.uuids.Length > 0) {
             foreach(var s in packet.uuids) {
-                var unit = GameObject.Find(s).GetComponent<PlayerCommandHandler>();
+                var unit = GameObject.Find(s).GetComponent<GameCommandHandler>();
                 unit.HandleCommand(packet);
             }
         }

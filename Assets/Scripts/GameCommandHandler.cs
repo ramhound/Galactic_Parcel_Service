@@ -3,7 +3,7 @@ using UnityEngine.Networking;
 using System.Collections;
 using System;
 
-public class PlayerCommandHandler : NetworkBehaviour, ICommandHandler {
+public class GameCommandHandler : NetworkBehaviour, ICommandHandler {
     public int commandRate = 1;
     [SyncVar]
     public CommandPacket currentCommand;

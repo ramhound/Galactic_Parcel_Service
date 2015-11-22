@@ -9,7 +9,7 @@ public class GameTimer : NetworkBehaviour {
     private static bool stopRequested = false;
     public static GameTick onGameTick;
     public static int currentTick = 0;
-    private static Dictionary<PlayerCommandHandler, int> playerCmdHandlers = new Dictionary<PlayerCommandHandler, int>();
+    private static Dictionary<GameCommandHandler, int> playerCmdHandlers = new Dictionary<GameCommandHandler, int>();
     public float tickRate = .2f;
 
     private void Awake() {
@@ -46,11 +46,11 @@ public class GameTimer : NetworkBehaviour {
         }
     }
 
-    public static void AddPlayerCmdHandler(PlayerCommandHandler pch, int eTick) {
+    public static void AddPlayerCmdHandler(GameCommandHandler pch, int eTick) {
         playerCmdHandlers.Add(pch, eTick);
     }
 
-    public static void RemovePlayerCmdHandler(PlayerCommandHandler pch) {
+    public static void RemovePlayerCmdHandler(GameCommandHandler pch) {
         playerCmdHandlers.Remove(pch);
     }
 }
