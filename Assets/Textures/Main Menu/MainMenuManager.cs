@@ -2,11 +2,20 @@
 using System.Collections.Generic;
 
 public class MainMenuManager : MonoBehaviour {
-    public void PlayClicked() {
-        Application.LoadLevel("Main Game");
+    public void SinglePlayerClicked() {
+        //open slide menu for loading worlds
+        //Application.LoadLevel("Main Game"); //maybe use load level async for no delay. 
+        //i am already used to manually managing scene objects
+        //so it seems like it would be the best of both worlds
+        GameNetworkHandler.instance.manager.StartHost();
+        GameNetworkDiscovery.instance.Initialize();
+        GameNetworkDiscovery.instance.StartAsServer();
     }
 
-    public void OptionsClicked() {
-
+    public void MultiPlayerClicked() {
+        //open slide menu for local discovery; still need to be designed
+        GameNetworkDiscovery.instance.Initialize();
+        GameNetworkDiscovery.instance.StartAsClient();
+        GameNetworkDiscovery.instance.showGUI = true;
     }
 }
