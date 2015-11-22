@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
 using Pathfinding;
-using System.Collections;
+using System.Collections.Generic;
 using System;
 
 public class ShipController : GameCommandHandler {
@@ -11,6 +11,7 @@ public class ShipController : GameCommandHandler {
     private Vector2 targetDestination;
     private int nodeIndex = 0;
 
+    public List<Package> packages = new List<Package>();
     public float speed = 100f;
     public float rotationSpeed = 30f;
     public float endPointDistance = .3f;
@@ -40,7 +41,8 @@ public class ShipController : GameCommandHandler {
     }
 
     public override void HandleCommand(CommandPacket packet) {
-        Debug.Log((GameCommand)packet.command);
+        base.HandleCommand(packet);
+
         if(packet.command == (int)GameCommand.None) {
             return;
         } else if(packet.command == (int)GameCommand.Move) {
@@ -53,7 +55,7 @@ public class ShipController : GameCommandHandler {
     private void FixedUpdate() {
         //i will have to eventually have to rewrite this to make a bit more sense
         if(!NetworkClient.active || isServer) {
-            if(path != null) {
+            if(path != null && currentCommand.command != (int)GameCommand.None) {
                 //completed trip
                 if(nodeIndex >= path.vectorPath.Count) {
                     body2D.velocity = Vector2.zero;
@@ -86,10 +88,22 @@ public class ShipController : GameCommandHandler {
     }
 
     private void OnTriggerEnter2D(Collider2D col) {
-        if(currentCommand.command == (int)GameCommand.PickUp &&
-            col.name.EqualsIgnoreCase(currentCommand.senderId)) {
+        if(currentCommand.command == (int)GameCommand.PickUp && col.name ==  currentCommand.senderId) {
+            var loc = col.GetComponent<Location>();
+            foreach(var p in loc.packages) {
+                packages.Add(p);
+            }
 
-            currentCommand = new CommandPacket() { command = (int)GameCommand.None};
+            loc.packages.Clear();
+            if(packages.Count > 0) {
+                currentCommand = new CommandPacket() {
+                    command = (int)GameCommand.Deliver,
+                    commandData = packages[0].receiver.location.transform.position,
+                    senderId = packages[0].receiver.location.name
+                };
+            }
+        } else if(currentCommand.command == (int)GameCommand.Deliver && col.name == currentCommand.senderId) {
+
         }
     }
 }

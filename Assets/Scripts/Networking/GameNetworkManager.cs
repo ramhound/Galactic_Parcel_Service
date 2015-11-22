@@ -14,4 +14,8 @@ public class GameNetworkManager : NetworkManager {
             StartHost();
         }
     }
+
+    public override void OnStartHost() {
+        base.OnStartHost();
+    }
 }

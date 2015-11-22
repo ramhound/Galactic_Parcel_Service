@@ -99,6 +99,5 @@ public class GamePlayer : NetworkBehaviour {
     public override void OnStartLocalPlayer() {
         base.OnStartLocalPlayer();
         localInstance = this;
-        Debug.Log(isLocalPlayer);
     }
 }

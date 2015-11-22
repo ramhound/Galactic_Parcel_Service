@@ -55,13 +55,13 @@ public class GameTimer : NetworkBehaviour {
     public override void OnStartServer() {
         base.OnStartServer();
         instance = this;
+        GameTimer.StartTimer();
     }
 
     public override void OnStartLocalPlayer() {
         base.OnStartLocalPlayer();
         if(isServer) {
-            Debug.Log(isServer);
-            GameTimer.StartTimer();
+            Debug.Log("Server asdjfka");
         }
     }
 }

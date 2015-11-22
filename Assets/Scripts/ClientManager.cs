@@ -66,8 +66,9 @@ public class ClientManager : MonoBehaviour {
         return client;
     }
 
-    public static Client GenerateClient(CharacterStyle style = 0) {
+    public static Client GenerateClient(Location loc) {
         int temp = 0;
+        var style = loc.clientStyles;
         if((int)style == 0) {
             foreach(var s in Enum.GetValues(typeof(CharacterStyle)) as int[])
                 temp |= s;
@@ -82,6 +83,7 @@ public class ClientManager : MonoBehaviour {
 
         var client = new Client();
         client.profilePic = randSprite;
+        client.location = loc;
 
         return client;
     }

@@ -7,8 +7,8 @@ public class HubStation : Location {
     public HubUiManager hubUiManager;
     public GameObject hubMenu;
     public GameObject[] spawnables;
-    public List<Package> packages = new List<Package>();
     public List<ShipController> activeFleet = new List<ShipController>();
+
     public override void Start() {
         base.Start();
     }
@@ -28,13 +28,12 @@ public class HubStation : Location {
 
     public override void OnGameTick() {
         //packageneration here
-        Debug.Log(isServer);
 
         if(GameTimer.currentTick == 1) {
             packages.Add(new Package() {
                 fragility = 1,
                 sender = ClientManager.farnsberg,
-                receiver = ClientManager.GenerateClient(clientStyles),
+                receiver = ClientManager.GenerateClient(Location.GetNearestLocation(transform.position)),
                 size = Vector2.one
             });
         }
@@ -45,7 +44,8 @@ public class HubStation : Location {
                 if(s.currentCommand.command == (int)GameCommand.None) {
                     s.HandleCommand(new CommandPacket() {
                         command = (int)GameCommand.PickUp,
-                        senderId = name
+                        senderId = name,
+                        commandData = transform.position
                     });
                 }
             }
@@ -65,13 +65,17 @@ public class HubStation : Location {
 
     private Package CreatePackage() {
         var package = new Package() {
-            sender = ClientManager.GenerateClient(clientStyles),
-            receiver = ClientManager.GenerateClient(clientStyles),
+            sender = ClientManager.GenerateClient(Location.GetNearestLocation(transform.position)),
+            receiver = ClientManager.GenerateClient(Location.GetNearestLocation(transform.position)),
             fragility = 1f,
             size = Vector2.one
         };
 
         PopUp.DisplayBanner(package.receiver.profilePic, "Reveiver", Banner.BannerType.Message);
         return package;
+    }
+
+    private void OnTriggerEnter2D(Collider2D col) {
+
     }
 }
