@@ -164,8 +164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d7a18dd661ee25419d6b634982f1dd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _xPara: .0500000007
-  _yPara: .0500000007
+  xPara: .0299999993
+  yPara: .0299999993
 --- !u!1 &1285930051
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +177,7 @@ GameObject:
   - 222: {fileID: 1285930053}
   - 114: {fileID: 1285930052}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: Company Name Logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -246,7 +246,7 @@ GameObject:
   - 114: {fileID: 1589805486}
   - 114: {fileID: 1589805490}
   m_Layer: 5
-  m_Name: Options Button
+  m_Name: MultiPlayer Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -366,8 +366,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d7a18dd661ee25419d6b634982f1dd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _xPara: .00999999978
-  _yPara: .00999999978
+  xPara: .00999999978
+  yPara: .00999999978
 --- !u!1001 &1652603575
 Prefab:
   m_ObjectHideFlags: 0
@@ -686,8 +686,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d7a18dd661ee25419d6b634982f1dd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _xPara: .00999999978
-  _yPara: .00999999978
+  xPara: .00999999978
+  yPara: .00999999978
 --- !u!1 &2113247011
 GameObject:
   m_ObjectHideFlags: 0
