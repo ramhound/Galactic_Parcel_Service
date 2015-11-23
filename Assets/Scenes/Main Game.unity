@@ -190,6 +190,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   commandRate: 300
+  currentCommand: 0
+  commandSenderId: 
+  commandData: {x: 0, y: 0, z: 0}
   clientStyles: 0
   rotationSpeed: 3
   rotateLeft: 0
@@ -1166,6 +1169,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   commandRate: 1
+  currentCommand: 0
+  commandSenderId: 
+  commandData: {x: 0, y: 0, z: 0}
   clientStyles: 9
   rotationSpeed: 1
   rotateLeft: 1
