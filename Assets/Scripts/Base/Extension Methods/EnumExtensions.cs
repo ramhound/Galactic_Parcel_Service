@@ -11,7 +11,7 @@ public static class EnumExtensions {
         Type type = prop.GetType();
 
         FieldInfo info = type.GetField(prop.ToString());
-        object[] pas = info.GetCustomAttributes(typeof(EnumDescription), false);
+        var pas = (object[])(info.GetCustomAttributes(typeof(EnumDescription), false));
         if(pas.Length > 0)
             return (EnumDescription)pas[0] == null ? prop.ToString() : ((EnumDescription)pas[0]).displayName;
         return prop.ToString();
