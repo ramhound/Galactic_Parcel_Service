@@ -686,6 +686,7 @@ MonoBehaviour:
   target: {fileID: 485656}
   yPara: .125
   xPara: .125
+  useMouse: 0
 --- !u!114 &11451050
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -736,6 +737,7 @@ MonoBehaviour:
   target: {fileID: 485656}
   yPara: .200000003
   xPara: .200000003
+  useMouse: 0
 --- !u!114 &11458674
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -750,6 +752,7 @@ MonoBehaviour:
   target: {fileID: 485656}
   yPara: .100000001
   xPara: .100000001
+  useMouse: 0
 --- !u!114 &11493474
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -764,6 +767,7 @@ MonoBehaviour:
   target: {fileID: 485656}
   yPara: .109999999
   xPara: .109999999
+  useMouse: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

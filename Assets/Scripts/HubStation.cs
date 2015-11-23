@@ -41,14 +41,18 @@ public class HubStation : Location {
 
         //broadcast pickup request to nearby ships not in route 
         if(packages.Count > 0) {
-            foreach(var s in activeFleet) {
-                if(s.currentCommand == GameCommand.None) {
-                    s.ReceiveCommand(new CommandPacket() {
-                        command = GameCommand.PickUp,
-                        senderId = name,
-                        commandData = transform.position
-                    });
-                }
+            BroadcastPickup();
+        }
+    }
+
+    private void BroadcastPickup() {
+        foreach(var s in activeFleet) {
+            if(s.currentCommand == GameCommand.None) {
+                s.ReceiveCommand(new CommandPacket() {
+                    command = GameCommand.PickUp,
+                    senderId = name,
+                    commandData = transform.position
+                });
             }
         }
     }

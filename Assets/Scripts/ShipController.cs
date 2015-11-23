@@ -8,7 +8,6 @@ public class ShipController : GameCommandHandler {
     private Seeker seeker;
     private Path path;
     private Rigidbody2D body2D;
-    private Vector2 targetDestination;
     private int nodeIndex = 0;
 
     public List<Package> packages = new List<Package>();
@@ -37,10 +36,9 @@ public class ShipController : GameCommandHandler {
 
     public override void OnGameTick() {
         base.OnGameTick();
-        ExecuteGameCommand();
     }
 
-    public void ExecuteGameCommand() {
+    public override void ExecuteCommand(GameCommand command) {
         if(currentCommand == GameCommand.None) {
             return;
         } else if(currentCommand == GameCommand.Move) {
@@ -80,8 +78,7 @@ public class ShipController : GameCommandHandler {
     }
 
     public void SetDestination(Vector2 destination) {
-        targetDestination = destination;
-        seeker.StartPath(transform.position, targetDestination, OnPathComplete);
+        seeker.StartPath(transform.position, destination, OnPathComplete);
     }
 
     //make this more generic and add it to pixel math
@@ -104,12 +101,13 @@ public class ShipController : GameCommandHandler {
 
                 //set new command
                 if(packages.Count > 0) {
-                    Debug.Log("Heading out for delivery");
+                    Debug.Log(packages[0].receiver.location);
                     ReceiveCommand(new CommandPacket() {
                         command = GameCommand.Deliver,
                         commandData = packages[0].receiver.location.transform.position,
                         senderId = packages[0].receiver.location.name
                     });
+                    Debug.Log("Heading out for delivery");
                 }
             } else if(currentCommand == GameCommand.Deliver && col.name == commandSenderId) {
                 body2D.velocity = Vector2.zero;

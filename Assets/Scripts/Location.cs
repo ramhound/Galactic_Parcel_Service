@@ -46,6 +46,9 @@ public class Location : GameCommandHandler, ISelectable {
 
     public static Location GetNearestLocation(Vector2 pos) {
         var locations = GameObject.FindObjectsOfType<Location>();
+        foreach(var l in locations) {
+            if(l.tag != "Hub Station") return l;
+        }
         return locations[0];
     }
 }
