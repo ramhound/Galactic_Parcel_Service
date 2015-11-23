@@ -132,6 +132,10 @@ Prefab:
       propertyPath: startOnStart
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11498864, guid: 209ac2e8bdc4f0f4085907de5f9da656, type: 2}
+      propertyPath: m_SpawnPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 179128, guid: 31a35fe06948a7142a15557e0b48b7a8, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 209ac2e8bdc4f0f4085907de5f9da656, type: 2}
   m_IsPrefabParent: 0
