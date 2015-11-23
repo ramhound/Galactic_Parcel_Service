@@ -1,17 +1,17 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
 using Pathfinding;
-using System.Collections;
+using System.Collections.Generic;
 using System;
 
-public class ShipController : PlayerCommandHandler {
+public class ShipController : GameCommandHandler {
     private Seeker seeker;
     private Path path;
     private Rigidbody2D body2D;
-    [SyncVar]
     private Vector2 targetDestination;
     private int nodeIndex = 0;
 
+    public List<Package> packages = new List<Package>();
     public float speed = 100f;
     public float rotationSpeed = 30f;
     public float endPointDistance = .3f;
@@ -24,6 +24,8 @@ public class ShipController : PlayerCommandHandler {
         seeker = GetComponent<Seeker>();
         body2D = GetComponent<Rigidbody2D>();
         name = "Ship " + idIndex++;
+
+        //setup ship based on the hub that hired it
     }
 
     private void OnPathComplete(Path path) {
@@ -35,22 +37,29 @@ public class ShipController : PlayerCommandHandler {
 
     public override void OnGameTick() {
         base.OnGameTick();
-
-        HandleCommand(currentCommand);
+        ExecuteGameCommand();
     }
 
-    public override void HandleCommand(CommandPacket packet) {
-        if(packet.command == (int)PlayerCommand.None) return;
-
-        if(packet.command == (int)PlayerCommand.Move) {
-            SetDestination(packet.commandData);
+    public void ExecuteGameCommand() {
+        if(currentCommand == GameCommand.None) {
+            return;
+        } else if(currentCommand == GameCommand.Move) {
+            SetDestination(commandData);
+        } else if(currentCommand == GameCommand.PickUp) {
+            SetDestination(commandData);
+        } else if(currentCommand == GameCommand.Deliver) {
+            SetDestination(commandData);
         }
     }
+
+    //public override void HandleCommand(CommandPacket packet) {
+    //    base.HandleCommand(packet);
+    //}
 
     private void FixedUpdate() {
         //i will have to eventually have to rewrite this to make a bit more sense
         if(!NetworkClient.active || isServer) {
-            if(path != null) {
+            if(path != null && currentCommand != GameCommand.None) {
                 //completed trip
                 if(nodeIndex >= path.vectorPath.Count) {
                     body2D.velocity = Vector2.zero;
@@ -80,5 +89,32 @@ public class ShipController : PlayerCommandHandler {
         float angle = Mathf.Atan2(point.y, point.x) * Mathf.Rad2Deg - 90;
         Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
         return Quaternion.Slerp(trans.rotation, q, Time.deltaTime * rotationSpeed);
+    }
+
+    private void OnTriggerEnter2D(Collider2D col) {
+        if(!NetworkClient.active || isServer) {
+            if(currentCommand == GameCommand.PickUp && col.name == commandSenderId) {
+                var loc = col.GetComponent<Location>();
+                foreach(var p in loc.packages) {
+                    packages.Add(p);
+                }
+
+                loc.packages.Clear();
+                CompletedCommand(currentCommand);
+
+                //set new command
+                if(packages.Count > 0) {
+                    Debug.Log("Heading out for delivery");
+                    ReceiveCommand(new CommandPacket() {
+                        command = GameCommand.Deliver,
+                        commandData = packages[0].receiver.location.transform.position,
+                        senderId = packages[0].receiver.location.name
+                    });
+                }
+            } else if(currentCommand == GameCommand.Deliver && col.name == commandSenderId) {
+                body2D.velocity = Vector2.zero;
+                CompletedCommand(currentCommand);
+            }
+        }
     }
 }

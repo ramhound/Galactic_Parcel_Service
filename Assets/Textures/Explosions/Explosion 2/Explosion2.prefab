@@ -1,14 +1,14 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &100000
+--- !u!1 &174722
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 400000}
-  - 114: {fileID: 11400000}
+  - 4: {fileID: 474944}
+  - 114: {fileID: 11493478}
   m_Layer: 0
   m_Name: Explosion2
   m_TagString: Untagged
@@ -16,24 +16,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &400000
+--- !u!4 &474944
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
+  m_GameObject: {fileID: 174722}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11400000
+--- !u!114 &11493478
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
+  m_GameObject: {fileID: 174722}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d0c51bb0b6e93049af5e88f93826e3b, type: 3}
@@ -42,387 +42,387 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 33085f72cd9117e4986a44279945b979, type: 2}
   mSprites:
   - name: expl_10_0000
-    x: 516
-    y: 638
-    width: 128
-    height: 128
+    x: 130
+    y: 15
+    width: 23
+    height: 22
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
+    paddingLeft: 61
+    paddingRight: 44
+    paddingTop: 46
+    paddingBottom: 60
   - name: expl_10_0001
-    x: 129
-    y: 122
-    width: 128
-    height: 128
+    x: 308
+    y: 15
+    width: 38
+    height: 37
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
+    paddingLeft: 54
+    paddingRight: 36
+    paddingTop: 38
+    paddingBottom: 53
   - name: expl_10_0002
-    x: 0
-    y: 638
-    width: 128
-    height: 128
+    x: 257
+    y: 3
+    width: 49
+    height: 49
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
+    paddingLeft: 49
+    paddingRight: 30
+    paddingTop: 32
+    paddingBottom: 47
   - name: expl_10_0003
-    x: 0
-    y: 251
-    width: 128
-    height: 128
+    x: 606
+    y: 167
+    width: 65
+    height: 65
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
+    paddingLeft: 41
+    paddingRight: 22
+    paddingTop: 24
+    paddingBottom: 39
   - name: expl_10_0004
-    x: 645
-    y: 767
-    width: 128
-    height: 128
+    x: 385
+    y: 3
+    width: 77
+    height: 77
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
+    paddingLeft: 35
+    paddingRight: 16
+    paddingTop: 18
+    paddingBottom: 33
   - name: expl_10_0005
-    x: 645
-    y: 638
-    width: 128
-    height: 128
+    x: 606
+    y: 234
+    width: 81
+    height: 81
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
+    paddingLeft: 33
+    paddingRight: 14
+    paddingTop: 16
+    paddingBottom: 31
   - name: expl_10_0006
-    x: 258
-    y: 896
-    width: 128
-    height: 128
+    x: 935
+    y: 430
+    width: 82
+    height: 82
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
+    paddingLeft: 33
+    paddingRight: 13
+    paddingTop: 16
+    paddingBottom: 30
   - name: expl_10_0007
-    x: 258
-    y: 251
-    width: 128
-    height: 128
+    x: 606
+    y: 317
+    width: 88
+    height: 89
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
+    paddingLeft: 30
+    paddingRight: 10
+    paddingTop: 12
+    paddingBottom: 27
   - name: expl_10_0008
-    x: 0
-    y: 509
-    width: 128
-    height: 128
+    x: 504
+    y: 17
+    width: 93
+    height: 94
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
+    paddingLeft: 28
+    paddingRight: 7
+    paddingTop: 9
+    paddingBottom: 25
   - name: expl_10_0009
-    x: 774
-    y: 638
-    width: 128
-    height: 128
+    x: 504
+    y: 113
+    width: 94
+    height: 95
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
+    paddingLeft: 27
+    paddingRight: 7
+    paddingTop: 9
+    paddingBottom: 24
   - name: expl_10_0010
-    x: 258
-    y: 767
-    width: 128
-    height: 128
+    x: 504
+    y: 210
+    width: 97
+    height: 96
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
+    paddingLeft: 25
+    paddingRight: 6
+    paddingTop: 8
+    paddingBottom: 24
   - name: expl_10_0011
-    x: 774
-    y: 896
-    width: 128
-    height: 128
+    x: 504
+    y: 308
+    width: 100
+    height: 98
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
+    paddingLeft: 23
+    paddingRight: 5
+    paddingTop: 7
+    paddingBottom: 23
   - name: expl_10_0012
-    x: 0
-    y: 380
-    width: 128
-    height: 128
+    x: 833
+    y: 412
+    width: 100
+    height: 100
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
+    paddingLeft: 24
+    paddingRight: 4
+    paddingTop: 6
+    paddingBottom: 22
   - name: expl_10_0013
-    x: 516
-    y: 896
-    width: 128
-    height: 128
+    x: 728
+    y: 411
+    width: 103
+    height: 101
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
+    paddingLeft: 21
+    paddingRight: 4
+    paddingTop: 6
+    paddingBottom: 21
   - name: expl_10_0014
-    x: 258
-    y: 380
-    width: 128
-    height: 128
+    x: 618
+    y: 410
+    width: 108
+    height: 102
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
+    paddingLeft: 17
+    paddingRight: 3
+    paddingTop: 5
+    paddingBottom: 21
   - name: expl_10_0015
-    x: 774
-    y: 767
-    width: 128
-    height: 128
+    x: 504
+    y: 408
+    width: 112
+    height: 104
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
+    paddingLeft: 14
+    paddingRight: 2
+    paddingTop: 4
+    paddingBottom: 20
   - name: expl_10_0016
-    x: 0
-    y: 767
-    width: 128
-    height: 128
+    x: 385
+    y: 82
+    width: 114
+    height: 104
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
+    paddingLeft: 12
+    paddingRight: 2
+    paddingTop: 4
+    paddingBottom: 20
   - name: expl_10_0017
-    x: 129
-    y: 767
-    width: 128
-    height: 128
+    x: 385
+    y: 188
+    width: 116
+    height: 106
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
+    paddingLeft: 11
+    paddingRight: 1
+    paddingTop: 3
+    paddingBottom: 19
   - name: expl_10_0018
-    x: 129
-    y: 509
-    width: 128
-    height: 128
+    x: 385
+    y: 296
+    width: 116
+    height: 106
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
+    paddingLeft: 11
+    paddingRight: 1
+    paddingTop: 3
+    paddingBottom: 19
   - name: expl_10_0019
-    x: 516
-    y: 767
-    width: 128
-    height: 128
+    x: 385
+    y: 404
+    width: 117
+    height: 108
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
+    paddingLeft: 11
     paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
+    paddingTop: 2
+    paddingBottom: 18
   - name: expl_10_0020
-    x: 129
-    y: 638
-    width: 128
-    height: 128
+    x: 257
+    y: 54
+    width: 119
+    height: 108
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
+    paddingLeft: 9
     paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
+    paddingTop: 2
+    paddingBottom: 18
   - name: expl_10_0021
-    x: 258
-    y: 509
-    width: 128
-    height: 128
+    x: 257
+    y: 164
+    width: 120
+    height: 110
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
+    paddingLeft: 8
     paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
+    paddingTop: 2
+    paddingBottom: 16
   - name: expl_10_0022
-    x: 129
-    y: 251
-    width: 128
-    height: 128
+    x: 130
+    y: 39
+    width: 122
+    height: 114
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
+    paddingLeft: 6
     paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
+    paddingTop: 1
+    paddingBottom: 13
   - name: expl_10_0023
-    x: 0
-    y: 896
-    width: 128
-    height: 128
+    x: 130
+    y: 155
+    width: 122
+    height: 116
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
+    paddingLeft: 6
     paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
+    paddingTop: 1
+    paddingBottom: 11
   - name: expl_10_0024
-    x: 0
-    y: 122
-    width: 128
-    height: 128
+    x: 130
+    y: 273
+    width: 124
+    height: 117
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
+    paddingLeft: 4
     paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
+    paddingTop: 1
+    paddingBottom: 10
   - name: expl_10_0025
-    x: 129
-    y: 380
-    width: 128
-    height: 128
+    x: 130
+    y: 392
+    width: 125
+    height: 120
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
+    paddingLeft: 3
     paddingRight: 0
     paddingTop: 0
-    paddingBottom: 0
+    paddingBottom: 8
   - name: expl_10_0026
-    x: 258
-    y: 638
-    width: 128
-    height: 128
+    x: 0
+    y: 16
+    width: 126
+    height: 121
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
+    paddingLeft: 2
     paddingRight: 0
     paddingTop: 0
-    paddingBottom: 0
+    paddingBottom: 7
   - name: expl_10_0027
-    x: 387
-    y: 767
-    width: 128
-    height: 128
+    x: 0
+    y: 139
+    width: 127
+    height: 121
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
+    paddingLeft: 1
     paddingRight: 0
     paddingTop: 0
-    paddingBottom: 0
+    paddingBottom: 7
   - name: expl_10_0028
-    x: 645
-    y: 896
-    width: 128
-    height: 128
+    x: 0
+    y: 262
+    width: 127
+    height: 123
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
+    paddingLeft: 1
     paddingRight: 0
     paddingTop: 0
-    paddingBottom: 0
+    paddingBottom: 5
   - name: expl_10_0029
-    x: 387
-    y: 638
+    x: 0
+    y: 387
     width: 128
-    height: 128
+    height: 125
     borderLeft: 0
     borderRight: 0
     borderTop: 0
@@ -430,33 +430,33 @@ MonoBehaviour:
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
-    paddingBottom: 0
+    paddingBottom: 3
   - name: expl_10_0030
-    x: 387
-    y: 896
-    width: 128
-    height: 128
+    x: 257
+    y: 395
+    width: 126
+    height: 117
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
+    paddingLeft: 2
     paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
+    paddingTop: 1
+    paddingBottom: 10
   - name: expl_10_0031
-    x: 129
-    y: 896
-    width: 128
-    height: 128
+    x: 257
+    y: 276
+    width: 126
+    height: 117
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 0
+    paddingLeft: 2
     paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
+    paddingTop: 2
+    paddingBottom: 9
   mPixelSize: 1
   mReplacement: {fileID: 0}
   mCoordinates: 0
@@ -470,5 +470,5 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 100000}
+  m_RootGameObject: {fileID: 174722}
   m_IsPrefabParent: 1

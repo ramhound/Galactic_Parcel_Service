@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Collections;
 using System;
 
-public class GamePlayer : NetworkBehaviour {
+public class GamePlayer : GameCommandHandler {
     private static GamePlayer _instance;
     //private static NetworkClient networkClient;
     public static GamePlayer localInstance {
@@ -12,23 +12,16 @@ public class GamePlayer : NetworkBehaviour {
         private set { _instance = value; }
     }
     public string playerId = "Krooked590";
-    private string[] _uuids = new string[] { };
-    public string[] uuids {
-        get { return _uuids; }
-        set {
-            _uuids = value;
-            //somethuing might need to go here not dsure et
-        }
-    }
+    public string[] uuids = new string[] { };
 
-    private ISelectable selectedUnit;
+    private ISelectable[] selectedUnits = new ISelectable[] { };
     private static int idIndex = 0;
 
-    private void Start() {
-        if(!NetworkClient.active || isLocalPlayer)
+    public override void Start() {
+        base.Start();
+        if(!NetworkClient.active)
             localInstance = this;
         name = playerId + idIndex++;
-
     }
 
     //make a packet merger function
@@ -42,46 +35,50 @@ public class GamePlayer : NetworkBehaviour {
                 var hit = Physics2D.Raycast(pos, Vector2.zero);
                 if(hit.collider == null) {
                     var packet = new CommandPacket() {
-                        playerId = name,
+                        senderId = name,
                         uuids = this.uuids,
-                        command = (int)PlayerCommand.Move,
+                        command = GameCommand.Move,
                         commandData = pos
                     };
 
                     SendCommandPacket(packet);
-                } else {
-
                 }
             }
-
-            if(Input.GetKeyUp(KeyCode.Escape))
-                Camera.main.GetComponent<CameraFollow>().SetMainTarget(null);
         }
     }
 
     public void SendCommandPacket(CommandPacket packet) {
-        if(NetworkClient.active) CmdHandleCommandPacket(packet); //handle as network
-        else HandleCommandPacket(packet); //or as single player
+        if(NetworkClient.active) CmdReceiveCommand(packet); //handle as network
+        else ReceiveCommand(packet); //or as single player
     }
 
     [Command]
-    public void CmdHandleCommandPacket(CommandPacket packet) {
-        HandleCommandPacket(packet);
+    public void CmdReceiveCommand(CommandPacket packet) {
+        ReceiveCommand(packet);
     }
 
     //this is implied to be run on the server and single player if you follow it
-    private void HandleCommandPacket(CommandPacket packet) {
+    public override void ReceiveCommand(CommandPacket packet) {
+        base.ReceiveCommand(packet);
+
         if(packet.uuids.Length > 0) {
             foreach(var s in packet.uuids) {
-                var unit = GameObject.Find(s).GetComponent<PlayerCommandHandler>();
-                unit.HandleCommand(packet);
+                var unit = GameObject.Find(s).GetComponent<GameCommandHandler>();
+                unit.ReceiveCommand(packet);
             }
         }
     }
 
-    public void SetSelectedUnit(ISelectable selection) {
-        if(selectedUnit != null) selectedUnit.SetSelected(false);
-        selectedUnit = selection;
+    public void SetSelectedUnits() {
+        SetSelectedUnits(new ISelectable[] { });
+    }
+
+    public void SetSelectedUnits(ISelectable[] selections) {
+        if(selectedUnits.Length > 0) {
+            foreach(var u in selectedUnits)
+                u.SetSelected(false);
+        }
+        selectedUnits = selections;
     }
 
     public void DisplayBanner(Vector2 characterIndex, string text, Banner.BannerType bannerType) {
@@ -92,5 +89,10 @@ public class GamePlayer : NetworkBehaviour {
     [ClientRpc]
     public void RpcDisplayBanner(Vector2 characterIndex, string text, Banner.BannerType bannerType) {
         PopUp.DisplayBanner(ClientManager.GenerateClient(characterIndex).profilePic, text, bannerType);
+    }
+
+    public override void OnStartLocalPlayer() {
+        base.OnStartLocalPlayer();
+        localInstance = this;
     }
 }

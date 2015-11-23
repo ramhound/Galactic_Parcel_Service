@@ -3,7 +3,7 @@ using UnityEngine.Networking;
 using System.Collections;
 using System.Collections.Generic;
 
-public class Location : PlayerCommandHandler, ISelectable {
+public class Location : GameCommandHandler, ISelectable {
     [BitMask(typeof(CharacterStyle))]
     public CharacterStyle clientStyles = CharacterStyle.British;
     private Transform trans;
@@ -11,6 +11,7 @@ public class Location : PlayerCommandHandler, ISelectable {
     public float rotationSpeed;
     public bool rotateLeft;
     public List<Client> clients = new List<Client>();
+    public List<Package> packages = new List<Package>();
 
     private void Awake() {
         trans = transform;
@@ -27,7 +28,7 @@ public class Location : PlayerCommandHandler, ISelectable {
 
     public virtual void SetSelected(bool selected) {
         if(selected) {
-            GamePlayer.localInstance.SetSelectedUnit(this);
+            GamePlayer.localInstance.SetSelectedUnits(new ISelectable[] { this });
             Camera.main.GetComponent<CameraFollow>().SetMainTarget(trans);
         }
     }
@@ -35,11 +36,16 @@ public class Location : PlayerCommandHandler, ISelectable {
     public override void OnGameTick() {
         base.OnGameTick();
 
-        GamePlayer.localInstance.DisplayBanner(new Vector2(-1, 0), "test", Banner.BannerType.Message);
+        //GamePlayer.localInstance.DisplayBanner(new Vector2(-1, 0), "test", Banner.BannerType.Message);
     }
 
     private void Rotate() {
         var rot = trans.rotation.eulerAngles;
         trans.rotation = Quaternion.Euler(rot.x, rot.y, rot.z + (rotateLeft ? (rotationSpeed * Time.deltaTime) : -(rotationSpeed * Time.deltaTime)));
+    }
+
+    public static Location GetNearestLocation(Vector2 pos) {
+        var locations = GameObject.FindObjectsOfType<Location>();
+        return locations[0];
     }
 }

@@ -1,15 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public enum PlayerCommand { None, Move, Spawn, Build }
+public enum GameCommand { None, Move, Spawn, Build, PickUp, Deliver }
 public interface ICommandHandler {
     void OnGameTick();
-    void HandleCommand(CommandPacket packet);
+    void ExecuteCommand(GameCommand command);
+    void CompletedCommand(GameCommand command);
+    void ReceiveCommand(CommandPacket packet);
 }
 public struct CommandPacket {
-    public string playerId;
+    public string senderId;
     public string[] uuids;
-    public int command;
+    public GameCommand command;
     public Vector3 commandData;
 }
 

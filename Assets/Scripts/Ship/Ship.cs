@@ -9,7 +9,7 @@ public class Ship : NetworkBehaviour, ISelectable {
 
     public void SetSelected(bool selected) {
         if(selected) {
-            GamePlayer.localInstance.SetSelectedUnit(this);
+            GamePlayer.localInstance.SetSelectedUnits(new ISelectable[] { this });
             GamePlayer.localInstance.uuids = new string[] { name };
             Camera.main.GetComponent<CameraFollow>().SetMainTarget(transform);
         }
