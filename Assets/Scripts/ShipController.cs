@@ -112,6 +112,11 @@ public class ShipController : GameCommandHandler {
             } else if(currentCommand == GameCommand.Deliver && col.name == commandSenderId) {
                 body2D.velocity = Vector2.zero;
                 CompletedCommand(currentCommand);
+
+                Debug.Log(packages[0].receiver.profilePicIndex);
+                GamePlayer.localInstance.DisplayBanner(packages[0].receiver.profilePicIndex, 
+                    @"<size=40><b>Fuck yea man!</b></size> /n Thanks for making sure that it got here in one peice",
+                    Banner.BannerType.Package);
             }
         }
     }

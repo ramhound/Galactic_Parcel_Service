@@ -30,7 +30,7 @@ public class HubStation : Location {
         //packageneration here
         base.OnGameTick();
 
-        if(GameTimer.currentTick == 1) {
+        if(GameTimer.currentTick == 5) {
             packages.Add(new Package() {
                 fragility = 1,
                 sender = ClientManager.farnsberg,

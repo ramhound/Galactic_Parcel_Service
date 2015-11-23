@@ -6,6 +6,7 @@ public class Banner : MonoBehaviour {
     public enum BannerType { Message, Package }
     public GameObject banner;
     public Image bannerImage;
+    public Text bannerText;
     public UITweener bannerTweener;
     public float closeAfterDuration = 3f;
     private float closeTime;
@@ -22,6 +23,7 @@ public class Banner : MonoBehaviour {
         }
 
         bannerImage.sprite = pic;
+        bannerText.text = text;
         bannerTweener.PlayForward();
         closeTime = Time.time + closeAfterDuration;
         enabled = true;

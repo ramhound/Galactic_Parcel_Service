@@ -62,6 +62,7 @@ public class ClientManager : MonoBehaviour {
         if(index.x == -1) return ClientManager.farnsberg;
         var client = new Client();
         client.profilePic = characters[(CharacterStyle)((int)index.x)][(int)index.y];
+        client.profilePicIndex = index;
 
         return client;
     }
@@ -78,11 +79,14 @@ public class ClientManager : MonoBehaviour {
         var styles = style.GetStyles();
 
         //testing
-        var randStyle = styles[UnityEngine.Random.Range(0, styles.Length)];
-        var randSprite = characters[randStyle][UnityEngine.Random.Range(0, characters[randStyle].Length)];
+        int i1 = UnityEngine.Random.Range(0, styles.Length - 1);
+        var randStyle = styles[i1];
+        int i2 = UnityEngine.Random.Range(0, characters[randStyle].Length - 1);
+        var randSprite = characters[randStyle][i2];
 
         var client = new Client();
         client.profilePic = randSprite;
+        client.profilePicIndex = new Vector2(i1, i2);
         client.location = loc;
 
         return client;
