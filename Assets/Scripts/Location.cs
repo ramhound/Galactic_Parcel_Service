@@ -10,12 +10,15 @@ public class Location : GameCommandHandler, ISelectable {
     private SpriteRenderer rend;
     public float rotationSpeed;
     public bool rotateLeft;
+    public string locationName;
     public List<Client> clients = new List<Client>();
     public List<Package> packages = new List<Package>();
 
     private void Awake() {
         trans = transform;
         rend = gameObject.GetComponent<SpriteRenderer>();
+
+        locationName = name;
     }
 
     private void Update() {

@@ -8,9 +8,12 @@ public class HubStation : Location {
     public GameObject hubMenu;
     public GameObject[] spawnables;
     public List<ShipController> activeFleet = new List<ShipController>();
+    public List<Location> deliveryLocations = new List<Location>();
 
     public override void Start() {
         base.Start();
+
+        locationName = "Hub Station";
     }
 
     public override void OnClick() {
@@ -31,15 +34,17 @@ public class HubStation : Location {
         base.OnGameTick();
 
         if(GameTimer.currentTick == 5) {
-            packages.Add(new Package() {
-                fragility = 1,
-                sender = ClientManager.farnsberg,
-                receiver = ClientManager.GenerateClient(Location.GetNearestLocation(transform.position)),
-                size = Vector2.one
-            });
+            //packages.Add(new Package() { //convert this into a command
+            //    fragility = 1,
+            //    sender = ClientManager.farnsberg,
+            //    receiver = ClientManager.GenerateClient(Location.GetNearestLocation(transform.position)),
+            //    size = Vector2.one
+            //});
+            GeneratePackages();
         }
 
         //broadcast pickup request to nearby ships not in route 
+        Debug.Log(packages.Count);
         if(packages.Count > 0) {
             BroadcastPickup();
         }
@@ -73,19 +78,20 @@ public class HubStation : Location {
         base.ReceiveCommand(packet);
     }
 
-    private Package CreatePackage() {
-        var package = new Package() {
-            sender = ClientManager.GenerateClient(Location.GetNearestLocation(transform.position)),
-            receiver = ClientManager.GenerateClient(Location.GetNearestLocation(transform.position)),
-            fragility = 1f,
-            size = Vector2.one
-        };
+    public void GeneratePackages() {
+        if(deliveryLocations.Count == 0) return; //let this through with different vars
 
-        PopUp.DisplayBanner(package.receiver.profilePic, "Reveiver", Banner.BannerType.Message);
-        return package;
-    }
+        int packageCount = UnityEngine.Random.Range(0, 5);
 
-    private void OnTriggerEnter2D(Collider2D col) {
-
+        for(int i = 0; i < packageCount; i++) {
+            var package = new Package() {
+                sender = ClientManager.GenerateClient(deliveryLocations[UnityEngine.Random.Range(0, deliveryLocations.Count - 1)]),
+                receiver = ClientManager.GenerateClient(deliveryLocations[UnityEngine.Random.Range(0, deliveryLocations.Count - 1)]),
+                fragility = 1f,
+                size = Vector2.one
+            };
+            packages.Add(package);
+            Debug.Log(packages.Count);
+        }
     }
 }

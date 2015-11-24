@@ -10,7 +10,9 @@ public class ShipController : GameCommandHandler {
     private Rigidbody2D body2D;
     private int nodeIndex = 0;
 
-    public List<Package> packages = new List<Package>();
+    public Vector2 cargoSpace = Vector2.one;
+    //public Package[,] cargo;
+    public List<Package> cargo;
     public float speed = 100f;
     public float rotationSpeed = 30f;
     public float endPointDistance = .3f;
@@ -25,6 +27,8 @@ public class ShipController : GameCommandHandler {
         name = "Ship " + idIndex++;
 
         //setup ship based on the hub that hired it
+        //cargo = new Package[(int)cargoSpace.x, (int)cargoSpace.y];
+        cargo = new List<Package>();
     }
 
     private void OnPathComplete(Path path) {
@@ -39,20 +43,17 @@ public class ShipController : GameCommandHandler {
     }
 
     public override void ExecuteCommand(GameCommand command) {
-        if(currentCommand == GameCommand.None) {
-            return;
-        } else if(currentCommand == GameCommand.Move) {
+        if(command == GameCommand.None) {
+            if(cargo.Count > 0)
+                StartDelivery();
+        } else if(command == GameCommand.Move) {
             SetDestination(commandData);
-        } else if(currentCommand == GameCommand.PickUp) {
+        } else if(command == GameCommand.PickUp) {
             SetDestination(commandData);
-        } else if(currentCommand == GameCommand.Deliver) {
+        } else if(command == GameCommand.Deliver) {
             SetDestination(commandData);
         }
     }
-
-    //public override void HandleCommand(CommandPacket packet) {
-    //    base.HandleCommand(packet);
-    //}
 
     private void FixedUpdate() {
         //i will have to eventually have to rewrite this to make a bit more sense
@@ -81,43 +82,65 @@ public class ShipController : GameCommandHandler {
         seeker.StartPath(transform.position, destination, OnPathComplete);
     }
 
+    private void OnTriggerEnter2D(Collider2D col) {
+        if(!NetworkClient.active || isServer) {
+            if(col.tag == "Hub Station" || col.tag == "Planet") {
+                var loc = col.GetComponent<Location>();
+                if(commandSenderId == loc.locationName) {
+
+
+                    if(currentCommand == GameCommand.PickUp) {
+                        LoadShip(loc.packages);
+                        CompletedCommand(currentCommand);
+
+                    } else if(currentCommand == GameCommand.Deliver) {
+                        body2D.velocity = Vector2.zero;
+                        GamePlayer.localInstance.DisplayBanner(cargo[0].receiver.profilePicIndex,
+                            @"<size=32>Fuck yea man!</size> /\n Thanks for making sure that it got here in one peice",
+                            Banner.BannerType.Package);
+                        cargo.Remove(cargo[0]);
+                        CompletedCommand(currentCommand);
+                    }
+                }
+            }
+        }
+    }
+
+    private void LoadShip(List<Package> packages) {
+        //cool tetris logic here...later
+        for(int i = packages.Count - 1; i >= 0; i--) {
+            cargo.Add(packages[i]);
+            packages.Remove(packages[i]);
+        }
+
+        //i dont like this i will change later
+        //var cargoIndex = new Vector2(-1, -1);
+
+        //for(int i = packages.Count - 0; i > 0; i--) {
+        //    var tempCargoIndex = cargoIndex + packages[i].size;
+        //    if(tempCargoIndex.x < cargoSpace.x && tempCargoIndex.y < cargoSpace.y) {
+        //        cargoSpace += packages[i].size;
+        //        cargo[(int)cargoSpace.x, (int)cargoSpace.y] = packages[i];
+        //    } else { Debug.Log("Package didnt fit"); }
+        //}
+
+        //packages.Clear();
+    }
+
+    private void StartDelivery() {
+        ReceiveCommand(new CommandPacket() {
+            command = GameCommand.Deliver,
+            commandData = cargo[0].receiver.location.transform.position,
+            senderId = cargo[0].receiver.location.locationName
+        });
+
+        Debug.Log("Heading out for delivery");
+    }
+
     //make this more generic and add it to pixel math
     private Quaternion RotateTowards(Transform trans, Vector2 point) {
         float angle = Mathf.Atan2(point.y, point.x) * Mathf.Rad2Deg - 90;
         Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
         return Quaternion.Slerp(trans.rotation, q, Time.deltaTime * rotationSpeed);
-    }
-
-    private void OnTriggerEnter2D(Collider2D col) {
-        if(!NetworkClient.active || isServer) {
-            if(currentCommand == GameCommand.PickUp && col.name == commandSenderId) {
-                var loc = col.GetComponent<Location>();
-                foreach(var p in loc.packages) {
-                    packages.Add(p);
-                }
-
-                loc.packages.Clear();
-                CompletedCommand(currentCommand);
-
-                //set new command
-                if(packages.Count > 0) {
-                    Debug.Log(packages[0].receiver.location);
-                    ReceiveCommand(new CommandPacket() {
-                        command = GameCommand.Deliver,
-                        commandData = packages[0].receiver.location.transform.position,
-                        senderId = packages[0].receiver.location.name
-                    });
-                    Debug.Log("Heading out for delivery");
-                }
-            } else if(currentCommand == GameCommand.Deliver && col.name == commandSenderId) {
-                body2D.velocity = Vector2.zero;
-                CompletedCommand(currentCommand);
-
-                Debug.Log(packages[0].receiver.profilePicIndex);
-                GamePlayer.localInstance.DisplayBanner(packages[0].receiver.profilePicIndex, 
-                    @"<size=40><b>Fuck yea man!</b></size> /n Thanks for making sure that it got here in one peice",
-                    Banner.BannerType.Package);
-            }
-        }
     }
 }

@@ -13,4 +13,8 @@ public class HubUiManager : MonoBehaviour {
         };
         GamePlayer.localInstance.SendCommandPacket(packet);
     }
+
+    public void CreatePackage() {
+        selectedStation.GeneratePackages();
+    }
 }

@@ -61,7 +61,7 @@ public class ClientManager : MonoBehaviour {
     public static Client GenerateClient(Vector2 index) {
         if(index.x == -1) return ClientManager.farnsberg;
         var client = new Client();
-        client.profilePic = characters[(CharacterStyle)((int)index.x)][(int)index.y];
+        client.profilePic = characters[(CharacterStyle)(index.x)][(int)index.y];
         client.profilePicIndex = index;
 
         return client;
@@ -86,7 +86,7 @@ public class ClientManager : MonoBehaviour {
 
         var client = new Client();
         client.profilePic = randSprite;
-        client.profilePicIndex = new Vector2(i1, i2);
+        client.profilePicIndex = new Vector2((int)randStyle, i2);
         client.location = loc;
 
         return client;

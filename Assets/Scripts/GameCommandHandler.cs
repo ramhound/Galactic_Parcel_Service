@@ -30,8 +30,8 @@ public class GameCommandHandler : NetworkBehaviour, ICommandHandler {
     }
 
     public virtual void CompletedCommand(GameCommand command) {
-        Debug.Log(name + " completed command - " + command);
-        if(command == currentCommand) currentCommand = GameCommand.None;
+        Debug.Log(name + " Completed " + command);
+        currentCommand = GameCommand.None;
     }
 
     public virtual void ReceiveCommand(CommandPacket packet) {
