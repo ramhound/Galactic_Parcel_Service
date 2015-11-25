@@ -3,16 +3,23 @@ using UnityEngine.Networking;
 using System.Collections;
 using System.Collections.Generic;
 
+public struct Route {
+    public Vector2[] locations;
+    public string name;
+    public bool timeSort;
+    public bool distanceSort;
+}
 public class HubStation : Location {
     public HubUiManager hubUiManager;
     public GameObject hubMenu;
     public GameObject[] spawnables;
-    public List<ShipController> activeFleet = new List<ShipController>();
+    public List<Ship> activeFleet = new List<Ship>();
     public List<Location> deliveryLocations = new List<Location>();
+    public SyncRouteList routes = new SyncRouteList();
+    public static Route defaultRoute;
 
     public override void Start() {
         base.Start();
-
         locationName = "Hub Station";
     }
 
@@ -24,6 +31,7 @@ public class HubStation : Location {
 
     public override void SetSelected(bool selected) {
         base.SetSelected(selected);
+        //later ill do something to let others on the network know
 
         hubMenu.gameObject.SetActive(selected);
         hubUiManager.selectedStation = selected ? this : null;
@@ -34,20 +42,24 @@ public class HubStation : Location {
         base.OnGameTick();
 
         if(GameTimer.currentTick == 5) {
-            //packages.Add(new Package() { //convert this into a command
-            //    fragility = 1,
-            //    sender = ClientManager.farnsberg,
-            //    receiver = ClientManager.GenerateClient(Location.GetNearestLocation(transform.position)),
-            //    size = Vector2.one
-            //});
-            GeneratePackages();
+            //putting this here for now so i can populate the list of locations
+            Setup();
         }
 
         //broadcast pickup request to nearby ships not in route 
-        Debug.Log(packages.Count);
         if(packages.Count > 0) {
             BroadcastPickup();
         }
+    }
+
+    private void Setup() {
+        defaultRoute = new Route() {
+            name = "Default",
+            locations = Location.ToVectorArray(deliveryLocations),
+            timeSort = false,
+            distanceSort = false
+        };
+        GeneratePackages();
     }
 
     private void BroadcastPickup() {
@@ -66,10 +78,12 @@ public class HubStation : Location {
         base.ExecuteCommand(command);
 
         if(currentCommand == GameCommand.Spawn) {
-            var ship = Instantiate(spawnables[(int)(commandData.x)]) as GameObject;
-            activeFleet.Add(ship.GetComponent<ShipController>());
-            if(isServer) NetworkServer.Spawn(ship);
+            var shipGo = Instantiate(spawnables[(int)(commandData.x)]) as GameObject;
+            var ship = shipGo.GetComponent<Ship>();
+            activeFleet.Add(ship);
+            if(isServer) NetworkServer.Spawn(shipGo);
 
+            ship.routes.Add(defaultRoute);
             CompletedCommand(command);
         }
     }
@@ -80,18 +94,16 @@ public class HubStation : Location {
 
     public void GeneratePackages() {
         if(deliveryLocations.Count == 0) return; //let this through with different vars
-
-        int packageCount = UnityEngine.Random.Range(0, 5);
+        int packageCount = Random.Range(3, 5);
 
         for(int i = 0; i < packageCount; i++) {
             var package = new Package() {
-                sender = ClientManager.GenerateClient(deliveryLocations[UnityEngine.Random.Range(0, deliveryLocations.Count - 1)]),
-                receiver = ClientManager.GenerateClient(deliveryLocations[UnityEngine.Random.Range(0, deliveryLocations.Count - 1)]),
+                sender = ClientManager.GenerateClient(deliveryLocations[Random.Range(0, deliveryLocations.Count)]),
+                receiver = ClientManager.GenerateClient(deliveryLocations[Random.Range(0, deliveryLocations.Count)]),
                 fragility = 1f,
                 size = Vector2.one
             };
             packages.Add(package);
-            Debug.Log(packages.Count);
         }
     }
 }

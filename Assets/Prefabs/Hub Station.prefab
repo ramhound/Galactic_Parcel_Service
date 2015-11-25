@@ -1,5 +1,23 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &109242
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 401342}
+  - 58: {fileID: 5804410}
+  - 114: {fileID: 11433910}
+  - 114: {fileID: 11467822}
+  m_Layer: 8
+  m_Name: Shield_Selection Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &170918
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,13 +30,55 @@ GameObject:
   - 58: {fileID: 5874556}
   - 114: {fileID: 11429980}
   - 114: {fileID: 11409548}
+  - 50: {fileID: 5000036}
   m_Layer: 8
   m_Name: Hub Station
+  m_TagString: Hub Station
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &174230
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 423002}
+  - 58: {fileID: 5804314}
+  - 114: {fileID: 11435054}
+  m_Layer: 8
+  m_Name: Delivery Zone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &401342
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109242}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 431802}
+  m_RootOrder: 0
+--- !u!4 &423002
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 174230}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 431802}
+  m_RootOrder: 1
 --- !u!4 &431802
 Transform:
   m_ObjectHideFlags: 1
@@ -28,9 +88,53 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 15.0799999, y: -12.1000004, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 401342}
+  - {fileID: 423002}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!50 &5000036
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 170918}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &5804314
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 174230}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 100
+--- !u!58 &5804410
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109242}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 12
 --- !u!58 &5874556
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -43,7 +147,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 11.25
+  m_Radius: 3
 --- !u!114 &11409548
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -62,11 +166,13 @@ MonoBehaviour:
   clientStyles: 9
   rotationSpeed: 1
   rotateLeft: 1
+  locationName: 
   hubUiManager: {fileID: 0}
   hubMenu: {fileID: 0}
   spawnables:
   - {fileID: 179128, guid: 31a35fe06948a7142a15557e0b48b7a8, type: 2}
   activeFleet: []
+  deliveryLocations: []
 --- !u!114 &11429980
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -99,6 +205,42 @@ MonoBehaviour:
     i15: 200
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &11433910
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd9a364e4893164b9d5c20fe6f9f8fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  location: {fileID: 11409548}
+--- !u!114 &11435054
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 174230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad06401a5baf00947a82b32b82aa25e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hubStation: {fileID: 11409548}
+--- !u!114 &11467822
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eca2f80db33eaf843b329dd8fe984947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  location: {fileID: 11409548}
 --- !u!212 &21237944
 SpriteRenderer:
   m_ObjectHideFlags: 1
