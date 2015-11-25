@@ -39,7 +39,6 @@ public class Ship : GameCommandHandler, ISelectable {
     public override void CompletedCommand(GameCommand command) {
         base.CompletedCommand(command);
         shipController.Stop();
-        hubStation.GeneratePackages();
     }
 
     private void StartDelivery() {
@@ -49,7 +48,7 @@ public class Ship : GameCommandHandler, ISelectable {
             senderId = cargo[0].receiver.location.locationName
         });
 
-        Debug.Log("Heading out for delivery");
+        Debug.Log(name + " Heading out for delivery");
     }
 
     private void LoadShip(List<Package> packages) {
@@ -71,6 +70,7 @@ public class Ship : GameCommandHandler, ISelectable {
                     if(currentCommand == GameCommand.PickUp) {
                         LoadShip(loc.packages);
                         CompletedCommand(currentCommand);
+                        hubStation.GeneratePackages();
 
                         if(cargo.Count > 0)
                             StartDelivery();
