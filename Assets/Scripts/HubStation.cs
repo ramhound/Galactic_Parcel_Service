@@ -23,12 +23,6 @@ public class HubStation : Location {
         locationName = "Hub Station";
     }
 
-    public override void OnClick() {
-        GamePlayer.localInstance.uuids = new string[] { };
-
-        SetSelected(true);
-    }
-
     public override void SetSelected(bool selected) {
         base.SetSelected(selected);
         //later ill do something to let others on the network know
@@ -80,6 +74,7 @@ public class HubStation : Location {
         if(currentCommand == GameCommand.Spawn) {
             var shipGo = Instantiate(spawnables[(int)(commandData.x)]) as GameObject;
             var ship = shipGo.GetComponent<Ship>();
+            ship.hubStation = this;
             activeFleet.Add(ship);
             if(isServer) NetworkServer.Spawn(shipGo);
 
@@ -94,8 +89,8 @@ public class HubStation : Location {
 
     public void GeneratePackages() {
         if(deliveryLocations.Count == 0) return; //let this through with different vars
-        int packageCount = Random.Range(3, 5);
 
+        int packageCount = Random.Range(1, 3);
         for(int i = 0; i < packageCount; i++) {
             var package = new Package() {
                 sender = ClientManager.GenerateClient(deliveryLocations[Random.Range(0, deliveryLocations.Count)]),

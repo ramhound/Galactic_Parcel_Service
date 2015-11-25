@@ -7,6 +7,7 @@ using System;
 public class Ship : GameCommandHandler, ISelectable {
     public enum ShipType { Cargo = 0, Shuttle, Speed, Defense, Special, Attack, Enemy_Attack, Enemy_Speed, Enemy_Defense }
     public ShipType shipType = ShipType.Cargo;
+    public HubStation hubStation;
     public SyncRouteList routes = new SyncRouteList();
     public List<Package> cargo = new List<Package>(); //may need to sync
     public ShipController shipController;
@@ -14,14 +15,12 @@ public class Ship : GameCommandHandler, ISelectable {
 
     public void SetSelected(bool selected) {
         if(selected) {
-            GamePlayer.localInstance.SetSelectedUnits(new ISelectable[] { this });
-            GamePlayer.localInstance.uuids = new string[] { name };
-            Camera.main.GetComponent<CameraFollow>().SetMainTarget(transform);
+
         }
     }
 
     public void OnClick() {
-        SetSelected(true);
+        GamePlayer.localInstance.SetSelectedUnits(transform);
     }
 
     public override void OnGameTick() {
@@ -40,7 +39,7 @@ public class Ship : GameCommandHandler, ISelectable {
     public override void CompletedCommand(GameCommand command) {
         base.CompletedCommand(command);
         shipController.Stop();
-        Debug.Log(cargo.Count);
+        hubStation.GeneratePackages();
     }
 
     private void StartDelivery() {
@@ -72,6 +71,10 @@ public class Ship : GameCommandHandler, ISelectable {
                     if(currentCommand == GameCommand.PickUp) {
                         LoadShip(loc.packages);
                         CompletedCommand(currentCommand);
+
+                        if(cargo.Count > 0)
+                            StartDelivery();
+
                     } else if(currentCommand == GameCommand.Deliver) {
                         for(int i = cargo.Count - 1; i >= 0; i--) {
                             if(cargo[i].receiver.location == loc) {

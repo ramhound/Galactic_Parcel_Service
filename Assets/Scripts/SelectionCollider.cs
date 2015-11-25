@@ -11,6 +11,6 @@ public class SelectionCollider : MonoBehaviour {
 	}
 
     private void OnClick() {
-        location.SetSelected(true);
+        GamePlayer.localInstance.SetSelectedUnits(location.transform);
     }
 }

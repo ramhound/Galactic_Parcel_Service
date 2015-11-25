@@ -22,20 +22,15 @@ public class Location : GameCommandHandler, ISelectable {
     }
 
     public virtual void OnClick() {
-        SetSelected(true);
+        GamePlayer.localInstance.SetSelectedUnits(transform);
     }
 
     public virtual void SetSelected(bool selected) {
-        if(selected) {
-            GamePlayer.localInstance.SetSelectedUnits(new ISelectable[] { this });
-            Camera.main.GetComponent<CameraFollow>().SetMainTarget(transform);
-        }
+
     }
 
     public override void OnGameTick() {
         base.OnGameTick();
-
-        //GamePlayer.localInstance.DisplayBanner(new Vector2(-1, 0), "test", Banner.BannerType.Message);
     }
 
     private void Rotate() {

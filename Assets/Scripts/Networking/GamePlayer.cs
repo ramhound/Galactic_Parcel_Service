@@ -14,7 +14,7 @@ public class GamePlayer : GameCommandHandler {
     public string playerId = "Krooked590";
     public string[] uuids = new string[] { };
 
-    private ISelectable[] selectedUnits = new ISelectable[] { };
+    private Transform[] selectedUnits = new Transform[] { };
     private static int idIndex = 0;
 
     public override void Start() {
@@ -69,16 +69,20 @@ public class GamePlayer : GameCommandHandler {
         }
     }
 
-    public void SetSelectedUnits() {
-        SetSelectedUnits(new ISelectable[] { });
-    }
-
-    public void SetSelectedUnits(ISelectable[] selections) {
+    public void SetSelectedUnits(params Transform[] selections) {
         if(selectedUnits.Length > 0) {
             foreach(var u in selectedUnits)
-                u.SetSelected(false);
+                u.GetComponent<ISelectable>().SetSelected(false);
+        }
+
+        if(selections.Length > 0) {
+            foreach(var u in selections)
+                u.GetComponent<ISelectable>().SetSelected(true);
         }
         selectedUnits = selections;
+
+        //camera should update here
+        Camera.main.GetComponent<CameraFollow>().targets = selectedUnits;
     }
 
     public void DisplayBanner(Vector2 characterIndex, string text, Banner.BannerType bannerType) {

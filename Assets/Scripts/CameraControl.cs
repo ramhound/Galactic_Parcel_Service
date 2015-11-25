@@ -22,7 +22,7 @@ public class CameraControl : MonoBehaviour {
         }
 
         if(delta.x != 0 || delta.y != 0) {
-            if(GamePlayer.localInstance.uuids.Length > 0) GamePlayer.localInstance.SetSelectedUnits();
+            GamePlayer.localInstance.SetSelectedUnits();
 
             transform.Translate(delta * Time.deltaTime * cameraSpeed);
             startPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

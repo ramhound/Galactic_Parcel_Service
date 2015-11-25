@@ -5,14 +5,11 @@ public class CameraFollow : MonoBehaviour {
     public static CameraFollow instance;
     public tk2dCamera cam { get; private set; }
     private Transform us;
-    public Transform mainTarget;
-    public Transform[] additionalTargets;
-    private Rigidbody body1;
-    private Rigidbody2D body2D1;
+    public Transform[] targets;
     public float followSpeed = 1.0f;
     public float zoomSpeedOut = 0.2f;
     public float zoomSpeedIn = 0.2f;
-
+    public int maxTargets = 10;
     public bool allowZooming = true;
     public float minSpeedThreshhold = .2f;
     public float maxSpeedThreshhold = 3.0f;
@@ -31,31 +28,28 @@ public class CameraFollow : MonoBehaviour {
         us = transform;
         cam = GetComponent<tk2dCamera>();
         minZoom = cam.ZoomFactor;
-
-        if(mainTarget != null) {
-            body1 = mainTarget.GetComponent<Rigidbody>();
-            body2D1 = mainTarget.GetComponent<Rigidbody2D>();
-        }
+        targets = new Transform[maxTargets];
     }
 
     private void FixedUpdate() {
-        if(mainTarget != null) {
+        if(targets.Length > 0 && targets[0] != null) {
             if(!battleView) {
                 Vector3 start = us.position;
-                Vector3 end = Vector3.MoveTowards(start, mainTarget.position + (Vector3)offSet, followSpeed * Time.deltaTime);
+                Vector3 end = Vector3.MoveTowards(start, targets[0].position + (Vector3)offSet, followSpeed * Time.deltaTime);
                 end.z = start.z;
                 us.position = end;
 
-                //i want the camera to be quick for zoom out and slower for zoom in;
-                if(allowZooming && (body1 != null || body2D1 != null) && cam != null) {
-                    float speed = body2D1 != null ? body2D1.velocity.magnitude : body1.velocity.magnitude;
-                    float speedSclamp = Mathf.Clamp01( (speed - minSpeedThreshhold) / (maxSpeedThreshhold - minSpeedThreshhold));
 
-                    float targetZoom = Mathf.Lerp(minZoom, maxZoomFactor, speedSclamp);
-                    float zoom = Mathf.MoveTowards(cam.ZoomFactor, targetZoom, (targetZoom < cam.ZoomFactor ? zoomSpeedOut : zoomSpeedIn) * Time.deltaTime);
-                    cam.ZoomFactor = zoom;
-                }
-            } else if(additionalTargets.Length > 1) {
+                ////i want the camera to be quick for zoom out and slower for zoom in;
+                //if(allowZooming && (body1 != null || body2D1 != null) && cam != null) {
+                //    float speed = body2D1 != null ? body2D1.velocity.magnitude : body1.velocity.magnitude;
+                //    float speedSclamp = Mathf.Clamp01( (speed - minSpeedThreshhold) / (maxSpeedThreshhold - minSpeedThreshhold));
+
+                //    float targetZoom = Mathf.Lerp(minZoom, maxZoomFactor, speedSclamp);
+                //    float zoom = Mathf.MoveTowards(cam.ZoomFactor, targetZoom, (targetZoom < cam.ZoomFactor ? zoomSpeedOut : zoomSpeedIn) * Time.deltaTime);
+                //    cam.ZoomFactor = zoom;
+                //}
+            } else if(targets.Length > 1) {
                 //TODO: find the center between all targets and center on that if possible
 
                 ////find middle between 2 targets and center the camera on that
@@ -79,35 +73,20 @@ public class CameraFollow : MonoBehaviour {
     }
 
     public void SetMainTarget(Transform target) {
-        this.mainTarget = target;
-        if(mainTarget != null) {
-            body1 = mainTarget.GetComponent<Rigidbody>();
-            body2D1 = mainTarget.GetComponent<Rigidbody2D>();
-        } else {
-            body1 = null;
-            body2D1 = null;
-        }
+
     }
 
     public void SetTarget2(Transform target) {
-        //this.target2 = target;
-        //if(target2 != null) {
-        //    body2 = target1.GetComponent<Rigidbody>();
-        //    body2D2 = target1.GetComponent<Rigidbody2D>();
-        //} else {
-        //    body2 = null;
-        //    body2D2 = null;
-        //}
+
     }
 
-    public void SwitchToBattleView(Transform t1, Transform t2) {
-        SetMainTarget(t1);
-        SetTarget2(t2);
-        battleView = true;
-    }
+    //public void SwitchToBattleView(Transform t1, Transform t2) {
 
-    public void SwitchToNormalView(Transform t1) {
-        SetMainTarget(t1);
-        battleView = false;
-    }
+    //    battleView = true;
+    //}
+
+    //public void SwitchToNormalView(Transform t1) {
+    //    SetMainTarget(t1);
+    //    battleView = false;
+    //}
 }
