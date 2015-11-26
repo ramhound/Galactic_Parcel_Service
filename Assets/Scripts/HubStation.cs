@@ -35,7 +35,7 @@ public class HubStation : Location {
         //packageneration here
         base.OnGameTick();
 
-        if(GameTimer.currentTick == 5) {
+        if(GameTimer.currentTick == 1) { //treating this tick like a late start
             //putting this here for now so i can populate the list of locations
             Setup();
         }

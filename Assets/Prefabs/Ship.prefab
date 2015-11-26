@@ -120,9 +120,9 @@ MonoBehaviour:
   smoothType: 0
   subdivisions: 2
   iterations: 2
-  strength: .5
+  strength: .772000015
   uniformLength: 1
-  maxSegmentLength: 2
+  maxSegmentLength: 10
   bezierTangentLength: .400000006
   offset: .200000003
   factor: .100000001
@@ -142,6 +142,7 @@ MonoBehaviour:
   commandSenderId: 
   commandData: {x: 0, y: 0, z: 0}
   shipType: 0
+  hubStation: {fileID: 0}
   shipController: {fileID: 11467462}
 --- !u!114 &11463186
 MonoBehaviour:
@@ -224,7 +225,9 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
@@ -259,6 +262,14 @@ Prefab:
       propertyPath: shipController
       value: 
       objectReference: {fileID: 11467462}
+    - target: {fileID: 0}
+      propertyPath: maxSegmentLength
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: strength
+      value: .772000015
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 179128}
