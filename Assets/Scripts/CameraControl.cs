@@ -3,7 +3,6 @@ using System.Collections;
 
 public class CameraControl : MonoBehaviour {
     public float cameraSpeed = 1f;
-    public CameraFollow camFollower;
     private Vector2 startPos;
     private bool shouldTrack = false;
 

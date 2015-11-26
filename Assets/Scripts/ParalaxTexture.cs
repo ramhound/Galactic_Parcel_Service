@@ -19,6 +19,7 @@ public class ParalaxTexture : MonoBehaviour {
         if(useMouse) target.position = Input.mousePosition;
         var rend = GetComponent<MeshRenderer>();
         var mat = rend.material;
-        mat.mainTextureOffset = new Vector2(target.position.x * (xPara / 100) * speedFactor, target.position.y * (yPara / 100) * speedFactor);
+        var sf = speedFactor * Camera.main.GetComponent<tk2dCamera>().ZoomFactor;
+        mat.mainTextureOffset = new Vector2(target.position.x * (xPara / 100) * sf, target.position.y * (yPara / 100) * sf);
     }
 }
