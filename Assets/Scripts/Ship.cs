@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Collections;
 using System;
 
-public class Ship : GameCommandHandler, ISelectable {
     public enum ShipType { Cargo = 0, Shuttle, Speed, Defense, Special, Attack, Enemy_Attack, Enemy_Speed, Enemy_Defense }
-    public ShipType shipType = ShipType.Cargo;
+public class Ship : GameCommandHandler, ISelectable {
+    public ShipType type = ShipType.Cargo;
     public HubStation hubStation;
     public SyncRouteList routes = new SyncRouteList();
     public List<Package> cargo = new List<Package>(); //may need to sync
@@ -51,7 +51,12 @@ public class Ship : GameCommandHandler, ISelectable {
         Debug.Log(name + " Heading out for delivery");
     }
 
-    private void LoadShip(List<Package> packages) {
+    private void DockWith(Location loc) {
+        //anim for dock
+        loc.DockWith(this);
+    }
+
+    public void LoadPackages(List<Package> packages) {
         //cool tetris logic here...later
         for(int i = packages.Count - 1; i >= 0; i--) {
             var locList = routes[0].locations.ToList();
@@ -68,7 +73,7 @@ public class Ship : GameCommandHandler, ISelectable {
                 var loc = col.GetComponent<Location>();
                 if(commandSenderId == loc.locationName) {
                     if(currentCommand == GameCommand.PickUp) {
-                        LoadShip(loc.packages);
+                        DockWith(loc);
                         CompletedCommand(currentCommand);
                         hubStation.GeneratePackages();
 

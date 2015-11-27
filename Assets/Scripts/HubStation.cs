@@ -3,8 +3,10 @@ using UnityEngine.Networking;
 using System.Collections;
 using System.Collections.Generic;
 
+public enum RouteType { Cargo = 0, Shuttle, Explorer }
 public struct Route {
     public Vector2[] locations;
+    public RouteType type;
     public string name;
     public bool timeSort;
     public bool distanceSort;
@@ -15,7 +17,9 @@ public class HubStation : Location {
     public GameObject[] spawnables;
     public List<Ship> activeFleet = new List<Ship>();
     public List<Location> deliveryLocations = new List<Location>();
-    public SyncRouteList routes = new SyncRouteList();
+    public SyncRouteList cargoRoutes = new SyncRouteList();
+    public SyncRouteList shuttleRoutes = new SyncRouteList();
+    public SyncRouteList explorerRoutes = new SyncRouteList();
     public static Route defaultRoute;
 
     public override void Start() {
@@ -49,10 +53,12 @@ public class HubStation : Location {
     private void Setup() {
         defaultRoute = new Route() {
             name = "Default",
+            type = RouteType.Cargo,
             locations = Location.ToVectorArray(deliveryLocations),
             timeSort = false,
             distanceSort = false
         };
+        cargoRoutes.Add(defaultRoute);
         GeneratePackages();
     }
 
@@ -78,7 +84,12 @@ public class HubStation : Location {
             activeFleet.Add(ship);
             if(isServer) NetworkServer.Spawn(shipGo);
 
-            ship.routes.Add(defaultRoute);
+            if(ship.type == ShipType.Cargo)
+                ship.routes = cargoRoutes;
+            else if(ship.type == ShipType.Shuttle)
+                ship.routes = shuttleRoutes;
+            else ship.routes = explorerRoutes;
+
             CompletedCommand(command);
         }
     }

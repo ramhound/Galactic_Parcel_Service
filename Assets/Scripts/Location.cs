@@ -9,7 +9,6 @@ public class Location : GameCommandHandler, ISelectable {
     public float rotationSpeed;
     public bool rotateLeft;
     public string locationName;
-    public List<Client> clients = new List<Client>();
     public List<Package> packages = new List<Package>();
     public Vector2 position { get { return transform.position; } }
 
@@ -31,6 +30,10 @@ public class Location : GameCommandHandler, ISelectable {
 
     public override void OnGameTick() {
         base.OnGameTick();
+    }
+
+    public virtual void DockWith(Ship ship) {
+        ship.LoadPackages(packages);
     }
 
     private void Rotate() {
