@@ -29,6 +29,8 @@ public class HubStation : Location {
         base.Start();
         if(discoveredLocations.Contains(this)) //lazy so for now just remove ourselves
             discoveredLocations.Remove(this);
+        if(!allHubStations.Contains(this))
+            allHubStations.Add(this);
         locationName = name;
     }
 
@@ -49,9 +51,24 @@ public class HubStation : Location {
             Setup();
         }
 
+        //every 10 seconds add packages
+        if(GameTimer.currentTick % 50 == 0)
+            GeneratePackages();
+
         //broadcast pickup request to nearby ships not in route 
-        if(packages.Count > 0 && GameTimer.currentTick % 2 == 0) {
-            BroadcastPickup();
+        if(packages.Count > 0) {
+            foreach(var p in packages) {
+                if(deliveryLocations.Contains(p.receiver.location)) {
+                    BroadcastPickup();
+                    break;
+                }
+            }
+            foreach(var p in packages) {
+                if(!deliveryLocations.Contains(p.receiver.location)) {
+                    BroadcastShuttlePickup();
+                    break;
+                }
+            }
         }
     }
 
@@ -75,8 +92,19 @@ public class HubStation : Location {
 
     private void BroadcastPickup() {
         foreach(var s in activeFleet) {
-            if(s.currentCommand == GameCommand.None) {
+            if(s.type == ShipType.Cargo && s.currentCommand == GameCommand.None) {
+                s.ReceiveCommand(new CommandPacket() {
+                    command = GameCommand.PickUp,
+                    senderId = name,
+                    commandData = transform.position
+                });
+            }
+        }
+    }
 
+    private void BroadcastShuttlePickup() {
+        foreach(var s in activeFleet) {
+            if(s.type == ShipType.Shuttle && s.currentCommand == GameCommand.None) {
                 s.ReceiveCommand(new CommandPacket() {
                     command = GameCommand.PickUp,
                     senderId = name,
@@ -90,7 +118,7 @@ public class HubStation : Location {
         base.ExecuteCommand(command);
 
         if(currentCommand == GameCommand.Spawn) {
-            var shipGo = Instantiate(spawnables[(int)(commandData.x)], 
+            var shipGo = Instantiate(spawnables[(int)(commandData.x)],
                                      spawnLocation.position, Quaternion.identity) as GameObject;
             var ship = shipGo.GetComponent<Ship>();
             ship.hubStation = this;
@@ -123,6 +151,7 @@ public class HubStation : Location {
                 size = Vector2.one
             };
             packages.Add(package);
+            Debug.Log(deliveryLocations.Contains(package.receiver.location));
         }
     }
 }

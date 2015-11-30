@@ -51,13 +51,12 @@ public class Ship : GameCommandHandler, ISelectable {
             });
 
             Debug.Log(name + " Heading out for delivery");
+        } else if(type == ShipType.Shuttle) {
+            ReceiveCommand(new CommandPacket() {
+                command = GameCommand.Shuttle,
+                //commandData = routes[0].locations
+            });
         }
-        //else if(type == ShipType.Shuttle) {
-        //    ReceiveCommand(new CommandPacket() {
-        //        command = GameCommand.Shuttle,
-        //        commandData = cargo[0].receiver.location.transform.position
-        //    });
-        //}
     }
 
     private void DockWith(Location loc) {
@@ -111,7 +110,6 @@ public class Ship : GameCommandHandler, ISelectable {
                         DockWith(loc);
                         CompletedCommand(currentCommand);
 
-                        hubStation.GeneratePackages();
                         if(cargo.Count > 0)
                             StartDelivery();
 
