@@ -18,7 +18,7 @@ GameObject:
   - 114: {fileID: 11463186}
   - 114: {fileID: 11413248}
   m_Layer: 0
-  m_Name: Ship
+  m_Name: Cargo Ship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -141,7 +141,7 @@ MonoBehaviour:
   currentCommand: 0
   commandSenderId: 
   commandData: {x: 0, y: 0, z: 0}
-  shipType: 0
+  type: 0
   hubStation: {fileID: 0}
   shipController: {fileID: 11467462}
 --- !u!114 &11463186

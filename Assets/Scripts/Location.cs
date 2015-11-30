@@ -9,11 +9,19 @@ public class Location : GameCommandHandler, ISelectable {
     public float rotationSpeed;
     public bool rotateLeft;
     public string locationName;
+    public static List<Location> discoveredLocations = new List<Location>();
     public List<Package> packages = new List<Package>();
     public Vector2 position { get { return transform.position; } }
 
-    private void Awake() {
+    public override void Awake() {
+        base.Awake();
         locationName = name;
+    }
+
+    public override void Start() {
+        base.Start();
+        if(!discoveredLocations.Contains(this))
+            discoveredLocations.Add(this);
     }
 
     private void Update() {

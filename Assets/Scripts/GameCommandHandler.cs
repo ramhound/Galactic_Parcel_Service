@@ -12,6 +12,10 @@ public class GameCommandHandler : NetworkBehaviour, ICommandHandler {
     [SyncVar]
     public Vector3 commandData;
 
+    public virtual void Awake() {
+
+    }
+
     public virtual void Start() {
         if(!NetworkClient.active || isServer) {
             GameTimer.AddGameCmdHandler(this);

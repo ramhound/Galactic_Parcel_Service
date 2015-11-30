@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public enum GameCommand { None, Move, Spawn, Build, PickUp, Deliver }
+public enum GameCommand { None, Move, Spawn, Build, PickUp, Deliver, Shuttle }
 public interface ICommandHandler {
     void OnGameTick();
     void ExecuteCommand(GameCommand command);
