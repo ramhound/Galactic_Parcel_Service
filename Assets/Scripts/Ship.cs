@@ -54,7 +54,8 @@ public class Ship : GameCommandHandler, ISelectable {
         } else if(type == ShipType.Shuttle) {
             ReceiveCommand(new CommandPacket() {
                 command = GameCommand.Shuttle,
-                //commandData = routes[0].locations
+                commandData = cargo[0].shippingFacility.position,
+                senderId = dockedLocation.name
             });
         }
     }
@@ -68,6 +69,7 @@ public class Ship : GameCommandHandler, ISelectable {
     public void LoadPackages(List<Package> packages) {
         if(type == ShipType.Cargo) {
             for(int i = packages.Count - 1; i >= 0; i--) {
+                //i think in the future i am going to not use a list and just check location
                 var locList = routes[0].locations.ToList();
                 if(locList.Contains(packages[i].receiver.location.position)) {
                     cargo.Add(packages[i]);
@@ -75,25 +77,15 @@ public class Ship : GameCommandHandler, ISelectable {
                 }
             }
         } else if(type == ShipType.Shuttle) {
-            var hub = dockedLocation as HubStation;
-            var rh = new List<HubStation>(); //route hubs
-            foreach(HubStation h in HubStation.allHubStations) { 
-                if(h == hub) continue;
-                for(int i = 0; i < routes[0].locations.Length; i++) {
-                    if(h.position == routes[0].locations[i]) {
-                        rh.Add(h);
-                    }
-                }
-            }
-
             for(int i = packages.Count - 1; i >= 0; i--) {
-                if(!hub.deliveryLocations.Contains(packages[i].receiver.location)) {
-                    foreach(var h in rh) {
-                        if(h.deliveryLocations.Contains(packages[i].receiver.location)) {
-                            cargo.Add(packages[i]);
-                            packages.RemoveAt(i);
-                        }
-                    }
+                var locList = routes[0].locations.ToList();
+                Debug.Log(locList);
+                Debug.Log(locList.Count);
+                Debug.Log(packages[i]);
+                Debug.Log(packages[i].shippingFacility);
+                if(locList.Contains(packages[i].shippingFacility.position)) {
+                    cargo.Add(packages[i]);
+                    packages.RemoveAt(i);
                 }
             }
         }
@@ -113,7 +105,9 @@ public class Ship : GameCommandHandler, ISelectable {
                         if(cargo.Count > 0)
                             StartDelivery();
 
-                    } else if(currentCommand == GameCommand.Deliver) {
+                    } else if(currentCommand == GameCommand.Deliver
+                        || currentCommand == GameCommand.Shuttle) {
+
                         for(int i = cargo.Count - 1; i >= 0; i--) {
                             if(cargo[i].receiver.location == loc) {
                                 cargo[i].receiver.PackageDelivered();

@@ -143,6 +143,7 @@ public class HubStation : Location {
         if(deliveryLocations.Count == 0) return; //let this through with different vars
 
         int packageCount = Random.Range(1, 3);
+
         for(int i = 0; i < packageCount; i++) {
             var package = new Package() {
                 sender = ClientManager.GenerateClient(discoveredLocations[Random.Range(0, discoveredLocations.Count)]),
@@ -150,8 +151,14 @@ public class HubStation : Location {
                 fragility = 1f,
                 size = Vector2.one
             };
+
+            foreach(HubStation h in HubStation.allHubStations) {
+                if(h.deliveryLocations.Contains(package.receiver.location)) {
+                    Debug.Log(h.name);
+                    package.shippingFacility = h;
+                }
+            }
             packages.Add(package);
-            Debug.Log(deliveryLocations.Contains(package.receiver.location));
         }
     }
 }
