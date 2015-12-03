@@ -78,11 +78,8 @@ public class Ship : GameCommandHandler, ISelectable {
             }
         } else if(type == ShipType.Shuttle) {
             for(int i = packages.Count - 1; i >= 0; i--) {
+                Debug.Log(packages[i].receiver.location);
                 var locList = routes[0].locations.ToList();
-                Debug.Log(locList);
-                Debug.Log(locList.Count);
-                Debug.Log(packages[i]);
-                Debug.Log(packages[i].shippingFacility);
                 if(locList.Contains(packages[i].shippingFacility.position)) {
                     cargo.Add(packages[i]);
                     packages.RemoveAt(i);

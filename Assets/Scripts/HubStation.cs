@@ -51,8 +51,8 @@ public class HubStation : Location {
             Setup();
         }
 
-        //every 10 seconds add packages
-        if(GameTimer.currentTick % 50 == 0)
+        //every 5 seconds add packages
+        if(GameTimer.currentTick % 25 == 0)
             GeneratePackages();
 
         //broadcast pickup request to nearby ships not in route 
@@ -152,13 +152,14 @@ public class HubStation : Location {
                 size = Vector2.one
             };
 
-            foreach(HubStation h in HubStation.allHubStations) {
-                if(h.deliveryLocations.Contains(package.receiver.location)) {
-                    Debug.Log(h.name);
-                    package.shippingFacility = h;
-                }
+            foreach(HubStation hub in HubStation.allHubStations) {
+                //if(hub.deliveryLocations.Contains(package.receiver.location)) {
+                //    Debug.Log(hub.deliveryLocations.Contains(package.receiver.location));
+                //    package.shippingFacility = hub;
+                //    packages.Add(package);
+                //    break;
+                //}
             }
-            packages.Add(package);
         }
     }
 }
