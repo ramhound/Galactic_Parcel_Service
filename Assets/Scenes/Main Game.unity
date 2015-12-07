@@ -1170,6 +1170,18 @@ Prefab:
       propertyPath: zoomSpeed
       value: .699999988
       objectReference: {fileID: 0}
+    - target: {fileID: 115364, guid: a8faded7357f0304fa7cc2f8703ac6dd, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11422016, guid: a8faded7357f0304fa7cc2f8703ac6dd, type: 2}
+      propertyPath: xThresh
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11422016, guid: a8faded7357f0304fa7cc2f8703ac6dd, type: 2}
+      propertyPath: yThresh
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6136388, guid: a8faded7357f0304fa7cc2f8703ac6dd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: a8faded7357f0304fa7cc2f8703ac6dd, type: 2}

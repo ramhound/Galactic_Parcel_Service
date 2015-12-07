@@ -52,12 +52,13 @@ public class HubStation : Location {
             Setup();
         }
 
-        ////every 5 seconds add packages
-        //if(GameTimer.currentTick % 25 == 0)
-        //    GeneratePackages();
+        //every 10 seconds add packages
+        if(GameTimer.currentTick % 50 == 0)
+            GeneratePackages();
 
         //broadcast pickup request to nearby ships not in route 
         if(packages.Count > 0) {
+            
             BroadcastPickup();
         }
 
@@ -87,7 +88,7 @@ public class HubStation : Location {
 
     private void BroadcastPickup() {
         foreach(var s in activeFleet) {
-            if(s.type == ShipType.Cargo && s.currentCommand == GameCommand.None) {
+            if(s.type == ShipType.Cargo && (s.currentCommand == GameCommand.None || s.currentCommand == GameCommand.Return)) {
                 s.ReceiveCommand(new CommandPacket() {
                     command = GameCommand.PickUp,
                     senderId = name,
@@ -99,7 +100,7 @@ public class HubStation : Location {
 
     private void BroadcastShuttlePickup() {
         foreach(var s in activeFleet) {
-            if(s.type == ShipType.Shuttle && s.currentCommand == GameCommand.None) {
+            if(s.type == ShipType.Shuttle && (s.currentCommand == GameCommand.None || s.currentCommand == GameCommand.Return)) {
                 s.ReceiveCommand(new CommandPacket() {
                     command = GameCommand.PickUp,
                     senderId = name,

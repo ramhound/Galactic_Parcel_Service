@@ -33,7 +33,7 @@ public class Ship : GameCommandHandler, ISelectable {
         if(command == GameCommand.None) {
             if(cargo.Count > 0)
                 StartDelivery();
-            else if(!atHub){
+            else if(!atHub) {
                 ReceiveCommand(new CommandPacket {
                     command = GameCommand.Return,
                     commandData = hubStation.position,
@@ -87,7 +87,6 @@ public class Ship : GameCommandHandler, ISelectable {
             } else if(col.tag == "Shield Collider") {
                 var loc = col.GetComponentInParent<Location>();
                 if(commandSenderId == loc.locationName) {
-                    shipController.Stop();
                     atHub = true;
                     CompletedCommand(currentCommand);
                 }

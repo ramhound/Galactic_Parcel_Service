@@ -150,7 +150,8 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: F:/Onedrive/Company Name/Game Projects/GPS/Android Key Store/user.keystore
+  AndroidKeystoreName: F:/OneDrive/Development/Game Projects/GPS Working/Android Key
+    Store/user.keystore
   AndroidKeyaliasName: game
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
@@ -165,7 +166,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 0}
+      m_Icon: {fileID: 2800000, guid: 816c19f9bac4ad44193d37085b6e78be, type: 3}
       m_Width: 128
       m_Height: 128
   m_BuildTargetBatching: []
