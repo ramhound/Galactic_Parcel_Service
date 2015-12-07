@@ -103,7 +103,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &39385108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,6 +123,7 @@ MonoBehaviour:
   rotationSpeed: 3
   rotateLeft: 0
   locationName: 
+  shipingFacilities: []
 --- !u!114 &39385109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,7 +229,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &61151003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,10 +245,11 @@ MonoBehaviour:
   currentCommand: 0
   commandSenderId: 
   commandData: {x: 0, y: 0, z: 0}
-  clientStyles: 6
+  clientStyles: 536
   rotationSpeed: 3
   rotateLeft: 0
   locationName: 
+  shipingFacilities: []
 --- !u!114 &61151004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,7 +336,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 652208658}
-  m_RootOrder: 3
+  m_RootOrder: 1
 --- !u!1 &109744630
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,10 +517,11 @@ MonoBehaviour:
   currentCommand: 0
   commandSenderId: 
   commandData: {x: 0, y: 0, z: 0}
-  clientStyles: 401
+  clientStyles: 536
   rotationSpeed: 3
   rotateLeft: 0
   locationName: 
+  shipingFacilities: []
 --- !u!114 &126458121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -605,7 +608,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 652208658}
-  m_RootOrder: 2
+  m_RootOrder: 6
 --- !u!1001 &361409414
 Prefab:
   m_ObjectHideFlags: 0
@@ -714,10 +717,11 @@ MonoBehaviour:
   currentCommand: 0
   commandSenderId: 
   commandData: {x: 0, y: 0, z: 0}
-  clientStyles: 448
+  clientStyles: 536
   rotationSpeed: 3
   rotateLeft: 1
   locationName: 
+  shipingFacilities: []
 --- !u!114 &443135166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -948,10 +952,11 @@ MonoBehaviour:
   currentCommand: 0
   commandSenderId: 
   commandData: {x: 0, y: 0, z: 0}
-  clientStyles: 24
+  clientStyles: 536
   rotationSpeed: 3
   rotateLeft: 0
   locationName: 
+  shipingFacilities: []
 --- !u!114 &473182016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1038,7 +1043,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 652208658}
-  m_RootOrder: 1
+  m_RootOrder: 5
 --- !u!1 &544824635
 GameObject:
   m_ObjectHideFlags: 0
@@ -1329,13 +1334,13 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 39385112}
-  - {fileID: 473182019}
-  - {fileID: 126458124}
   - {fileID: 61151007}
-  - {fileID: 1194104322}
   - {fileID: 1822049338}
   - {fileID: 1658262399}
   - {fileID: 998373758}
+  - {fileID: 473182019}
+  - {fileID: 126458124}
+  - {fileID: 1194104322}
   - {fileID: 443135164}
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -1598,7 +1603,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &998373758
 Transform:
   m_ObjectHideFlags: 0
@@ -1610,7 +1615,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 652208658}
-  m_RootOrder: 7
+  m_RootOrder: 4
 --- !u!114 &998373759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1626,10 +1631,11 @@ MonoBehaviour:
   currentCommand: 0
   commandSenderId: 
   commandData: {x: 0, y: 0, z: 0}
-  clientStyles: 1
+  clientStyles: 536
   rotationSpeed: 3
   rotateLeft: 0
   locationName: 
+  shipingFacilities: []
 --- !u!114 &998373760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1826,7 +1832,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 652208658}
-  m_RootOrder: 4
+  m_RootOrder: 7
 --- !u!114 &1194104323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1842,10 +1848,11 @@ MonoBehaviour:
   currentCommand: 0
   commandSenderId: 
   commandData: {x: 0, y: 0, z: 0}
-  clientStyles: 416
+  clientStyles: 536
   rotationSpeed: 3
   rotateLeft: 0
   locationName: 
+  shipingFacilities: []
 --- !u!114 &1194104324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2093,7 +2100,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1658262399
 Transform:
   m_ObjectHideFlags: 0
@@ -2105,7 +2112,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 652208658}
-  m_RootOrder: 6
+  m_RootOrder: 3
 --- !u!114 &1658262400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2121,10 +2128,11 @@ MonoBehaviour:
   currentCommand: 0
   commandSenderId: 
   commandData: {x: 0, y: 0, z: 0}
-  clientStyles: 38
+  clientStyles: 536
   rotationSpeed: 3
   rotateLeft: 0
   locationName: 
+  shipingFacilities: []
 --- !u!114 &1658262401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2290,7 +2298,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1822049338
 Transform:
   m_ObjectHideFlags: 0
@@ -2302,7 +2310,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 652208658}
-  m_RootOrder: 5
+  m_RootOrder: 2
 --- !u!114 &1822049339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2318,10 +2326,11 @@ MonoBehaviour:
   currentCommand: 0
   commandSenderId: 
   commandData: {x: 0, y: 0, z: 0}
-  clientStyles: 2
+  clientStyles: 536
   rotationSpeed: 3
   rotateLeft: 0
   locationName: 
+  shipingFacilities: []
 --- !u!114 &1822049340
 MonoBehaviour:
   m_ObjectHideFlags: 0

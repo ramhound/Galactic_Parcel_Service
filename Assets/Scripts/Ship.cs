@@ -54,9 +54,10 @@ public class Ship : GameCommandHandler, ISelectable {
         } else if(type == ShipType.Shuttle) {
             ReceiveCommand(new CommandPacket() {
                 command = GameCommand.Shuttle,
-                commandData = cargo[0].shippingFacility.position,
+                commandData = cargo[0].receiver.location.shipingFacilities[0].position,
                 senderId = dockedLocation.name
             });
+            Debug.Log(name + " Heading out for shuttle");
         }
     }
 
@@ -64,30 +65,6 @@ public class Ship : GameCommandHandler, ISelectable {
         //anim for dock
         dockedLocation = loc;
         loc.DockWith(this);
-    }
-
-    public void LoadPackages(List<Package> packages) {
-        if(type == ShipType.Cargo) {
-            for(int i = packages.Count - 1; i >= 0; i--) {
-                //i think in the future i am going to not use a list and just check location
-                var locList = routes[0].locations.ToList();
-                if(locList.Contains(packages[i].receiver.location.position)) {
-                    cargo.Add(packages[i]);
-                    packages.RemoveAt(i);
-                }
-            }
-        } else if(type == ShipType.Shuttle) {
-            for(int i = packages.Count - 1; i >= 0; i--) {
-                Debug.Log(packages[i].receiver.location);
-                var locList = routes[0].locations.ToList();
-                if(locList.Contains(packages[i].shippingFacility.position)) {
-                    cargo.Add(packages[i]);
-                    packages.RemoveAt(i);
-                }
-            }
-        }
-
-        //cool tetris logic here...later
     }
 
     private void OnTriggerEnter2D(Collider2D col) {
@@ -102,17 +79,11 @@ public class Ship : GameCommandHandler, ISelectable {
                         if(cargo.Count > 0)
                             StartDelivery();
 
-                    } else if(currentCommand == GameCommand.Deliver
-                        || currentCommand == GameCommand.Shuttle) {
-
+                    } else if(currentCommand == GameCommand.Deliver) {
                         for(int i = cargo.Count - 1; i >= 0; i--) {
                             if(cargo[i].receiver.location == loc) {
                                 cargo[i].receiver.PackageDelivered();
                                 cargo.RemoveAt(i);
-
-                                //                            GamePlayer.localInstance.DisplayBanner(cargo[0].receiver.profilePicIndex,
-                                //@"<size=32>Fuck yea man!</size> \\nThanks for making sure that it got here in one peice",
-                                //Banner.BannerType.Package);
                             }
                         }
 

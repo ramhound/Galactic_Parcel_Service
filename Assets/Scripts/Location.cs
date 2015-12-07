@@ -10,6 +10,7 @@ public class Location : GameCommandHandler, ISelectable {
     public bool rotateLeft;
     public string locationName;
     public static List<Location> discoveredLocations = new List<Location>();
+    public List<HubStation> shipingFacilities = new List<HubStation>();
     public List<Package> packages = new List<Package>();
     public Vector2 position { get { return transform.position; } }
 
@@ -41,7 +42,11 @@ public class Location : GameCommandHandler, ISelectable {
     }
 
     public virtual void DockWith(Ship ship) {
-        ship.LoadPackages(packages);
+        LoadPackages(ship);
+    }
+
+    public virtual void LoadPackages(Ship ship) {
+
     }
 
     private void Rotate() {
@@ -63,5 +68,14 @@ public class Location : GameCommandHandler, ISelectable {
             tl.Add(l.position);
         }
         return tl.ToArray();
+    }
+
+    public virtual void OnTriggerEnter2D(Collider2D col) {
+        Debug.Log(col.tag);
+        if(col.tag == "Delivery Zone Collider") {
+            var sf = col.GetComponentInParent<HubStation>();
+            if(!shipingFacilities.Contains(sf))
+                shipingFacilities.Add(sf);
+        }
     }
 }

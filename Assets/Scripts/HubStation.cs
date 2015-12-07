@@ -18,6 +18,7 @@ public class HubStation : Location {
     public Transform spawnLocation;
 
     public List<Ship> activeFleet = new List<Ship>();
+    public List<Package> shuttlePackages = new List<Package>();
     public List<Location> deliveryLocations = new List<Location>();
     public static List<Location> allHubStations = new List<Location>();
 
@@ -57,20 +58,14 @@ public class HubStation : Location {
 
         //broadcast pickup request to nearby ships not in route 
         if(packages.Count > 0) {
-            foreach(var p in packages) {
-                if(deliveryLocations.Contains(p.receiver.location)) {
-                    BroadcastPickup();
-                    break;
-                }
-            }
-            foreach(var p in packages) {
-                if(!deliveryLocations.Contains(p.receiver.location)) {
-                    BroadcastShuttlePickup();
-                    break;
-                }
-            }
+            BroadcastPickup();
+        }
+
+        if(shuttlePackages.Count > 0) {
+            BroadcastShuttlePickup();
         }
     }
+
 
     private void Setup() {
         cargoRoutes.Add(new Route() {
@@ -139,10 +134,40 @@ public class HubStation : Location {
         base.ReceiveCommand(packet);
     }
 
+    //public override void DockWith(Ship ship) {
+    //    base.DockWith(ship);
+    //}
+
+    public override void LoadPackages(Ship ship) {
+        base.LoadPackages(ship);
+
+        if(ship.type == ShipType.Cargo) {
+            for(int i = packages.Count - 1; i >= 0; i--) {
+                //i think in the future i am going to not use a list and just check location
+                var locList = ship.routes[0].locations.ToList();
+                if(locList.Contains(packages[i].receiver.location.position)) {
+                    ship.cargo.Add(packages[i]);
+                    packages.RemoveAt(i);
+                }
+            }
+        } else if(ship.type == ShipType.Shuttle) {
+            for(int i = shuttlePackages.Count - 1; i >= 0; i--) {
+                //i think in the future i am going to not use a list and just check location
+                var locList = ship.routes[0].locations.ToList();
+                foreach(var sf in shuttlePackages[i].receiver.location.shipingFacilities) {
+                    if(locList.Contains(sf.position)) {
+                        ship.cargo.Add(shuttlePackages[i]);
+                        shuttlePackages.RemoveAt(i);
+                    }
+                }
+            }
+        }
+    }
+
     public void GeneratePackages() {
         if(deliveryLocations.Count == 0) return; //let this through with different vars
-
         int packageCount = Random.Range(1, 3);
+
 
         for(int i = 0; i < packageCount; i++) {
             var package = new Package() {
@@ -152,14 +177,17 @@ public class HubStation : Location {
                 size = Vector2.one
             };
 
-            foreach(HubStation hub in HubStation.allHubStations) {
-                //if(hub.deliveryLocations.Contains(package.receiver.location)) {
-                //    Debug.Log(hub.deliveryLocations.Contains(package.receiver.location));
-                //    package.shippingFacility = hub;
-                //    packages.Add(package);
-                //    break;
-                //}
+            if(package.receiver.location.shipingFacilities.Contains(this)) {
+                packages.Add(package);
+            } else {
+                shuttlePackages.Add(package);
             }
         }
+
+        //sort the package list when there is a sorting facility on this hub
+    }
+
+    public override void OnTriggerEnter2D(Collider2D col) {
+        //left blank for override
     }
 }

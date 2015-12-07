@@ -64,8 +64,8 @@ GameObject:
   - 58: {fileID: 5804314}
   - 114: {fileID: 11435054}
   m_Layer: 8
-  m_Name: Delivery Zone
-  m_TagString: Untagged
+  m_Name: Delivery Zone Collider
+  m_TagString: Delivery Zone Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -195,6 +195,7 @@ MonoBehaviour:
   rotationSpeed: 1
   rotateLeft: 1
   locationName: 
+  shipingFacilities: []
   hubUiManager: {fileID: 0}
   hubMenu: {fileID: 0}
   spawnables:
@@ -310,6 +311,10 @@ Prefab:
       propertyPath: spawnables.Array.data[0]
       value: 
       objectReference: {fileID: 179128, guid: 31a35fe06948a7142a15557e0b48b7a8, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Delivery Collider
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 170918}
