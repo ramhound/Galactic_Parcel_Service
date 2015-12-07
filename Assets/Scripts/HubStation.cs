@@ -164,6 +164,19 @@ public class HubStation : Location {
         }
     }
 
+    public void ShuttleDelivery(Ship ship) {
+        //this should load all packages from the shuttle ship to the hub station
+        for(int i = ship.cargo.Count - 1; i >= 0; i--) {
+            if(ship.cargo[i].receiver.location.shipingFacilities.Contains(this)) {
+                packages.Add(ship.cargo[i]);
+                ship.cargo.RemoveAt(i);
+            }
+        }
+
+        //maybe some check but lazy
+        LoadPackages(ship);
+    }
+
     public void GeneratePackages() {
         if(deliveryLocations.Count == 0) return; //let this through with different vars
         int packageCount = Random.Range(1, 3);

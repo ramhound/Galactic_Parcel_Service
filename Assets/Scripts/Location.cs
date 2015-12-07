@@ -71,7 +71,6 @@ public class Location : GameCommandHandler, ISelectable {
     }
 
     public virtual void OnTriggerEnter2D(Collider2D col) {
-        Debug.Log(col.tag);
         if(col.tag == "Delivery Zone Collider") {
             var sf = col.GetComponentInParent<HubStation>();
             if(!shipingFacilities.Contains(sf))

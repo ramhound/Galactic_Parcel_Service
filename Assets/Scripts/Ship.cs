@@ -55,7 +55,7 @@ public class Ship : GameCommandHandler, ISelectable {
             ReceiveCommand(new CommandPacket() {
                 command = GameCommand.Shuttle,
                 commandData = cargo[0].receiver.location.shipingFacilities[0].position,
-                senderId = dockedLocation.name
+                senderId = cargo[0].receiver.location.shipingFacilities[0].name
             });
             Debug.Log(name + " Heading out for shuttle");
         }
@@ -87,6 +87,10 @@ public class Ship : GameCommandHandler, ISelectable {
                             }
                         }
 
+                        CompletedCommand(currentCommand);
+                    } else if(currentCommand == GameCommand.Shuttle) {
+                        var sf = loc.GetComponent<HubStation>();
+                        sf.ShuttleDelivery(this);
                         CompletedCommand(currentCommand);
                     }
                 }
