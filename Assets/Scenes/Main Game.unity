@@ -99,7 +99,7 @@ GameObject:
   - 114: {fileID: 39385108}
   m_Layer: 8
   m_Name: Location 3
-  m_TagString: Planet
+  m_TagString: Location
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -225,7 +225,7 @@ GameObject:
   - 114: {fileID: 61151003}
   m_Layer: 8
   m_Name: Location (1)
-  m_TagString: Planet
+  m_TagString: Location
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -497,7 +497,7 @@ GameObject:
   - 114: {fileID: 126458120}
   m_Layer: 8
   m_Name: Location 2
-  m_TagString: Planet
+  m_TagString: Location
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -616,10 +616,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 11409548, guid: f62598ca75a87d24b98956da2482c9c8, type: 2}
-      propertyPath: spawnables.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 431802, guid: f62598ca75a87d24b98956da2482c9c8, type: 2}
       propertyPath: m_LocalPosition.x
       value: -189.899994
@@ -660,10 +656,6 @@ Prefab:
       propertyPath: hubMenu
       value: 
       objectReference: {fileID: 2085155089}
-    - target: {fileID: 11409548, guid: f62598ca75a87d24b98956da2482c9c8, type: 2}
-      propertyPath: spawnables.Array.data[1]
-      value: 
-      objectReference: {fileID: 179128, guid: 5c9c12155f2808944927a234a25c88fc, type: 2}
     - target: {fileID: 170918, guid: f62598ca75a87d24b98956da2482c9c8, type: 2}
       propertyPath: m_Name
       value: Hub Station (1)
@@ -685,7 +677,7 @@ GameObject:
   - 114: {fileID: 443135165}
   m_Layer: 8
   m_Name: Location (6)
-  m_TagString: Planet
+  m_TagString: Location
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -932,7 +924,7 @@ GameObject:
   - 114: {fileID: 473182015}
   m_Layer: 8
   m_Name: Location
-  m_TagString: Planet
+  m_TagString: Location
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1599,7 +1591,7 @@ GameObject:
   - 114: {fileID: 998373759}
   m_Layer: 8
   m_Name: Location (5)
-  m_TagString: Planet
+  m_TagString: Location
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1816,7 +1808,7 @@ GameObject:
   - 114: {fileID: 1194104323}
   m_Layer: 8
   m_Name: Location (2)
-  m_TagString: Planet
+  m_TagString: Location
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2096,7 +2088,7 @@ GameObject:
   - 114: {fileID: 1658262400}
   m_Layer: 8
   m_Name: Location (4)
-  m_TagString: Planet
+  m_TagString: Location
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2294,7 +2286,7 @@ GameObject:
   - 114: {fileID: 1822049339}
   m_Layer: 8
   m_Name: Location (3)
-  m_TagString: Planet
+  m_TagString: Location
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

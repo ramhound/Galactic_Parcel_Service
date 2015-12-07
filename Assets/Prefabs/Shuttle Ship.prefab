@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 304aed5fafc464a49b099bc4c57e4e2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 450
+  speed: 300
   rotationSpeed: 3
   endPointDistance: .100000001
   pathRefreshRate: .100000001
@@ -282,7 +282,7 @@ Prefab:
         type: 3}
     - target: {fileID: 0}
       propertyPath: speed
-      value: 450
+      value: 300
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

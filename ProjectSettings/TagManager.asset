@@ -5,9 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Hub Station
-  - Planet
+  - Location
   - Docking Collider
   - Delivery Zone Collider
+  - Delivery Collider
+  - Shield Collider
   layers:
   - Default
   - TransparentFX

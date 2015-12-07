@@ -52,9 +52,9 @@ public class HubStation : Location {
             Setup();
         }
 
-        //every 5 seconds add packages
-        if(GameTimer.currentTick % 25 == 0)
-            GeneratePackages();
+        ////every 5 seconds add packages
+        //if(GameTimer.currentTick % 25 == 0)
+        //    GeneratePackages();
 
         //broadcast pickup request to nearby ships not in route 
         if(packages.Count > 0) {
@@ -134,13 +134,15 @@ public class HubStation : Location {
         base.ReceiveCommand(packet);
     }
 
-    //public override void DockWith(Ship ship) {
-    //    base.DockWith(ship);
-    //}
+    public override void DockWith(Ship ship) {
+        if(ship.currentCommand == GameCommand.PickUp || ship.currentCommand == GameCommand.Shuttle) {
+            LoadPackages(ship);
+        } else if(ship.currentCommand == GameCommand.Shuttle) {
+            ShuttleDelivery(ship);
+        }
+    }
 
     public override void LoadPackages(Ship ship) {
-        base.LoadPackages(ship);
-
         if(ship.type == ShipType.Cargo) {
             for(int i = packages.Count - 1; i >= 0; i--) {
                 //i think in the future i am going to not use a list and just check location
@@ -173,13 +175,13 @@ public class HubStation : Location {
             }
         }
 
-        //maybe some check but lazy
-        LoadPackages(ship);
+        //if(shuttlePackages.Count > 0)
+        //    LoadPackages(ship);
     }
 
     public void GeneratePackages() {
         if(deliveryLocations.Count == 0) return; //let this through with different vars
-        int packageCount = Random.Range(1, 3);
+        int packageCount = Random.Range(1, 2);
 
 
         for(int i = 0; i < packageCount; i++) {

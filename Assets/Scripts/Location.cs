@@ -42,12 +42,17 @@ public class Location : GameCommandHandler, ISelectable {
     }
 
     public virtual void DockWith(Ship ship) {
-        LoadPackages(ship);
+        if(ship.currentCommand == GameCommand.Delivery) {
+            for(int i = ship.cargo.Count - 1; i >= 0; i--) {
+                if(ship.cargo[i].receiver.location == this) {
+                    ship.cargo[i].receiver.PackageDelivered();
+                    ship.cargo.RemoveAt(i);
+                }
+            }
+        }
     }
 
-    public virtual void LoadPackages(Ship ship) {
-
-    }
+    public virtual void LoadPackages(Ship ship) { }
 
     private void Rotate() {
         var rot = transform.rotation.eulerAngles;
