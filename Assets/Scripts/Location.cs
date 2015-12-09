@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class Location : GameCommandHandler, ISelectable {
     [BitMask(typeof(CharacterStyle))]
     public CharacterStyle clientStyles = CharacterStyle.British;
+    public bool rotate = true;
     public float rotationSpeed;
     public bool rotateLeft;
     public string locationName;
@@ -19,23 +20,22 @@ public class Location : GameCommandHandler, ISelectable {
         locationName = name;
     }
 
+    //might be able to change this to new start maybe
     public override void Start() {
         base.Start();
-        if(!discoveredLocations.Contains(this))
-            discoveredLocations.Add(this);
+        if(!Location.discoveredLocations.Contains(this))
+            Location.discoveredLocations.Add(this);
     }
 
     private void Update() {
-        Rotate();
+        if(rotate) Rotate();
     }
 
     public virtual void OnClick() {
         GamePlayer.localInstance.SetSelectedUnits(transform);
     }
 
-    public virtual void SetSelected(bool selected) {
-
-    }
+    public virtual void SetSelected(bool selected) {}
 
     public override void OnGameTick() {
         base.OnGameTick();
@@ -57,14 +57,6 @@ public class Location : GameCommandHandler, ISelectable {
     private void Rotate() {
         var rot = transform.rotation.eulerAngles;
         transform.rotation = Quaternion.Euler(rot.x, rot.y, rot.z + (rotateLeft ? (rotationSpeed * Time.deltaTime) : -(rotationSpeed * Time.deltaTime)));
-    }
-
-    public static Location GetNearestLocation(Vector2 pos) {
-        var locations = GameObject.FindObjectsOfType<Location>();
-        foreach(var l in locations) {
-            if(l.tag != "Hub Station") return l;
-        }
-        return locations[0];
     }
 
     public static Vector2[] ToVectorArray(List<Location> locs) {

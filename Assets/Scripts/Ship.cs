@@ -59,6 +59,7 @@ public class Ship : GameCommandHandler, ISelectable {
         } else if(type == ShipType.Shuttle) {
             ReceiveCommand(new CommandPacket() {
                 command = GameCommand.Shuttle,
+                //i think this might be where it is getting stuck
                 commandData = cargo[0].receiver.location.shipingFacilities[0].position,
                 senderId = cargo[0].receiver.location.shipingFacilities[0].name
             });
@@ -81,10 +82,10 @@ public class Ship : GameCommandHandler, ISelectable {
                 if(currentCommand == GameCommand.PickUp && hs.name == commandSenderId) {
                     //claim pick up
                     if(type == ShipType.Cargo) {
-                        if(hs.cargoPickUp != this)
+                        if(!hs.cargoPickUp.Contains(this))
                             CompletedCommand(GameCommand.Return);
                     } else if(type == ShipType.Shuttle) {
-                        if(hs.shuttlePickUp != this)
+                        if(!hs.shuttlePickUp.Contains(this))
                             CompletedCommand(GameCommand.Return);
                     }
                 } else if(currentCommand == GameCommand.Return && hs.name == commandSenderId) {
@@ -95,19 +96,18 @@ public class Ship : GameCommandHandler, ISelectable {
                 var loc = col.GetComponent<Location>();
                 if(currentCommand == GameCommand.PickUp) {
                     DockWith(loc);
-
-                    var hs = (HubStation)loc;
-                    if(type == ShipType.Cargo) hs.cargoPickUp = null;
-                    else if(type == ShipType.Shuttle) hs.shuttlePickUp = null;
-
                     CompletedCommand(currentCommand);
 
-                    if(cargo.Count > 0)
-                        StartDelivery();
+                    var hs = (HubStation)loc;
+                    if(type == ShipType.Cargo) hs.cargoPickUp.Remove(this);
+                    else if(type == ShipType.Shuttle) hs.shuttlePickUp.Remove(this);
                 } else if(currentCommand == GameCommand.Delivery || currentCommand == GameCommand.Shuttle) {
                     DockWith(loc);
                     CompletedCommand(currentCommand);
                 }
+
+                if(cargo.Count > 0)
+                    StartDelivery();
             }
         }
     }

@@ -120,6 +120,7 @@ MonoBehaviour:
   commandSenderId: 
   commandData: {x: 0, y: 0, z: 0}
   clientStyles: 536
+  rotate: 1
   rotationSpeed: 3
   rotateLeft: 0
   locationName: 
@@ -246,6 +247,7 @@ MonoBehaviour:
   commandSenderId: 
   commandData: {x: 0, y: 0, z: 0}
   clientStyles: 536
+  rotate: 1
   rotationSpeed: 3
   rotateLeft: 0
   locationName: 
@@ -446,6 +448,7 @@ MonoBehaviour:
   commandSenderId: 
   commandData: {x: 0, y: 0, z: 0}
   clientStyles: 536
+  rotate: 1
   rotationSpeed: 3
   rotateLeft: 0
   locationName: 
@@ -584,6 +587,7 @@ MonoBehaviour:
   commandSenderId: 
   commandData: {x: 0, y: 0, z: 0}
   clientStyles: 536
+  rotate: 1
   rotationSpeed: 3
   rotateLeft: 1
   locationName: 
@@ -819,6 +823,7 @@ MonoBehaviour:
   commandSenderId: 
   commandData: {x: 0, y: 0, z: 0}
   clientStyles: 536
+  rotate: 1
   rotationSpeed: 3
   rotateLeft: 0
   locationName: 
@@ -1401,8 +1406,9 @@ MonoBehaviour:
   commandSenderId: 
   commandData: {x: 0, y: 0, z: 0}
   clientStyles: 1023
+  rotate: 0
   rotationSpeed: 3
-  rotateLeft: 0
+  rotateLeft: 1
   locationName: 
   shipingFacilities: []
 --- !u!114 &998373760
@@ -1756,6 +1762,7 @@ MonoBehaviour:
   commandSenderId: 
   commandData: {x: 0, y: 0, z: 0}
   clientStyles: 536
+  rotate: 1
   rotationSpeed: 3
   rotateLeft: 0
   locationName: 
@@ -2237,6 +2244,7 @@ MonoBehaviour:
   commandSenderId: 
   commandData: {x: 0, y: 0, z: 0}
   clientStyles: 536
+  rotate: 1
   rotationSpeed: 3
   rotateLeft: 0
   locationName: 
@@ -2435,6 +2443,7 @@ MonoBehaviour:
   commandSenderId: 
   commandData: {x: 0, y: 0, z: 0}
   clientStyles: 536
+  rotate: 1
   rotationSpeed: 3
   rotateLeft: 0
   locationName: 

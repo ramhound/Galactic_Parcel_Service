@@ -16,10 +16,11 @@ public class HubStation : Location {
     public GameObject hubMenu;
     public GameObject[] spawnables;
     public Transform spawnLocation;
-    public Ship cargoPickUp;
-    public Ship shuttlePickUp;
 
     public List<Ship> activeFleet = new List<Ship>();
+    public List<Ship> cargoPickUp = new List<Ship>();
+    public List<Ship> shuttlePickUp = new List<Ship>();
+
     public List<Package> shuttlePackages = new List<Package>();
     public List<Location> deliveryLocations = new List<Location>();
     public static List<Location> allHubStations = new List<Location>();
@@ -30,8 +31,8 @@ public class HubStation : Location {
 
     public override void Start() {
         base.Start();
-        if(discoveredLocations.Contains(this)) //lazy so for now just remove ourselves
-            discoveredLocations.Remove(this);
+        if(Location.discoveredLocations.Contains(this)) //lazy so for now just remove ourselves
+            Location.discoveredLocations.Remove(this);
         if(!HubStation.allHubStations.Contains(this))
             HubStation.allHubStations.Add(this);
         locationName = name;
@@ -60,11 +61,11 @@ public class HubStation : Location {
         }
 
         //broadcast pickup request to nearby ships not in route 
-        if(packages.Count > 0 && cargoPickUp == null) {
+        if(packages.Count > 0 && cargoPickUp.Count == 0) {
             BroadcastPickup();
         }
 
-        if(shuttlePackages.Count > 0 && shuttlePickUp == null) {
+        if(shuttlePackages.Count > 0 && shuttlePickUp.Count == 0) {
             BroadcastShuttlePickup();
         }
     }
@@ -95,10 +96,12 @@ public class HubStation : Location {
         //    return 1;
         //});
 
+        //i forgfot i wanted to make global commands
+
         foreach(var s in activeFleet) {
             if(s.atHub && s.type == ShipType.Cargo
                 && (s.currentCommand == GameCommand.None || s.currentCommand == GameCommand.Return)) {
-                cargoPickUp = s;
+                cargoPickUp.Add(s);
                 s.ReceiveCommand(new CommandPacket() {
                     command = GameCommand.PickUp,
                     senderId = name,
@@ -111,7 +114,7 @@ public class HubStation : Location {
         foreach(var s in activeFleet) {
             if(s.type == ShipType.Cargo
                 && (s.currentCommand == GameCommand.None || s.currentCommand == GameCommand.Return)) {
-                cargoPickUp = s;
+                cargoPickUp.Add(s);
                 s.ReceiveCommand(new CommandPacket() {
                     command = GameCommand.PickUp,
                     senderId = name,
@@ -124,9 +127,9 @@ public class HubStation : Location {
 
     private void BroadcastShuttlePickup() {
         foreach(var s in activeFleet) {
-            if(s.atHub && s.type == ShipType.Shuttle 
+            if(s.atHub && s.type == ShipType.Shuttle
                 && (s.currentCommand == GameCommand.None || s.currentCommand == GameCommand.Return)) {
-                shuttlePickUp = s;
+                shuttlePickUp.Add(s);
                 s.ReceiveCommand(new CommandPacket() {
                     command = GameCommand.PickUp,
                     senderId = name,
@@ -137,9 +140,9 @@ public class HubStation : Location {
         }
 
         foreach(var s in activeFleet) {
-            if(s.type == ShipType.Shuttle 
+            if(s.type == ShipType.Shuttle
                 && (s.currentCommand == GameCommand.None || s.currentCommand == GameCommand.Return)) {
-                shuttlePickUp = s;
+                shuttlePickUp.Add(s);
                 s.ReceiveCommand(new CommandPacket() {
                     command = GameCommand.PickUp,
                     senderId = name,
@@ -187,45 +190,47 @@ public class HubStation : Location {
     public override void LoadPackages(Ship ship) {
         //still need to consider the cargo size of the ship
 
+        int cargoIndex = ship.cargo.Count;
         if(ship.type == ShipType.Cargo) {
-            int cargoIndex = 0;
             for(int i = packages.Count - 1; i >= 0; i--) {
                 var locList = ship.routes[0].locations.ToList();
-                if(cargoIndex++ < ship.cargoSize) {
-                    if(locList.Contains(packages[i].receiver.location.position)) {
-                        ship.cargo.Add(packages[i]);
-                        packages.RemoveAt(i);
-                    }
-                } else break;
+                if(locList.Contains(packages[i].receiver.location.position)
+                        && cargoIndex < ship.cargoSize) {
+
+                    cargoIndex++;
+                    ship.cargo.Add(packages[i]);
+                    packages.RemoveAt(i);
+                }
             }
-        } else if(ship.type == ShipType.Shuttle) {
-            int cargoIndex = 0;
+            return;
+        }
+
+        if(ship.type == ShipType.Shuttle) {
             for(int i = shuttlePackages.Count - 1; i >= 0; i--) {
                 var locList = ship.routes[0].locations.ToList();
                 foreach(var sf in shuttlePackages[i].receiver.location.shipingFacilities) {
-                    if(cargoIndex++ < ship.cargoSize)
-                        if(locList.Contains(sf.position)) {
-                            ship.cargo.Add(shuttlePackages[i]);
-                            shuttlePackages.RemoveAt(i);
-                        }
+                    if(locList.Contains(sf.position) && cargoIndex < ship.cargoSize) {
+                        cargoIndex++;
+                        ship.cargo.Add(shuttlePackages[i]);
+                        shuttlePackages.RemoveAt(i);
+                    }
                 }
             }
+            return;
         }
-
-        //GeneratePackages();
     }
 
     public void ShuttleDelivery(Ship ship) {
         //this should load all packages from the shuttle ship to the hub station
         for(int i = ship.cargo.Count - 1; i >= 0; i--) {
-            if(ship.cargo[i].receiver.location.shipingFacilities.Contains(this)) {
+            if(deliveryLocations.Contains(ship.cargo[i].receiver.location)) {
                 packages.Add(ship.cargo[i]);
                 ship.cargo.RemoveAt(i);
             }
         }
 
-        //if(shuttlePackages.Count > 0)
-        //    LoadPackages(ship);
+        if(shuttlePackages.Count > 0)
+            LoadPackages(ship);
     }
 
     public void GeneratePackages() {
@@ -235,9 +240,9 @@ public class HubStation : Location {
         for(int i = 0; i < packageCount; i++) {
             var package = new Package() {
                 sender = ClientManager.GenerateClient(
-                    discoveredLocations[Random.Range(0, discoveredLocations.Count)]),
+                    Location.discoveredLocations[Random.Range(0, Location.discoveredLocations.Count)]),
                 receiver = ClientManager.GenerateClient(
-                    discoveredLocations[Random.Range(0, discoveredLocations.Count)]),
+                    Location.discoveredLocations[Random.Range(0, Location.discoveredLocations.Count)]),
                 fragility = 1f,
                 size = Vector2.one
             };
