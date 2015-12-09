@@ -180,7 +180,7 @@ public class HubStation : Location {
     }
 
     public override void DockWith(Ship ship) {
-        if(ship.currentCommand == GameCommand.PickUp || ship.currentCommand == GameCommand.Shuttle) {
+        if(ship.currentCommand == GameCommand.PickUp) {
             LoadPackages(ship);
         } else if(ship.currentCommand == GameCommand.Shuttle) {
             ShuttleDelivery(ship);
