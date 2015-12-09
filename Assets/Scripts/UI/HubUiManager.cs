@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class HubUiManager : MonoBehaviour {
     public HubStation selectedStation;
+    public Text cargoPackages;
+    public Text shuttlePackages;
 
     public void CreateShip(int shipType) {
         var packet = new CommandPacket() {
@@ -16,5 +19,10 @@ public class HubUiManager : MonoBehaviour {
 
     public void CreatePackage() {
         selectedStation.GeneratePackages();
+    }
+
+    private void Update() {
+        cargoPackages.text = "Cargo Packages: " + selectedStation.packages.Count;
+        shuttlePackages.text = "Shuttle Packages: " + selectedStation.shuttlePackages.Count;
     }
 }

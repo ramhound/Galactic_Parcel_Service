@@ -13,6 +13,7 @@ public class Ship : GameCommandHandler, ISelectable {
     public ShipController shipController;
     public Location dockedLocation;
     //public Vector2 cargoSpace = Vector2.one;
+    public int cargoSize = 3; //will rework this later
     public bool atHub = false;
 
     public void SetSelected(bool selected) {
@@ -25,15 +26,11 @@ public class Ship : GameCommandHandler, ISelectable {
         GamePlayer.localInstance.SetSelectedUnits(transform);
     }
 
-    public override void OnGameTick() {
-        base.OnGameTick();
-    }
-
     public override void ExecuteCommand(GameCommand command) {
         if(command == GameCommand.None) {
-            if(cargo.Count > 0)
+            if(cargo.Count > 0) {
                 StartDelivery();
-            else if(!atHub) {
+            } else if(!atHub) {
                 ReceiveCommand(new CommandPacket {
                     command = GameCommand.Return,
                     commandData = hubStation.position,
@@ -74,37 +71,52 @@ public class Ship : GameCommandHandler, ISelectable {
         shipController.Stop();
         dockedLocation = loc;
         loc.DockWith(this);
-    }
+    }  
 
     private void OnTriggerEnter2D(Collider2D col) {
         if(!NetworkClient.active || isServer) {
-            if(col.tag == "Hub Station" || col.tag == "Location") {
-                var loc = col.GetComponent<Location>();
-                if(commandSenderId == loc.locationName) {
-                    DockWith(loc);
+            if(col.tag == "Shield Collider") {
+                atHub = true;
+                var hs = col.GetComponentInParent<HubStation>();
+                if(currentCommand == GameCommand.PickUp && hs.name == commandSenderId) {
+                    //claim pick up
+                    if(type == ShipType.Cargo) {
+                        if(hs.cargoPickUp != this)
+                            CompletedCommand(GameCommand.Return);
+                    } else if(type == ShipType.Shuttle) {
+                        if(hs.shuttlePickUp != this)
+                            CompletedCommand(GameCommand.Return);
+                    }
+                } else if(currentCommand == GameCommand.Return && hs.name == commandSenderId) {
                     CompletedCommand(currentCommand);
                 }
-            } else if(col.tag == "Shield Collider") {
-                var loc = col.GetComponentInParent<Location>();
-                if(commandSenderId == loc.locationName) {
-                    atHub = true;
+
+            } else if(col.tag == "Hub Station" || col.tag == "Location") {
+                var loc = col.GetComponent<Location>();
+                if(currentCommand == GameCommand.PickUp) {
+                    DockWith(loc);
+
+                    var hs = (HubStation)loc;
+                    if(type == ShipType.Cargo) hs.cargoPickUp = null;
+                    else if(type == ShipType.Shuttle) hs.shuttlePickUp = null;
+
+                    CompletedCommand(currentCommand);
+
+                    if(cargo.Count > 0)
+                        StartDelivery();
+                } else if(currentCommand == GameCommand.Delivery || currentCommand == GameCommand.Shuttle) {
+                    DockWith(loc);
                     CompletedCommand(currentCommand);
                 }
             }
         }
     }
 
-    private void OnTriggerStay2D(Collider2D col) {
-
-    }
+    private void OnTriggerStay2D(Collider2D col) { }
 
     private void OnTriggerExit2D(Collider2D col) {
         if(!NetworkClient.active || isServer) {
-            if(col.tag == "Hub Station" || col.tag == "Location") {
-                //var loc = col.GetComponent<Location>();
-                //loc.UnDock(this);
-                dockedLocation = null;
-            } else if(col.tag == "Shield Collider") {
+            if(col.tag == "Shield Collider") {
                 atHub = false;
             }
         }

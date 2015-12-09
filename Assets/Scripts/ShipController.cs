@@ -58,6 +58,7 @@ public class ShipController : NetworkBehaviour {
 
     public void Stop() {
         body2D.velocity = Vector2.zero;
+        path = null;
     }
 
     //make this more generic and add it to pixel math

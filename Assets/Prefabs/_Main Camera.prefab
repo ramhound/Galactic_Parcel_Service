@@ -13,7 +13,7 @@ GameObject:
   - 114: {fileID: 11424960}
   m_Layer: 0
   m_Name: BG Camera
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,7 +35,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &149662
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,7 +87,7 @@ GameObject:
   - 4: {fileID: 448682}
   - 33: {fileID: 3390686}
   - 23: {fileID: 2346546}
-  - 61: {fileID: 6136388}
+  - 65: {fileID: 6594534}
   m_Layer: 9
   m_Name: Background
   m_TagString: Untagged
@@ -482,19 +482,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 115364}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!61 &6136388
-BoxCollider2D:
+--- !u!65 &6594534
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 178252}
-  m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!81 &8146374
 AudioListener:
   m_ObjectHideFlags: 1
@@ -521,9 +520,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 11451050}
-  zoomSensitivity: .400000006
-  zoomSpeed: .800000012
-  zoomMin: .100000001
+  zoomSensitivity: .300000012
+  zoomSpeed: .699999988
+  zoomMin: .0500000007
   zoomMax: .5
 --- !u!114 &11415094
 MonoBehaviour:
@@ -537,7 +536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targets: []
-  followSpeed: 50
+  followSpeed: 100
   zoomSpeedOut: .200000003
   zoomSpeedIn: .200000003
   maxTargets: 10
@@ -563,6 +562,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraSpeed: 40
+  xThresh: 4
+  yThresh: 4
 --- !u!114 &11424960
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -574,11 +575,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a92b5d748695fd44aac9feef17ba415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventType: 2
+  eventType: 0
   eventsGoToColliders: 0
   eventReceiverMask:
     serializedVersion: 2
-    m_Bits: 4294967263
+    m_Bits: 512
   debug: 0
   useMouse: 1
   useTouch: 1
@@ -652,7 +653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventType: 2
-  eventsGoToColliders: 0
+  eventsGoToColliders: 1
   eventReceiverMask:
     serializedVersion: 2
     m_Bits: 4294967263
