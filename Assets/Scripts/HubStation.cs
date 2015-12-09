@@ -32,8 +32,8 @@ public class HubStation : Location {
         base.Start();
         if(discoveredLocations.Contains(this)) //lazy so for now just remove ourselves
             discoveredLocations.Remove(this);
-        if(!allHubStations.Contains(this))
-            allHubStations.Add(this);
+        if(!HubStation.allHubStations.Contains(this))
+            HubStation.allHubStations.Add(this);
         locationName = name;
     }
 
@@ -82,7 +82,7 @@ public class HubStation : Location {
         shuttleRoutes.Add(new Route() {
             name = "Default",
             type = RouteType.Shuttle,
-            locations = Location.ToVectorArray(allHubStations)
+            locations = Location.ToVectorArray(HubStation.allHubStations)
         });
     }
 
@@ -98,13 +98,12 @@ public class HubStation : Location {
         foreach(var s in activeFleet) {
             if(s.atHub && s.type == ShipType.Cargo
                 && (s.currentCommand == GameCommand.None || s.currentCommand == GameCommand.Return)) {
+                cargoPickUp = s;
                 s.ReceiveCommand(new CommandPacket() {
                     command = GameCommand.PickUp,
                     senderId = name,
                     commandData = transform.position
                 });
-
-                cargoPickUp = s;
                 return;
             }
         }
@@ -112,12 +111,12 @@ public class HubStation : Location {
         foreach(var s in activeFleet) {
             if(s.type == ShipType.Cargo
                 && (s.currentCommand == GameCommand.None || s.currentCommand == GameCommand.Return)) {
+                cargoPickUp = s;
                 s.ReceiveCommand(new CommandPacket() {
                     command = GameCommand.PickUp,
                     senderId = name,
                     commandData = transform.position
                 });
-                cargoPickUp = s;
                 return;
             }
         }
@@ -127,12 +126,12 @@ public class HubStation : Location {
         foreach(var s in activeFleet) {
             if(s.atHub && s.type == ShipType.Shuttle 
                 && (s.currentCommand == GameCommand.None || s.currentCommand == GameCommand.Return)) {
+                shuttlePickUp = s;
                 s.ReceiveCommand(new CommandPacket() {
                     command = GameCommand.PickUp,
                     senderId = name,
                     commandData = transform.position
                 });
-                shuttlePickUp = s;
                 return;
             }
         }
@@ -140,12 +139,12 @@ public class HubStation : Location {
         foreach(var s in activeFleet) {
             if(s.type == ShipType.Shuttle 
                 && (s.currentCommand == GameCommand.None || s.currentCommand == GameCommand.Return)) {
+                shuttlePickUp = s;
                 s.ReceiveCommand(new CommandPacket() {
                     command = GameCommand.PickUp,
                     senderId = name,
                     commandData = transform.position
                 });
-                shuttlePickUp = s;
                 return;
             }
         }
@@ -156,8 +155,8 @@ public class HubStation : Location {
 
         if(currentCommand == GameCommand.Spawn) {
             var shipGo = Instantiate(spawnables[(int)(commandData.x)]
-                                     , spawnLocation.position, spawnables[(int)(commandData.x)]
-                                     .transform.rotation) as GameObject;
+                , spawnLocation.position, spawnables[(int)(commandData.x)]
+                .transform.rotation) as GameObject;
             var ship = shipGo.GetComponent<Ship>();
             ship.hubStation = this;
             activeFleet.Add(ship);
@@ -235,13 +234,15 @@ public class HubStation : Location {
 
         for(int i = 0; i < packageCount; i++) {
             var package = new Package() {
-                sender = ClientManager.GenerateClient(discoveredLocations[Random.Range(0, discoveredLocations.Count)]),
-                receiver = ClientManager.GenerateClient(discoveredLocations[Random.Range(0, discoveredLocations.Count)]),
+                sender = ClientManager.GenerateClient(
+                    discoveredLocations[Random.Range(0, discoveredLocations.Count)]),
+                receiver = ClientManager.GenerateClient(
+                    discoveredLocations[Random.Range(0, discoveredLocations.Count)]),
                 fragility = 1f,
                 size = Vector2.one
             };
 
-            if(package.receiver.location.shipingFacilities.Contains(this)) {
+            if(deliveryLocations.Contains(package.receiver.location)) {
                 packages.Add(package);
             } else {
                 shuttlePackages.Add(package);
