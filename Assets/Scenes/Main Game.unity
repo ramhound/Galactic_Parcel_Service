@@ -558,7 +558,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &443135164
 Transform:
   m_ObjectHideFlags: 0
@@ -1116,6 +1116,7 @@ Transform:
   - {fileID: 126458124}
   - {fileID: 1194104322}
   - {fileID: 443135164}
+  - {fileID: 998373758}
   m_Father: {fileID: 0}
   m_RootOrder: 8
 --- !u!1 &675755180
@@ -1384,12 +1385,12 @@ Transform:
   m_PrefabParentObject: {fileID: 416472, guid: 826688c153ccd234cb73a0a7162a359c, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 998373757}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21, y: 14, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: .803077638, w: .595874488}
+  m_LocalPosition: {x: -238.586151, y: 90.1402588, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1658262399}
-  m_RootOrder: 0
+  m_Father: {fileID: 652208658}
+  m_RootOrder: 8
 --- !u!114 &998373759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1405,8 +1406,8 @@ MonoBehaviour:
   currentCommand: 0
   commandSenderId: 
   commandData: {x: 0, y: 0, z: 0}
-  clientStyles: 1023
-  rotate: 0
+  clientStyles: 128
+  rotate: 1
   rotationSpeed: 3
   rotateLeft: 1
   locationName: 
@@ -2224,8 +2225,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: .803077638, w: .595874488}
   m_LocalPosition: {x: -219.100006, y: 74.0999985, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 998373758}
+  m_Children: []
   m_Father: {fileID: 652208658}
   m_RootOrder: 3
 --- !u!114 &1658262400

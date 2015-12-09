@@ -55,15 +55,19 @@ public class Ship : GameCommandHandler, ISelectable {
                 senderId = cargo[0].receiver.location.locationName
             });
 
-            Debug.Log(name + " Heading out for delivery");
+            Debug.Log(name + " Heading out to " + cargo[0].receiver.location + " for delivery");
         } else if(type == ShipType.Shuttle) {
+            //foreach(var sf in cargo[0].receiver.location.shipingFacilities) {
+            //    if(sf)
+            //}
+
             ReceiveCommand(new CommandPacket() {
                 command = GameCommand.Shuttle,
-                //i think this might be where it is getting stuck
+                //i think this might be where it is getting 
                 commandData = cargo[0].receiver.location.shipingFacilities[0].position,
                 senderId = cargo[0].receiver.location.shipingFacilities[0].name
             });
-            Debug.Log(name + " Heading out for shuttle");
+            Debug.Log(name + " Heading out " + cargo[0].receiver.location.shipingFacilities[0] + " for shuttle");
         }
     }
 
@@ -94,14 +98,20 @@ public class Ship : GameCommandHandler, ISelectable {
 
             } else if(col.tag == "Hub Station" || col.tag == "Location") {
                 var loc = col.GetComponent<Location>();
-                if(currentCommand == GameCommand.PickUp) {
+                if(currentCommand == GameCommand.PickUp && loc.name == commandSenderId) {
                     DockWith(loc);
                     CompletedCommand(currentCommand);
+
+                    Debug.Log(cargo.Count);
+                    if(cargo.Count > 0)
+                        Debug.Log(cargo[0].receiver.location);
 
                     var hs = (HubStation)loc;
                     if(type == ShipType.Cargo) hs.cargoPickUp.Remove(this);
                     else if(type == ShipType.Shuttle) hs.shuttlePickUp.Remove(this);
-                } else if(currentCommand == GameCommand.Delivery || currentCommand == GameCommand.Shuttle) {
+
+                } else if((currentCommand == GameCommand.Delivery || currentCommand == GameCommand.Shuttle)
+                        && commandSenderId == loc.name) {
                     DockWith(loc);
                     CompletedCommand(currentCommand);
                 }
