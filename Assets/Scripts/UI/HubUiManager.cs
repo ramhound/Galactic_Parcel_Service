@@ -2,19 +2,18 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class HubUiManager : MonoBehaviour {
+public class HubUIManager : MonoBehaviour {
     public HubStation selectedStation;
     public Text cargoPackages;
     public Text shuttlePackages;
 
     public void CreateShip(int shipType) {
-        var packet = new CommandPacket() {
+        GamePlayer.localInstance.SendCommandPacket(new CommandPacket() {
             senderId = GamePlayer.localInstance.name,
             uuids = new string[] { selectedStation.name },
             command = GameCommand.Spawn,
             commandData = new Vector3(shipType, 0, 0)
-        };
-        GamePlayer.localInstance.SendCommandPacket(packet);
+        });
     }
 
     public void CreatePackage() {

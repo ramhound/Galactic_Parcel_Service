@@ -144,7 +144,7 @@ MonoBehaviour:
   type: 1
   hubStation: {fileID: 0}
   shipController: {fileID: 11467462}
-  dockedLocation: {fileID: 0}
+  shipUI: {fileID: 0}
   cargoSize: 3
   atHub: 0
 --- !u!114 &11463186
@@ -301,6 +301,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Radius
       value: 4.21000004
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: shipUI
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

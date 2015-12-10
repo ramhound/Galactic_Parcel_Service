@@ -3,20 +3,25 @@ using UnityEngine.Networking;
 using System.Collections.Generic;
 using System.Collections;
 using System;
+using System.Linq;
 
 public enum ShipType { Cargo = 0, Shuttle, Speed, Defense, Special, Attack, Enemy_Attack, Enemy_Speed, Enemy_Defense }
 public class Ship : GameCommandHandler, ISelectable {
     public ShipType type = ShipType.Cargo;
     public HubStation hubStation;
     public SyncRouteList routes = new SyncRouteList();
-    public List<Package> cargo = new List<Package>(); //may need to sync
+    //may still want to sync the packages for ui purposes
+    public Dictionary<Location, List<Package>> cargo = new Dictionary<Location, List<Package>>();
     public ShipController shipController;
-    public Location dockedLocation;
-    //public Vector2 cargoSpace = Vector2.one;
+
+    public GameObject shipUI;
     public int cargoSize = 3; //will rework this later
     public bool atHub = false;
 
-    public void SetSelected(bool selected) { }
+    public void SetSelected(bool selected) {
+        shipUI.SetActive(selected);
+        shipUI.GetComponent<ShipUIManager>().selectedShip = selected ? this : null;
+    }
 
     public void OnClick() {
         GamePlayer.localInstance.SetSelectedUnits(transform);
@@ -24,7 +29,6 @@ public class Ship : GameCommandHandler, ISelectable {
 
     public override void ExecuteCommand(GameCommand command) {
         if(command == GameCommand.None) {
-            Debug.Log(currentCommand);
             if(cargo.Count > 0) {
                 StartDelivery();
             } else if(!atHub) {
@@ -46,32 +50,29 @@ public class Ship : GameCommandHandler, ISelectable {
 
     private void StartDelivery() {
         if(type == ShipType.Cargo) {
+            var loc = cargo.Keys.First();
             ReceiveCommand(new CommandPacket() {
                 command = GameCommand.Delivery,
-                commandData = cargo[0].receiver.location.transform.position,
-                senderId = cargo[0].receiver.location.locationName
+                commandData = loc.position,
+                senderId = loc.locationName
             });
 
-            Debug.Log(name + " Heading out to " + cargo[0].receiver.location + " for delivery");
+            Debug.Log(name + " Heading out to " + loc.locationName + " for delivery");
         } else if(type == ShipType.Shuttle) {
-            //foreach(var sf in cargo[0].receiver.location.shipingFacilities) {
-            //    if(sf)
-            //}
-
+            var loc = cargo.Keys.First();
             ReceiveCommand(new CommandPacket() {
                 command = GameCommand.Shuttle,
                 //i think this might be where it is getting 
-                commandData = cargo[0].receiver.location.shipingFacilities[0].position,
-                senderId = cargo[0].receiver.location.shipingFacilities[0].name
+                commandData = loc.position,
+                senderId = loc.name
             });
-            Debug.Log(name + " Heading out " + cargo[0].receiver.location.shipingFacilities[0] + " for shuttle");
+            Debug.Log(name + " Heading out " + loc.locationName + " for shuttle");
         }
     }
 
     private void DockWith(Location loc) {
         //anim for dock
         shipController.Stop();
-        dockedLocation = loc;
         loc.DockWith(this);
     }
 
@@ -109,6 +110,10 @@ public class Ship : GameCommandHandler, ISelectable {
             }
         }
     }
+
+    //public void AssignRoute(Route route) {
+    //    routes.Add(route);
+    //}
 
     private void OnTriggerExit2D(Collider2D col) {
         if(!NetworkClient.active || isServer) {

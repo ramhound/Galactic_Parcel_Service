@@ -35,7 +35,7 @@ public class Location : GameCommandHandler, ISelectable {
         GamePlayer.localInstance.SetSelectedUnits(transform);
     }
 
-    public virtual void SetSelected(bool selected) {}
+    public virtual void SetSelected(bool selected) { }
 
     public override void OnGameTick() {
         base.OnGameTick();
@@ -43,12 +43,18 @@ public class Location : GameCommandHandler, ISelectable {
 
     public virtual void DockWith(Ship ship) {
         if(ship.currentCommand == GameCommand.Delivery) {
-            for(int i = ship.cargo.Count - 1; i >= 0; i--) {
-                if(ship.cargo[i].receiver.location == this) {
-                    ship.cargo[i].receiver.PackageDelivered(ship.cargo[i]);
-                    ship.cargo.RemoveAt(i);
+            Location loc = null;
+            foreach(var kv in ship.cargo) {
+                if(kv.Key == this) {
+                    foreach(var p in kv.Value) {
+                        p.receiver.PackageDelivered(p);
+                        loc = this;
+                    }
                 }
+                break;
             }
+            if(loc != null)
+                ship.cargo.Remove(loc);
         }
     }
 
