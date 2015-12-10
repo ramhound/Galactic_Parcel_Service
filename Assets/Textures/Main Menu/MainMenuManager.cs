@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 
 public class MainMenuManager : MonoBehaviour {
+    public AudioSource audioSource;
+    public AudioClip loopClip;
+
     public void SinglePlayerClicked() {
         //open slide menu for loading worlds
         //Application.LoadLevel("Main Game"); //maybe use load level async for no delay. 
@@ -17,5 +20,13 @@ public class MainMenuManager : MonoBehaviour {
         GameNetworkDiscovery.instance.Initialize();
         GameNetworkDiscovery.instance.StartAsClient();
         GameNetworkDiscovery.instance.showGUI = true;
+    }
+
+    private void Update() {
+        if(!audioSource.isPlaying) {
+            audioSource.clip = loopClip;
+            audioSource.loop = true;
+            audioSource.Play();
+        }
     }
 }

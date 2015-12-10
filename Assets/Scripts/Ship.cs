@@ -85,6 +85,11 @@ public class Ship : GameCommandHandler, ISelectable {
                     if(currentCommand == GameCommand.PickUp && hs.name == commandSenderId) {
                         if(!hs.cargoPickUp.Contains(this))
                             CompletedCommand(GameCommand.Return);
+                        else if((type == ShipType.Cargo && hs.packages.Count == 0)
+                                || (type == ShipType.Shuttle) && hs.shuttlePackages.Count == 0) {
+                            CompletedCommand(GameCommand.Return);
+                            hs.cargoPickUp.Remove(this);
+                        }
                     } else if(currentCommand == GameCommand.Return && hs.name == commandSenderId) {
                         CompletedCommand(currentCommand);
                     }
