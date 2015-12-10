@@ -19,7 +19,6 @@ public class HubStation : Location {
 
     public List<Ship> activeFleet = new List<Ship>();
     public List<Ship> cargoPickUp = new List<Ship>();
-    public List<Ship> shuttlePickUp = new List<Ship>();
 
     public List<Package> shuttlePackages = new List<Package>();
     public List<Location> deliveryLocations = new List<Location>();
@@ -61,12 +60,12 @@ public class HubStation : Location {
         }
 
         //broadcast pickup request to nearby ships not in route 
-        if(packages.Count > 0 && cargoPickUp.Count == 0) {
-            BroadcastPickup();
+        if(packages.Count > 0) {
+            BroadcastPickup(ShipType.Cargo);
         }
 
-        if(shuttlePackages.Count > 0 && shuttlePickUp.Count == 0) {
-            BroadcastShuttlePickup();
+        if(shuttlePackages.Count > 0) {
+            BroadcastPickup(ShipType.Shuttle);
         }
     }
 
@@ -87,7 +86,7 @@ public class HubStation : Location {
         });
     }
 
-    private void BroadcastPickup() {
+    private void BroadcastPickup(ShipType type) {
         //activeFleet.Sort(delegate(Ship x, Ship y) {
         //    var xDist = Vector2.Distance(x.transform.position, transform.position);
         //    var yDist = Vector2.Distance(y.transform.position, transform.position);
@@ -96,61 +95,31 @@ public class HubStation : Location {
         //    return 1;
         //});
 
-        //i forgfot i wanted to make global commands
-
-        foreach(var s in activeFleet) {
-            if(s.atHub && s.type == ShipType.Cargo
-                && (s.currentCommand == GameCommand.None || s.currentCommand == GameCommand.Return)) {
-                cargoPickUp.Add(s);
-                s.ReceiveCommand(new CommandPacket() {
-                    command = GameCommand.PickUp,
-                    senderId = name,
-                    commandData = transform.position
-                });
-                return;
+            foreach(var s in activeFleet) {
+                if(s.atHub && s.type == type
+                    && (s.currentCommand == GameCommand.None || s.currentCommand == GameCommand.Return)) {
+                    cargoPickUp.Add(s);
+                    s.ReceiveCommand(new CommandPacket() {
+                        command = GameCommand.PickUp,
+                        senderId = name,
+                        commandData = transform.position
+                    });
+                    return;
+                }
             }
-        }
 
-        foreach(var s in activeFleet) {
-            if(s.type == ShipType.Cargo
-                && (s.currentCommand == GameCommand.None || s.currentCommand == GameCommand.Return)) {
-                cargoPickUp.Add(s);
-                s.ReceiveCommand(new CommandPacket() {
-                    command = GameCommand.PickUp,
-                    senderId = name,
-                    commandData = transform.position
-                });
-                return;
+            foreach(var s in activeFleet) {
+                if(s.type == type
+                    && (s.currentCommand == GameCommand.None || s.currentCommand == GameCommand.Return)) {
+                    cargoPickUp.Add(s);
+                    s.ReceiveCommand(new CommandPacket() {
+                        command = GameCommand.PickUp,
+                        senderId = name,
+                        commandData = transform.position
+                    });
+                    return;
+                }
             }
-        }
-    }
-
-    private void BroadcastShuttlePickup() {
-        foreach(var s in activeFleet) {
-            if(s.atHub && s.type == ShipType.Shuttle
-                && (s.currentCommand == GameCommand.None || s.currentCommand == GameCommand.Return)) {
-                shuttlePickUp.Add(s);
-                s.ReceiveCommand(new CommandPacket() {
-                    command = GameCommand.PickUp,
-                    senderId = name,
-                    commandData = transform.position
-                });
-                return;
-            }
-        }
-
-        foreach(var s in activeFleet) {
-            if(s.type == ShipType.Shuttle
-                && (s.currentCommand == GameCommand.None || s.currentCommand == GameCommand.Return)) {
-                shuttlePickUp.Add(s);
-                s.ReceiveCommand(new CommandPacket() {
-                    command = GameCommand.PickUp,
-                    senderId = name,
-                    commandData = transform.position
-                });
-                return;
-            }
-        }
     }
 
     public override void ExecuteCommand(GameCommand command) {
@@ -175,10 +144,6 @@ public class HubStation : Location {
         }
     }
 
-    public override void ReceiveCommand(CommandPacket packet) {
-        base.ReceiveCommand(packet);
-    }
-
     public override void DockWith(Ship ship) {
         if(ship.currentCommand == GameCommand.PickUp) {
             LoadPackages(ship);
@@ -187,9 +152,7 @@ public class HubStation : Location {
         }
     }
 
-    public override void LoadPackages(Ship ship) {
-        //still need to consider the cargo size of the ship
-
+    public override void LoadPackages(Ship ship) { 
         int cargoIndex = ship.cargo.Count;
         if(ship.type == ShipType.Cargo) {
             for(int i = packages.Count - 1; i >= 0; i--) {
@@ -256,7 +219,5 @@ public class HubStation : Location {
         //sort the package list when there is a sorting facility on this hub
     }
 
-    public override void OnTriggerEnter2D(Collider2D col) {
-        //left blank for override
-    }
+    public override void OnTriggerEnter2D(Collider2D col) { /*left blank for the override*/ }
 }

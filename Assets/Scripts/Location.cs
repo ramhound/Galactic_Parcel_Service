@@ -45,7 +45,7 @@ public class Location : GameCommandHandler, ISelectable {
         if(ship.currentCommand == GameCommand.Delivery) {
             for(int i = ship.cargo.Count - 1; i >= 0; i--) {
                 if(ship.cargo[i].receiver.location == this) {
-                    ship.cargo[i].receiver.PackageDelivered();
+                    ship.cargo[i].receiver.PackageDelivered(ship.cargo[i]);
                     ship.cargo.RemoveAt(i);
                 }
             }
@@ -59,19 +59,19 @@ public class Location : GameCommandHandler, ISelectable {
         transform.rotation = Quaternion.Euler(rot.x, rot.y, rot.z + (rotateLeft ? (rotationSpeed * Time.deltaTime) : -(rotationSpeed * Time.deltaTime)));
     }
 
-    public static Vector2[] ToVectorArray(List<Location> locs) {
-        var tl = new List<Vector2>();
-        foreach(var l in locs) {
-            tl.Add(l.position);
-        }
-        return tl.ToArray();
-    }
-
     public virtual void OnTriggerEnter2D(Collider2D col) {
         if(col.tag == "Delivery Zone Collider") {
             var sf = col.GetComponentInParent<HubStation>();
             if(!shipingFacilities.Contains(sf))
                 shipingFacilities.Add(sf);
         }
+    }
+
+    public static Vector2[] ToVectorArray(List<Location> locs) {
+        var tl = new List<Vector2>();
+        foreach(var l in locs) {
+            tl.Add(l.position);
+        }
+        return tl.ToArray();
     }
 }

@@ -16,11 +16,7 @@ public class Ship : GameCommandHandler, ISelectable {
     public int cargoSize = 3; //will rework this later
     public bool atHub = false;
 
-    public void SetSelected(bool selected) {
-        if(selected) {
-
-        }
-    }
+    public void SetSelected(bool selected) { }
 
     public void OnClick() {
         GamePlayer.localInstance.SetSelectedUnits(transform);
@@ -28,6 +24,7 @@ public class Ship : GameCommandHandler, ISelectable {
 
     public override void ExecuteCommand(GameCommand command) {
         if(command == GameCommand.None) {
+            Debug.Log(currentCommand);
             if(cargo.Count > 0) {
                 StartDelivery();
             } else if(!atHub) {
@@ -76,24 +73,20 @@ public class Ship : GameCommandHandler, ISelectable {
         shipController.Stop();
         dockedLocation = loc;
         loc.DockWith(this);
-    }  
+    }
 
     private void OnTriggerEnter2D(Collider2D col) {
         if(!NetworkClient.active || isServer) {
             if(col.tag == "Shield Collider") {
-                atHub = true;
                 var hs = col.GetComponentInParent<HubStation>();
-                if(currentCommand == GameCommand.PickUp && hs.name == commandSenderId) {
-                    //claim pick up
-                    if(type == ShipType.Cargo) {
+                if(hs.name == hubStation.name) {
+                    atHub = true;
+                    if(currentCommand == GameCommand.PickUp && hs.name == commandSenderId) {
                         if(!hs.cargoPickUp.Contains(this))
                             CompletedCommand(GameCommand.Return);
-                    } else if(type == ShipType.Shuttle) {
-                        if(!hs.shuttlePickUp.Contains(this))
-                            CompletedCommand(GameCommand.Return);
+                    } else if(currentCommand == GameCommand.Return && hs.name == commandSenderId) {
+                        CompletedCommand(currentCommand);
                     }
-                } else if(currentCommand == GameCommand.Return && hs.name == commandSenderId) {
-                    CompletedCommand(currentCommand);
                 }
 
             } else if(col.tag == "Hub Station" || col.tag == "Location") {
@@ -102,13 +95,8 @@ public class Ship : GameCommandHandler, ISelectable {
                     DockWith(loc);
                     CompletedCommand(currentCommand);
 
-                    Debug.Log(cargo.Count);
-                    if(cargo.Count > 0)
-                        Debug.Log(cargo[0].receiver.location);
-
                     var hs = (HubStation)loc;
-                    if(type == ShipType.Cargo) hs.cargoPickUp.Remove(this);
-                    else if(type == ShipType.Shuttle) hs.shuttlePickUp.Remove(this);
+                    hs.cargoPickUp.Remove(this);
 
                 } else if((currentCommand == GameCommand.Delivery || currentCommand == GameCommand.Shuttle)
                         && commandSenderId == loc.name) {
@@ -122,15 +110,16 @@ public class Ship : GameCommandHandler, ISelectable {
         }
     }
 
-    private void OnTriggerStay2D(Collider2D col) { }
-
     private void OnTriggerExit2D(Collider2D col) {
         if(!NetworkClient.active || isServer) {
             if(col.tag == "Shield Collider") {
-                atHub = false;
+                var hs = col.GetComponentInParent<HubStation>();
+                if(hs == hubStation)
+                    atHub = false;
             }
         }
     }
+    private void OnTriggerStay2D(Collider2D col) { }
 }
 public struct ShipStats {
     public int health;

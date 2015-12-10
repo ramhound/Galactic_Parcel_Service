@@ -8,7 +8,7 @@ public class Client {
     public Vector2 profilePicIndex;
 
     //called on the sender client when the package arrives
-    public void PackageDelivered() {
+    public void PackageDelivered(Package package) {
         //not wokring yet
     }
 }
