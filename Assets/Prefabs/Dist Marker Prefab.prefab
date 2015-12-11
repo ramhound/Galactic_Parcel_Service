@@ -170,6 +170,8 @@ MonoBehaviour:
   packageCountLabel: {fileID: 11444346}
   distanceLabel: {fileID: 0}
   loc: {fileID: 0}
+  distanceFromShip: {x: 50, y: 500}
+  rotationSpeed: 10
   packageCount: 0
   _colors:
   - {r: 1, g: 0, b: 0, a: 1}
@@ -270,7 +272,19 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.y
+      value: 1.59600997
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.x
+      value: 1.59600997
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Radius
+      value: 54
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 175140}

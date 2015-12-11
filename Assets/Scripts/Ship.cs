@@ -104,6 +104,9 @@ public class Ship : GameCommandHandler, ISelectable {
                 if(currentCommand == GameCommand.PickUp && loc.name == commandSenderId) {
                     DockWith(loc);
                     CompletedCommand(currentCommand);
+                    if(shipUI.GetComponent<ShipUIManager>().selectedShip == this) {
+                        shipUI.GetComponent<ShipUIManager>().CreateDistanceMarkers();
+                    }
 
                     var hs = (HubStation)loc;
                     hs.cargoPickUp.Remove(this);
@@ -112,8 +115,9 @@ public class Ship : GameCommandHandler, ISelectable {
                         && commandSenderId == loc.name) {
                     DockWith(loc);
                     CompletedCommand(currentCommand);
-                    Debug.Log("Distance Ticks: " + distTicks);
-                    distTicks = 0;
+                    shipUI.GetComponent<ShipUIManager>().RemoveMarkerFor(loc);
+
+                    distTicks = 0;//testing something
                 }
 
                 if(cargo.Count > 0)

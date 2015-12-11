@@ -9,34 +9,21 @@ public class DistanceMarker : MonoBehaviour {
     public Text packageCountLabel;
     public Text distanceLabel;
     public Location loc;
+    public Vector2 distanceFromShip = new Vector2(50, 500);
+    public float rotationSpeed = 10;
     public int packageCount;
 
     public Color[] _colors = new Color[] { Color.red, Color.yellow, Color.green };
     public static Color[] colors;
 
     private void Update() {
+        var distance = Vector2.Distance(selectedShip.transform.position, loc.position);
         //distanceLabel.text = "" + Vector2.Distance(selectedShip.transform.position, loc.position);
+        transform.rotation = RotateTowards(transform, loc.position);
 
-        Vector3 v3Pos = Camera.main.WorldToViewportPoint(loc.position);
-
-        if(v3Pos.x >= 0.0f && v3Pos.x <= 1.0f && v3Pos.y >= 0.0f && v3Pos.y <= 1.0f)
-            return; // Object center is visible
-
-        v3Pos.x -= 0.5f;  // Translate to use center of viewport
-        v3Pos.y -= 0.5f;
-        v3Pos.z = 0;      // I think I can do this rather than do a 
-        //   a full projection onto the plane
-
-        float fAngle = Mathf.Atan2(v3Pos.x, v3Pos.y);
-        transform.localEulerAngles = new Vector3(0.0f, 0.0f, -fAngle * Mathf.Rad2Deg);
-
-        v3Pos.x = 0.42f * Mathf.Sin(fAngle) + 0.5f;  // Place on ellipse touching 
-        v3Pos.y = 0.42f * Mathf.Cos(fAngle) + 0.5f;  //   side of viewport
-        v3Pos.z = Camera.main.nearClipPlane + 0.01f;  // Looking from neg to pos Z;
-
-        var locd = Camera.main.ViewportToWorldPoint(v3Pos);
-        //transform.position = Camera.main.ScreenToWorldPoint(Camera.main.WorldToScreenPoint(locd));
-        transform.position = v3Pos;
+        var scale = Mathf.Clamp(distance*10, distanceFromShip.x, distanceFromShip.y);
+        var axis = (Vector3)loc.position - selectedShip.transform.position;
+        transform.localPosition = axis.normalized * scale;
 
         //change colour based on client package durability
 
@@ -44,6 +31,10 @@ public class DistanceMarker : MonoBehaviour {
         //ColourMarkers();
         //PositionDistanceText();
     }
+
+    //private void OnClick() {
+    //    GamePlayer.localInstance.SetSelectedUnits(loc.transform);
+    //}
 
     //private void ColourMarkers() {
     //    if(_colors.Length == 0) return;
@@ -67,4 +58,10 @@ public class DistanceMarker : MonoBehaviour {
     //    distanceLabel.color = c;
     //    _distance.color = c;
     //}
+
+    private Quaternion RotateTowards(Transform trans, Vector2 point) {
+        float angle = Mathf.Atan2(point.y, point.x) * Mathf.Rad2Deg - 90;
+        Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+        return Quaternion.Slerp(trans.rotation, q, Time.deltaTime * rotationSpeed);
+    }
 }
