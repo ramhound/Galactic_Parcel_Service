@@ -7,9 +7,9 @@ using System;
 public class ShipController : NetworkBehaviour {
     private Seeker seeker;
     private Path path;
-    private Rigidbody2D body2D;
     private Ship ship;
     private int nodeIndex = 0;
+    public Rigidbody2D body2D;
 
     public float speed = 100f;
     public float rotationSpeed = 30f;
@@ -54,6 +54,7 @@ public class ShipController : NetworkBehaviour {
 
     public void SetDestination(Vector2 destination) {
         seeker.StartPath(transform.position, destination, OnPathComplete);
+        var dist = Vector2.Distance(transform.position, ship.commandData);
     }
 
     public void Stop() {

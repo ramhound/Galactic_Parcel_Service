@@ -5,12 +5,14 @@ using System.Collections.Generic;
 
 public class GameTimer : NetworkBehaviour {
     public delegate void GameTick();
-    private static GameTimer instance;
-    private static bool stopRequested = false;
+    public static GameTimer instance;
     public static GameTick onGameTick;
-    public static int currentTick = 0;
     public static List<GameCommandHandler> gameCmdHandlers = new List<GameCommandHandler>();
-    public float tickRate = .2f;
+
+    private static bool stopRequested = false;
+    public static int currentTick = 0;
+    public float ticksPerSecond = 5f;
+    private float tickRate = .2f;
 
     private void Start() {
         if(!NetworkClient.active) {
@@ -30,6 +32,7 @@ public class GameTimer : NetworkBehaviour {
     }
 
     private IEnumerator Timer() {
+        tickRate = 1f / ticksPerSecond;
         while(!stopRequested) {
             yield return new WaitForSeconds(tickRate);
             currentTick++;

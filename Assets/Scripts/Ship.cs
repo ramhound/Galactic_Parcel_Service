@@ -17,10 +17,11 @@ public class Ship : GameCommandHandler, ISelectable {
     public GameObject shipUI;
     public int cargoSize = 3; //will rework this later
     public bool atHub = false;
+    public int distTicks = 0;
 
     public void SetSelected(bool selected) {
-        shipUI.SetActive(selected);
         shipUI.GetComponent<ShipUIManager>().selectedShip = selected ? this : null;
+        shipUI.SetActive(selected);
     }
 
     public void OnClick() {
@@ -40,6 +41,7 @@ public class Ship : GameCommandHandler, ISelectable {
             }
         } else {
             shipController.SetDestination(commandData);
+            distTicks++;
         }
     }
 
@@ -68,6 +70,8 @@ public class Ship : GameCommandHandler, ISelectable {
             });
             Debug.Log(name + " Heading out " + loc.locationName + " for shuttle");
         }
+
+        distTicks = 0;
     }
 
     private void DockWith(Location loc) {
@@ -108,6 +112,8 @@ public class Ship : GameCommandHandler, ISelectable {
                         && commandSenderId == loc.name) {
                     DockWith(loc);
                     CompletedCommand(currentCommand);
+                    Debug.Log("Distance Ticks: " + distTicks);
+                    distTicks = 0;
                 }
 
                 if(cargo.Count > 0)
