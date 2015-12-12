@@ -173,6 +173,7 @@ public class HubStation : Location {
                 ship.routes = shuttleRoutes;
             } else ship.routes = explorerRoutes;
 
+            GamePlayer.localInstance.DisplayBanner(new Vector2(-1, 0), ship.type.ToString(), Banner.BannerType.Message);
             CompletedCommand(command);
         }
     }
