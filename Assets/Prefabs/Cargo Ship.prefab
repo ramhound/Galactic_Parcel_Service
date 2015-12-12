@@ -119,8 +119,8 @@ MonoBehaviour:
   priority: 1
   smoothType: 0
   subdivisions: 2
-  iterations: 2
-  strength: 1
+  iterations: 10
+  strength: 0
   uniformLength: 1
   maxSegmentLength: 1000
   bezierTangentLength: .400000006
@@ -147,6 +147,7 @@ MonoBehaviour:
   shipUI: {fileID: 0}
   cargoSize: 3
   atHub: 0
+  distTicks: 0
 --- !u!114 &11463186
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -186,6 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 304aed5fafc464a49b099bc4c57e4e2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  body2D: {fileID: 0}
   speed: 300
   rotationSpeed: 3
   endPointDistance: .100000001
@@ -271,7 +273,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: strength
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: speed
@@ -312,6 +314,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: smoothType
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: iterations
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

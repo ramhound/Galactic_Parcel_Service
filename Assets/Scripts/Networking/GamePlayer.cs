@@ -82,7 +82,7 @@ public class GamePlayer : GameCommandHandler {
         selectedUnits = selections;
 
         //camera should update here
-        Camera.main.GetComponent<CameraFollow>().targets = selectedUnits;
+        Camera.main.GetComponent<CameraFollow>().SetTargets(selectedUnits);
     }
 
     public void DisplayBanner(Vector2 characterIndex, string text, Banner.BannerType bannerType) {

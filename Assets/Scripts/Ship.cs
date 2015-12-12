@@ -19,6 +19,15 @@ public class Ship : GameCommandHandler, ISelectable {
     public bool atHub = false;
     public int distTicks = 0;
 
+    public int CargoCount {
+        get {
+            int tc = 0;
+            foreach(var kv in cargo) {
+                tc += kv.Value.Count;
+            } return tc;
+        }
+    }
+
     public void SetSelected(bool selected) {
         shipUI.GetComponent<ShipUIManager>().selectedShip = selected ? this : null;
         shipUI.SetActive(selected);
@@ -86,15 +95,8 @@ public class Ship : GameCommandHandler, ISelectable {
                 var hs = col.GetComponentInParent<HubStation>();
                 if(hs.name == hubStation.name) {
                     atHub = true;
-                    if(currentCommand == GameCommand.PickUp && hs.name == commandSenderId) {
-                        if(!hs.cargoPickUp.Contains(this))
-                            CompletedCommand(GameCommand.Return);
-                        else if((type == ShipType.Cargo && hs.packages.Count == 0)
-                                || (type == ShipType.Shuttle) && hs.shuttlePackages.Count == 0) {
-                            CompletedCommand(GameCommand.Return);
-                            hs.cargoPickUp.Remove(this);
-                        }
-                    } else if(currentCommand == GameCommand.Return && hs.name == commandSenderId) {
+
+                    if(currentCommand == GameCommand.Return && hs.name == commandSenderId) {
                         CompletedCommand(currentCommand);
                     }
                 }

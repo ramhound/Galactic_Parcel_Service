@@ -147,6 +147,7 @@ MonoBehaviour:
   shipUI: {fileID: 0}
   cargoSize: 3
   atHub: 0
+  distTicks: 0
 --- !u!114 &11463186
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -186,6 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 304aed5fafc464a49b099bc4c57e4e2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  body2D: {fileID: 0}
   speed: 300
   rotationSpeed: 3
   endPointDistance: .100000001

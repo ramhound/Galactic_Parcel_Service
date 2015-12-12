@@ -20,9 +20,19 @@ public class HubStation : Location {
     public List<Ship> activeFleet = new List<Ship>();
     public List<Ship> cargoPickUp = new List<Ship>();
 
+    //packages Inherited from Location 
     public List<Package> shuttlePackages = new List<Package>();
     public List<Location> deliveryLocations = new List<Location>();
     public static List<Location> allHubStations = new List<Location>();
+    public int claimedPackages = 0;
+    public int PackagesAvail {
+        get { return packages.Count - claimedPackages; }
+    }
+
+    public int claimedShuttlePackages = 0;
+    public int ShuttlePackagesAvail {
+        get { return shuttlePackages.Count - claimedShuttlePackages; }
+    }
 
     public SyncRouteList cargoRoutes = new SyncRouteList();
     public SyncRouteList shuttleRoutes = new SyncRouteList();
@@ -35,6 +45,7 @@ public class HubStation : Location {
         if(!HubStation.allHubStations.Contains(this))
             HubStation.allHubStations.Add(this);
         locationName = name;
+        cargoPickUp.Clear();
     }
 
     public override void SetSelected(bool selected) {
@@ -60,11 +71,11 @@ public class HubStation : Location {
         }
 
         //broadcast pickup request to nearby ships not in route 
-        if(packages.Count > 0) {
+        if(PackagesAvail > 0) {
             BroadcastPickup(ShipType.Cargo);
         }
 
-        if(shuttlePackages.Count > 0) {
+        if(ShuttlePackagesAvail > 0) {
             BroadcastPickup(ShipType.Shuttle);
         }
     }
@@ -98,12 +109,23 @@ public class HubStation : Location {
         foreach(var s in activeFleet) {
             if(s.atHub && s.type == type
                 && (s.currentCommand == GameCommand.None || s.currentCommand == GameCommand.Return)) {
+                //i need how many packages this ship is able to pick up and check it to what 
+                //the hub has available so i can keep the claimed packeges count accurate
+                int loadCount = s.cargoSize - s.CargoCount;
+                if(s.type == ShipType.Cargo) {
+                    claimedPackages += loadCount > PackagesAvail ? PackagesAvail : loadCount;
+                } else {
+                    claimedShuttlePackages += loadCount > ShuttlePackagesAvail 
+                        ? ShuttlePackagesAvail : loadCount;
+                }
+
                 cargoPickUp.Add(s);
                 s.ReceiveCommand(new CommandPacket() {
                     command = GameCommand.PickUp,
                     senderId = name,
                     commandData = transform.position
                 });
+
                 return;
             }
         }
@@ -111,12 +133,22 @@ public class HubStation : Location {
         foreach(var s in activeFleet) {
             if(s.type == type
                 && (s.currentCommand == GameCommand.None || s.currentCommand == GameCommand.Return)) {
+
+                int loadCount = s.cargoSize - s.CargoCount;
+                if(s.type == ShipType.Cargo) {
+                    claimedPackages += loadCount > PackagesAvail ? PackagesAvail : loadCount;
+                } else {
+                    claimedShuttlePackages += loadCount > ShuttlePackagesAvail
+                        ? ShuttlePackagesAvail : loadCount;
+                }
+
                 cargoPickUp.Add(s);
                 s.ReceiveCommand(new CommandPacket() {
                     command = GameCommand.PickUp,
                     senderId = name,
                     commandData = transform.position
                 });
+
                 return;
             }
         }
@@ -139,7 +171,6 @@ public class HubStation : Location {
                 ship.routes = cargoRoutes;
             else if(ship.type == ShipType.Shuttle) {
                 ship.routes = shuttleRoutes;
-                //foreach()
             } else ship.routes = explorerRoutes;
 
             CompletedCommand(command);
@@ -156,10 +187,7 @@ public class HubStation : Location {
 
     public override void LoadPackages(Ship ship) {
         //iterate over all keys in cargo dic totaling up the packages
-        int cargoIndex = 0;
-        foreach(var kv in ship.cargo) {
-            cargoIndex += kv.Value.Count;
-        }
+        int cargoIndex = ship.CargoCount;
 
         List<Package> loadList = new List<Package>(ship.cargoSize);
         if(ship.type == ShipType.Cargo) {
@@ -173,6 +201,8 @@ public class HubStation : Location {
                     packages.RemoveAt(i);
                 }
             }
+
+            claimedPackages -= loadList.Count;
 
             foreach(var p in loadList) {
                 if(ship.cargo.ContainsKey(p.receiver.location))
@@ -196,6 +226,8 @@ public class HubStation : Location {
                     }
                 }
             }
+
+            claimedShuttlePackages -= loadList.Count;
 
             foreach(var p in loadList) {
                 if(ship.cargo.ContainsKey(p.receiver.location.shipingFacilities[0]))
@@ -232,8 +264,14 @@ public class HubStation : Location {
         //        ship.cargo.RemoveAt(i);
         //    }
         //}
-        if(shuttlePackages.Count > 0)
-            LoadPackages(ship);
+
+        //need to rework the broadcas fro shuttle and issue #6 will finally be fixed
+        //but for now it is working fine as long as i dont have the shuttle pick up packages from the hub
+        //it just delivered to
+
+        //if(shuttlePackages.Count > 0)
+        //    LoadPackages(ship);
+        UpdateAvailablePackages();
     }
 
     public void GeneratePackages() {
@@ -256,7 +294,24 @@ public class HubStation : Location {
                 shuttlePackages.Add(package);
             }
         }
+
+        UpdateAvailablePackages();
         //sort the package list when there is a sorting facility on this hub
+    }
+
+    public void UpdateAvailablePackages() {
+        //prob a better way buty im despriote
+        claimedPackages = 0;
+        claimedShuttlePackages = 0;
+        foreach(var ship in cargoPickUp) {
+            int loadCount = ship.cargoSize - ship.CargoCount;
+            if(ship.type == ShipType.Cargo) {
+                claimedPackages += loadCount > PackagesAvail ? PackagesAvail : loadCount;
+            } else {
+                claimedShuttlePackages += loadCount > ShuttlePackagesAvail
+                    ? ShuttlePackagesAvail : loadCount;
+            }
+        }
     }
 
     public override void OnTriggerEnter2D(Collider2D col) { /*left blank for the override*/ }
