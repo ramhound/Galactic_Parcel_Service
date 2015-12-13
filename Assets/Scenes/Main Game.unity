@@ -2216,6 +2216,10 @@ Prefab:
       propertyPath: m_PlayOnAwake
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8212578, guid: 209ac2e8bdc4f0f4085907de5f9da656, type: 2}
+      propertyPath: Mute
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 209ac2e8bdc4f0f4085907de5f9da656, type: 2}
   m_IsPrefabParent: 0

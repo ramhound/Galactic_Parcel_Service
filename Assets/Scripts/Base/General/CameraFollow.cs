@@ -33,19 +33,28 @@ public class CameraFollow : MonoBehaviour {
 
     public void SetTargets(params Transform[] targets) {
         this.targets = targets;
+        //if(targets.Length == 1) {
+        //    iTween.MoveTo(gameObject, iTween.Hash(
+        //        "x", targets[0].position.x,
+        //        "y", targets[0].position.y,
+        //        "time", .5f,
+        //        "easetype", iTween.EaseType.easeOutCubic
+        //        ));
+        //} else if(targets.Length > 1) {
+        //    //find center of all
+        //} else { }
+    }
+
+    private void FixedUpdate() {
         if(targets.Length == 1) {
-            iTween.MoveTo(gameObject, iTween.Hash(
+            iTween.MoveUpdate(gameObject, iTween.Hash(
                 "x", targets[0].position.x,
                 "y", targets[0].position.y,
-                "time", .5f,
-                "easetype", iTween.EaseType.easeOutCubic
+                "time", 1f
                 ));
         } else if(targets.Length > 1) {
             //find center of all
         } else { }
-    }
-
-    private void FixedUpdate() {
         //if(targets.Length > 0 && targets[0] != null) {
         //    if(!battleView) {
         //        Vector3 start = us.position;
