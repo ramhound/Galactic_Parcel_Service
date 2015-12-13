@@ -10,6 +10,7 @@ TagManager:
   - Delivery Zone Collider
   - Delivery Collider
   - Shield Collider
+  - Selection Collider
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - Obstacle
   - Background
   - Hub Station
-  - 
+  - Selection Collider
   - 
   - 
   - 

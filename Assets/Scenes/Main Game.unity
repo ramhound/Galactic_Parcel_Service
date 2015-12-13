@@ -191,7 +191,9 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
@@ -206,7 +208,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 39385107}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 110, y: -107, z: 1}
+  m_LocalPosition: {x: 101, y: -235, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 652208658}
@@ -229,7 +231,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &61151003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,7 +319,9 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
@@ -332,7 +336,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 61151002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 188.300003, y: -166.600006, z: 1}
+  m_LocalPosition: {x: 273.200012, y: -46.9000015, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 652208658}
@@ -517,7 +521,9 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
@@ -532,7 +538,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 126458119}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 70.6999969, y: 86.5, z: 1}
+  m_LocalPosition: {x: 167, y: 147, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 652208658}
@@ -754,7 +760,9 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
@@ -868,7 +876,9 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
@@ -883,7 +893,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 473182014}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -47, y: 26, z: 1}
+  m_LocalPosition: {x: -68, y: 39, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 652208658}
@@ -1179,11 +1189,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 431802, guid: f62598ca75a87d24b98956da2482c9c8, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 25
+      value: 77
       objectReference: {fileID: 0}
     - target: {fileID: 431802, guid: f62598ca75a87d24b98956da2482c9c8, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -16
+      value: -34
       objectReference: {fileID: 0}
     - target: {fileID: 431802, guid: f62598ca75a87d24b98956da2482c9c8, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1225,6 +1235,10 @@ Prefab:
       propertyPath: rotationTarget
       value: 
       objectReference: {fileID: 357792112}
+    - target: {fileID: 5804314, guid: f62598ca75a87d24b98956da2482c9c8, type: 2}
+      propertyPath: m_Radius
+      value: 250
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f62598ca75a87d24b98956da2482c9c8, type: 2}
   m_IsPrefabParent: 0
@@ -1254,7 +1268,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 998373757}
   m_LocalRotation: {x: 0, y: 0, z: .803077638, w: .595874488}
-  m_LocalPosition: {x: -315, y: 197, z: 1}
+  m_LocalPosition: {x: -275, y: 244, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 652208658}
@@ -1346,7 +1360,9 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
@@ -1473,7 +1489,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1194104321}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -303, y: -4, z: 1}
+  m_LocalPosition: {x: -391, y: -85, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 652208658}
@@ -1565,7 +1581,9 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
@@ -1820,11 +1838,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 431802, guid: f62598ca75a87d24b98956da2482c9c8, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -244
+      value: -347
       objectReference: {fileID: 0}
     - target: {fileID: 431802, guid: f62598ca75a87d24b98956da2482c9c8, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 78
+      value: 82
       objectReference: {fileID: 0}
     - target: {fileID: 431802, guid: f62598ca75a87d24b98956da2482c9c8, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1868,7 +1886,7 @@ Prefab:
       objectReference: {fileID: 1499705769}
     - target: {fileID: 5804314, guid: f62598ca75a87d24b98956da2482c9c8, type: 2}
       propertyPath: m_Radius
-      value: 150
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 170918, guid: f62598ca75a87d24b98956da2482c9c8, type: 2}
       propertyPath: m_IsActive
@@ -1876,7 +1894,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11409548, guid: f62598ca75a87d24b98956da2482c9c8, type: 2}
       propertyPath: rotationSpeed
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11409548, guid: f62598ca75a87d24b98956da2482c9c8, type: 2}
       propertyPath: rotationTarget
@@ -1911,7 +1929,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1658262398}
   m_LocalRotation: {x: 0, y: 0, z: .803077638, w: .595874488}
-  m_LocalPosition: {x: -296, y: 181, z: 1}
+  m_LocalPosition: {x: -232, y: 196, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 652208658}
@@ -2003,7 +2021,9 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
@@ -2129,7 +2149,9 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
