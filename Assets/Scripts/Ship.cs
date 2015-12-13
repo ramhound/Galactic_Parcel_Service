@@ -9,10 +9,11 @@ public enum ShipType { Cargo = 0, Shuttle, Speed, Defense, Special, Attack, Enem
 public class Ship : GameCommandHandler, ISelectable {
     public ShipType type = ShipType.Cargo;
     public HubStation hubStation;
-    public SyncRouteList routes = new SyncRouteList();
+    public Route route = new Route();
     //may still want to sync the packages for ui purposes
     public Dictionary<Location, List<Package>> cargo = new Dictionary<Location, List<Package>>();
     public ShipController shipController;
+    public Location destinationTarget;
 
     public GameObject shipUI;
     public int cargoSize = 3; //will rework this later
@@ -37,6 +38,11 @@ public class Ship : GameCommandHandler, ISelectable {
         GamePlayer.localInstance.SetSelectedUnits(transform);
     }
 
+    public override void ReceiveCommand(CommandPacket packet) {
+        base.ReceiveCommand(packet);
+        destinationTarget = Location.GetLocation(packet.dataString);
+    }
+
     public override void ExecuteCommand(GameCommand command) {
         if(command == GameCommand.None) {
             if(cargo.Count > 0) {
@@ -44,12 +50,12 @@ public class Ship : GameCommandHandler, ISelectable {
             } else if(!atHub) {
                 ReceiveCommand(new CommandPacket {
                     command = GameCommand.Return,
-                    commandData = hubStation.position,
-                    senderId = hubStation.name
+                    dataVector = hubStation.position,
+                    dataString = hubStation.name
                 });
             }
         } else {
-            shipController.SetDestination(commandData);
+            shipController.SetDestination(destinationTarget);
             distTicks++;
         }
     }
@@ -64,8 +70,8 @@ public class Ship : GameCommandHandler, ISelectable {
             var loc = cargo.Keys.First();
             ReceiveCommand(new CommandPacket() {
                 command = GameCommand.Delivery,
-                commandData = loc.position,
-                senderId = loc.locationName
+                dataVector = loc.position,
+                dataString = loc.locationName
             });
 
             Debug.Log(name + " Heading out to " + loc.locationName + " for delivery");
@@ -74,8 +80,8 @@ public class Ship : GameCommandHandler, ISelectable {
             ReceiveCommand(new CommandPacket() {
                 command = GameCommand.Shuttle,
                 //i think this might be where it is getting 
-                commandData = loc.position,
-                senderId = loc.name
+                dataVector = loc.position,
+                dataString = loc.name
             });
             Debug.Log(name + " Heading out " + loc.locationName + " for shuttle");
         }
@@ -96,14 +102,14 @@ public class Ship : GameCommandHandler, ISelectable {
                 if(hs.name == hubStation.name) {
                     atHub = true;
 
-                    if(currentCommand == GameCommand.Return && hs.name == commandSenderId) {
+                    if(currentCommand == GameCommand.Return && hs.name == dataString) {
                         CompletedCommand(currentCommand);
                     }
                 }
 
             } else if(col.tag == "Hub Station" || col.tag == "Location") {
                 var loc = col.GetComponent<Location>();
-                if(currentCommand == GameCommand.PickUp && loc.name == commandSenderId) {
+                if(currentCommand == GameCommand.PickUp && loc.name == dataString) {
                     DockWith(loc);
                     CompletedCommand(currentCommand);
                     if(shipUI.GetComponent<ShipUIManager>().selectedShip == this) {
@@ -114,7 +120,7 @@ public class Ship : GameCommandHandler, ISelectable {
                     hs.cargoPickUp.Remove(this);
 
                 } else if((currentCommand == GameCommand.Delivery || currentCommand == GameCommand.Shuttle)
-                        && commandSenderId == loc.name) {
+                        && dataString == loc.name) {
                     DockWith(loc);
                     CompletedCommand(currentCommand);
                     shipUI.GetComponent<ShipUIManager>().RemoveMarkerFor(loc);

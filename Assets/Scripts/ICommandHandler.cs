@@ -9,10 +9,10 @@ public interface ICommandHandler {
     void ReceiveCommand(CommandPacket packet);
 }
 public struct CommandPacket {
-    public string senderId;
-    public string[] uuids;
     public GameCommand command;
-    public Vector3 commandData;
+    public string[] uuids;
+    public string dataString;
+    public Vector3 dataVector;
 }
 
 

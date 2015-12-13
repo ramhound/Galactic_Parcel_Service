@@ -7,6 +7,7 @@ public class Location : GameCommandHandler, ISelectable {
     [BitMask(typeof(CharacterStyle))]
     public CharacterStyle clientStyles = CharacterStyle.British;
     public bool rotate = true;
+    public Transform rotationTarget;
     public float rotationSpeed;
     public bool rotateLeft;
     public string locationName;
@@ -61,8 +62,11 @@ public class Location : GameCommandHandler, ISelectable {
     public virtual void LoadPackages(Ship ship) { }
 
     private void Rotate() {
-        var rot = transform.rotation.eulerAngles;
-        transform.rotation = Quaternion.Euler(rot.x, rot.y, rot.z + (rotateLeft ? (rotationSpeed * Time.deltaTime) : -(rotationSpeed * Time.deltaTime)));
+        //var rot = transform.rotation.eulerAngles;
+        //transform.rotation = Quaternion.Euler(rot.x, rot.y, rot.z + (rotateLeft ? (rotationSpeed * Time.deltaTime) : -(rotationSpeed * Time.deltaTime)));
+
+        transform.RotateAround(rotationTarget.position, Vector3.forward,
+            (rotateLeft ? (rotationSpeed * Time.deltaTime) : -(rotationSpeed * Time.deltaTime)));
     }
 
     public virtual void OnTriggerEnter2D(Collider2D col) {
@@ -79,5 +83,25 @@ public class Location : GameCommandHandler, ISelectable {
             tl.Add(l.position);
         }
         return tl.ToArray();
+    }
+
+    public static string[] ToStringArray(List<Location> locs) {
+        var tl = new List<string>();
+        foreach(var l in locs) {
+            tl.Add(l.name);
+        }
+        return tl.ToArray();
+    }
+
+    public static Location GetLocation(string name) {
+        foreach(var l in Location.discoveredLocations) {
+            if(l.name == name) return l;
+        }
+
+        foreach(var l in HubStation.allHubStations) {
+            if(l.name == name) return l;
+        }
+
+        return null;
     }
 }

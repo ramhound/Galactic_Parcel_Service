@@ -14,17 +14,7 @@ public class Banner : MonoBehaviour {
     private float closeTime;
     public bool isShowing = false;
 
-    public void CreateBanner(Sprite pic, string text, BannerType type) {
-        //profilePic.spriteName = pic;
-        //this.text.text = text;
-
-
-        if(type == BannerType.Package) {
-
-        } else {
-
-        }
-
+    public void CreateBanner(Sprite pic, string text, BannerType type) { 
         bannerImage.sprite = pic;
         bannerText.text = text;
         Banner.bannerQueue.Add(this);
@@ -42,6 +32,7 @@ public class Banner : MonoBehaviour {
         bannerTweener.onFinished.Add(new EventDelegate(()
             => {
                 banner.SetActive(false);
+                Destroy(gameObject);
                 isShowing = false;
                 Banner.bannerQueue.Remove(this);
             }) { oneShot = true });

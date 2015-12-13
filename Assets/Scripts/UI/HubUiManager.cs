@@ -9,10 +9,10 @@ public class HubUIManager : MonoBehaviour {
 
     public void CreateShip(int shipType) {
         GamePlayer.localInstance.SendCommandPacket(new CommandPacket() {
-            senderId = GamePlayer.localInstance.name,
+            dataString = GamePlayer.localInstance.name,
             uuids = new string[] { selectedStation.name },
             command = GameCommand.Spawn,
-            commandData = new Vector3(shipType, 0, 0)
+            dataVector = new Vector3(shipType, 0, 0)
         });
     }
 

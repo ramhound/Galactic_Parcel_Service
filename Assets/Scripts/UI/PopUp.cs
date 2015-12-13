@@ -19,7 +19,6 @@ public class PopUp : MonoBehaviour {
     private void Update() {
         if(Banner.bannerQueue.Count > 0 && !Banner.bannerQueue[0].isShowing) {
             Banner.bannerQueue[0].DisplayBanner();
-            Debug.Log("Hete");
         }
     }
 }

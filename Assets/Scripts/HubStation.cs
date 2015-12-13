@@ -5,7 +5,8 @@ using System.Collections.Generic;
 
 public enum RouteType { Cargo = 0, Shuttle, Explorer }
 public struct Route {
-    public Vector2[] locations;
+    public Vector2[] positions;
+    public string[] locationNames;
     public RouteType type;
     public string name;
     public bool timeSort;
@@ -85,7 +86,8 @@ public class HubStation : Location {
         cargoRoutes.Add(new Route() {
             name = "Default",
             type = RouteType.Cargo,
-            locations = Location.ToVectorArray(deliveryLocations),
+            positions = Location.ToVectorArray(deliveryLocations),
+            locationNames = Location.ToStringArray(deliveryLocations),
             timeSort = false,
             distanceSort = false
         });
@@ -93,7 +95,8 @@ public class HubStation : Location {
         shuttleRoutes.Add(new Route() {
             name = "Default",
             type = RouteType.Shuttle,
-            locations = Location.ToVectorArray(HubStation.allHubStations)
+            locationNames = Location.ToStringArray(HubStation.allHubStations),
+            positions = Location.ToVectorArray(HubStation.allHubStations)
         });
     }
 
@@ -122,8 +125,8 @@ public class HubStation : Location {
                 cargoPickUp.Add(s);
                 s.ReceiveCommand(new CommandPacket() {
                     command = GameCommand.PickUp,
-                    senderId = name,
-                    commandData = transform.position
+                    dataString = name,
+                    dataVector = transform.position
                 });
 
                 return;
@@ -145,8 +148,8 @@ public class HubStation : Location {
                 cargoPickUp.Add(s);
                 s.ReceiveCommand(new CommandPacket() {
                     command = GameCommand.PickUp,
-                    senderId = name,
-                    commandData = transform.position
+                    dataString = name,
+                    dataVector = transform.position
                 });
 
                 return;
@@ -158,8 +161,8 @@ public class HubStation : Location {
         base.ExecuteCommand(command);
 
         if(currentCommand == GameCommand.Spawn) {
-            var shipGo = Instantiate(spawnables[(int)(commandData.x)]
-                , spawnLocation.position, spawnables[(int)(commandData.x)]
+            var shipGo = Instantiate(spawnables[(int)(dataVector.x)]
+                , spawnLocation.position, spawnables[(int)(dataVector.x)]
                 .transform.rotation) as GameObject;
             var ship = shipGo.GetComponent<Ship>();
             ship.hubStation = this;
@@ -168,10 +171,10 @@ public class HubStation : Location {
             if(isServer) NetworkServer.Spawn(shipGo);
 
             if(ship.type == ShipType.Cargo)
-                ship.routes = cargoRoutes;
+                ship.route = cargoRoutes[0];
             else if(ship.type == ShipType.Shuttle) {
-                ship.routes = shuttleRoutes;
-            } else ship.routes = explorerRoutes;
+                ship.route = shuttleRoutes[0];
+            } else ship.route = explorerRoutes[0];
 
             GamePlayer.localInstance.DisplayBanner(new Vector2(-1, 0), ship.type.ToString(), Banner.BannerType.Message);
             CompletedCommand(command);
@@ -193,8 +196,8 @@ public class HubStation : Location {
         List<Package> loadList = new List<Package>(ship.cargoSize);
         if(ship.type == ShipType.Cargo) {
             for(int i = packages.Count - 1; i >= 0; i--) {
-                var locList = ship.routes[0].locations.ToList();
-                if(locList.Contains(packages[i].receiver.location.position)
+                var locList = ship.route.locationNames.ToList();
+                if(locList.Contains(packages[i].receiver.location.name)
                         && cargoIndex < ship.cargoSize) {
 
                     cargoIndex++;
@@ -218,9 +221,9 @@ public class HubStation : Location {
 
         if(ship.type == ShipType.Shuttle) {
             for(int i = shuttlePackages.Count - 1; i >= 0; i--) {
-                var locList = ship.routes[0].locations.ToList();
+                var locList = ship.route.locationNames.ToList();
                 foreach(var sf in shuttlePackages[i].receiver.location.shipingFacilities) {
-                    if(locList.Contains(sf.position) && cargoIndex < ship.cargoSize) {
+                    if(locList.Contains(sf.name) && cargoIndex < ship.cargoSize) {
                         cargoIndex++;
                         loadList.Add(shuttlePackages[i]);
                         shuttlePackages.RemoveAt(i);

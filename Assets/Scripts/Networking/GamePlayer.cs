@@ -35,10 +35,10 @@ public class GamePlayer : GameCommandHandler {
                 var hit = Physics2D.Raycast(pos, Vector2.zero);
                 if(hit.collider == null) {
                     var packet = new CommandPacket() {
-                        senderId = name,
+                        dataString = name,
                         uuids = this.uuids,
                         command = GameCommand.Move,
-                        commandData = pos
+                        dataVector = pos
                     };
 
                     SendCommandPacket(packet);
