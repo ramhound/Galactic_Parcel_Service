@@ -24,7 +24,7 @@ public class ShipUIManager : MonoBehaviour {
 
     private void Update() {
         currentCmdLabel.text = "Command: " + selectedShip.currentCommand.ToString();
-        cargoLabel.text = "Cargo Count: " + selectedShip.cargo.Count;
+        cargoLabel.text = "Cargo Count: " + selectedShip.CargoCount;
     }
 
     public void CreateDistanceMarkers() {
@@ -57,10 +57,17 @@ public class ShipUIManager : MonoBehaviour {
         var go = Instantiate(distanceMarkerPrefab) as GameObject;
         var distMarker = go.GetComponent<DistanceMarker>();
         distMarker.transform.SetParent(markerParent);
-        distMarker.transform.localPosition = Vector2.zero;
         distMarker.loc = loc;
         distMarker.packageCountLabel.text = "" + packageCount;
         distMarker.selectedShip = selectedShip;
+        distMarker.transform.localPosition = distMarker.GetPosition();
+        distMarker.transform.localScale = Vector3.one;
+        distMarker.shipUIManager = this;
         return distMarker;
+    }
+
+    public void PackageMarkerClicked(DistanceMarker marker) {
+        RemoveAllMarkers();
+        GamePlayer.localInstance.SetSelectedUnits(marker.loc.transform);
     }
 }

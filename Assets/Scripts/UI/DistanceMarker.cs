@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class DistanceMarker : MonoBehaviour {
+    public ShipUIManager shipUIManager;
     public Ship selectedShip;
     public Image circle;
     public Image packageIcon;
@@ -17,13 +18,9 @@ public class DistanceMarker : MonoBehaviour {
     public static Color[] colors;
 
     private void Update() {
-        var distance = Vector2.Distance(selectedShip.transform.position, loc.position);
         //distanceLabel.text = "" + Vector2.Distance(selectedShip.transform.position, loc.position);
         transform.rotation = RotateTowards(transform, loc.position);
-
-        var scale = Mathf.Clamp(distance*10, distanceFromShip.x, distanceFromShip.y);
-        var axis = (Vector3)loc.position - selectedShip.transform.position;
-        transform.localPosition = axis.normalized * scale;
+        transform.localPosition = GetPosition() * Camera.main.GetComponent<tk2dCamera>().ZoomFactor;
 
         //change colour based on client package durability
 
@@ -32,9 +29,17 @@ public class DistanceMarker : MonoBehaviour {
         //PositionDistanceText();
     }
 
-    //private void OnClick() {
-    //    GamePlayer.localInstance.SetSelectedUnits(loc.transform);
-    //}
+    public Vector2 GetPosition() {
+        transform.localPosition = Vector2.zero;
+        var distance = Vector2.Distance(selectedShip.transform.position, loc.position);
+        var scale = Mathf.Clamp(distance * 100, distanceFromShip.x, distanceFromShip.y);
+        var axis = (Vector3)loc.position - selectedShip.transform.position;
+        return axis.normalized * scale;
+    }
+
+    public void MarkerClicked() {
+        shipUIManager.PackageMarkerClicked(this);
+    }
 
     //private void ColourMarkers() {
     //    if(_colors.Length == 0) return;
