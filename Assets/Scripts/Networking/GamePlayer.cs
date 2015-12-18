@@ -87,12 +87,12 @@ public class GamePlayer : GameCommandHandler {
 
     public void DisplayBanner(Vector2 characterIndex, string text, Banner.BannerType bannerType) {
         if(isServer) RpcDisplayBanner(characterIndex, text, bannerType);
-        else PopUp.DisplayBanner(ClientManager.GenerateClient(characterIndex).profilePic, text, bannerType);
+        else PopUp.DisplayBanner(ClientManager.GetClient(characterIndex).profilePic, text, bannerType);
     }
 
     [ClientRpc]
     public void RpcDisplayBanner(Vector2 characterIndex, string text, Banner.BannerType bannerType) {
-        PopUp.DisplayBanner(ClientManager.GenerateClient(characterIndex).profilePic, text, bannerType);
+        PopUp.DisplayBanner(ClientManager.GetClient(characterIndex).profilePic, text, bannerType);
     }
 
     public override void OnStartLocalPlayer() {
