@@ -24,6 +24,7 @@ public class HubStation : Location {
     //packages Inherited from Location 
     public List<Package> shuttlePackages = new List<Package>();
     public List<Location> deliveryLocations = new List<Location>();
+    public static List<Location> alldeliveryLocations = new List<Location>();
     public static List<Location> allHubStations = new List<Location>();
     public int claimedPackages = 0;
     public int PackagesAvail {
@@ -176,7 +177,6 @@ public class HubStation : Location {
                 ship.route = shuttleRoutes[0];
             } else ship.route = explorerRoutes[0];
 
-            GamePlayer.localInstance.DisplayBanner(new Vector2(-1, 0), ship.type.ToString(), Banner.BannerType.Message);
             CompletedCommand(command);
         }
     }
@@ -261,14 +261,6 @@ public class HubStation : Location {
             ship.cargo.Remove(l);
         }
 
-
-        //for(int i = ship.cargo.Count - 1; i >= 0; i--) {
-        //    if(deliveryLocations.Contains(ship.cargo[i].receiver.location)) {
-        //        packages.Add(ship.cargo[i]);
-        //        ship.cargo.RemoveAt(i);
-        //    }
-        //}
-
         //need to rework the broadcas fro shuttle and issue #6 will finally be fixed
         //but for now it is working fine as long as i dont have the shuttle pick up packages from the hub
         //it just delivered to
@@ -279,10 +271,10 @@ public class HubStation : Location {
     }
 
     public void GeneratePackages() {
-        if(deliveryLocations.Count == 0) return; //let this through with different vars
-        int packageCount = Random.Range(1, 3);
 
+        int packageCount = Random.Range(1, 3);
         for(int i = 0; i < packageCount; i++) {
+            
             var package = new Package() {
                 sender = ClientManager.GenerateClient(
                     Location.discoveredLocations[Random.Range(0, Location.discoveredLocations.Count)]),
@@ -292,7 +284,16 @@ public class HubStation : Location {
                 size = Vector2.one
             };
 
-            if(deliveryLocations.Contains(package.receiver.location)) {
+            if(package.receiver.location.shipingFacilities.Count == 0) {
+                //do something with the sender client getting mad or something
+                //that they cant send the package becuase we do not own a hub that is able
+                //to deliver the clients package
+                GamePlayer.localInstance.DisplayBanner(package.sender.profilePicIndex
+                    , "Fuck you for not being able to deliver my shit..ASSHOLE", Banner.BannerType.Package);
+                continue;
+            }
+
+            if(package.receiver.location.shipingFacilities.Contains(this)) {
                 packages.Add(package);
             } else {
                 shuttlePackages.Add(package);

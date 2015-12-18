@@ -4,7 +4,7 @@ using System.Collections;
 public class CameraFollow : MonoBehaviour {
     public static CameraFollow instance;
     public tk2dCamera cam { get; private set; }
-    private Transform us;
+    //private Transform us;
     public Transform[] targets;
     public float followSpeed = 1.0f;
     public float zoomSpeedOut = 0.2f;
@@ -14,7 +14,7 @@ public class CameraFollow : MonoBehaviour {
     public float minSpeedThreshhold = .2f;
     public float maxSpeedThreshhold = 3.0f;
     public float maxZoomFactor = 0.6f;
-    private float minZoom;
+    //private float minZoom;
     public Vector2 offSet = Vector2.zero;
     public bool battleView = false;
     public float battleZoomFactor = 0.5f;
@@ -25,9 +25,9 @@ public class CameraFollow : MonoBehaviour {
     private void Start() {
         instance = this;
 
-        us = transform;
+        //us = transform;
         cam = GetComponent<tk2dCamera>();
-        minZoom = cam.ZoomFactor;
+        //minZoom = cam.ZoomFactor;
         targets = new Transform[maxTargets];
     }
 

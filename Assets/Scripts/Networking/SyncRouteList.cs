@@ -2,5 +2,4 @@
 using UnityEngine.Networking;
 using System.Collections;
 
-public class SyncRouteList : SyncListStruct<Route> {
-}
+public class SyncRouteList : SyncListStruct<Route> {}

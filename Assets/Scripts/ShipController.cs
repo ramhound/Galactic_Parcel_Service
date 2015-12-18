@@ -58,7 +58,7 @@ public class ShipController : NetworkBehaviour {
 
     public void SetDestination(Vector2 destination) {
         seeker.StartPath(transform.position, destination, OnPathComplete);
-        var dist = Vector2.Distance(transform.position, ship.dataVector);
+        //var dist = Vector2.Distance(transform.position, ship.dataVector);
     }
 
     public void Stop() {
