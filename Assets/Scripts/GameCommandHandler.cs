@@ -8,9 +8,9 @@ public class GameCommandHandler : NetworkBehaviour, ICommandHandler {
     [SyncVar]
     public GameCommand currentCommand = GameCommand.None;
     [SyncVar]
-    public string commandSenderId;
+    public string dataString;
     [SyncVar]
-    public Vector3 commandData;
+    public Vector3 dataVector;
 
     public virtual void Awake() {
 
@@ -40,7 +40,7 @@ public class GameCommandHandler : NetworkBehaviour, ICommandHandler {
 
     public virtual void ReceiveCommand(CommandPacket packet) {
         currentCommand = packet.command;
-        commandSenderId = packet.senderId;
-        commandData = packet.commandData;
+        dataString = packet.dataString;
+        dataVector = packet.dataVector;
     }
 }

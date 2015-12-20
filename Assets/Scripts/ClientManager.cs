@@ -54,11 +54,11 @@ public class ClientManager : MonoBehaviour {
     }
 
     public static Client GetClient(string name) {
-        //will eventually be able to get a preexidting client by name
+        //will eventually be able to get a pre existing client by name
         return null;
     }
 
-    public static Client GenerateClient(Vector2 index) {
+    public static Client GetClient(Vector2 index) {
         if(index.x == -1) return ClientManager.farnsberg;
         var client = new Client();
         client.profilePic = characters[(CharacterStyle)(index.x)][(int)index.y];

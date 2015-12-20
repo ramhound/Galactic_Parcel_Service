@@ -6,6 +6,8 @@ using System.Collections.Generic;
 public class Location : GameCommandHandler, ISelectable {
     [BitMask(typeof(CharacterStyle))]
     public CharacterStyle clientStyles = CharacterStyle.British;
+    public bool rotate = true;
+    public Transform rotationTarget;
     public float rotationSpeed;
     public bool rotateLeft;
     public string locationName;
@@ -19,23 +21,22 @@ public class Location : GameCommandHandler, ISelectable {
         locationName = name;
     }
 
+    //might be able to change this to new start maybe
     public override void Start() {
         base.Start();
-        if(!discoveredLocations.Contains(this))
-            discoveredLocations.Add(this);
+        if(!Location.discoveredLocations.Contains(this))
+            Location.discoveredLocations.Add(this);
     }
 
     private void Update() {
-        Rotate();
+        if(rotate) Rotate();
     }
 
     public virtual void OnClick() {
         GamePlayer.localInstance.SetSelectedUnits(transform);
     }
 
-    public virtual void SetSelected(bool selected) {
-
-    }
+    public virtual void SetSelected(bool selected) { }
 
     public override void OnGameTick() {
         base.OnGameTick();
@@ -43,28 +44,39 @@ public class Location : GameCommandHandler, ISelectable {
 
     public virtual void DockWith(Ship ship) {
         if(ship.currentCommand == GameCommand.Delivery) {
-            for(int i = ship.cargo.Count - 1; i >= 0; i--) {
-                if(ship.cargo[i].receiver.location == this) {
-                    ship.cargo[i].receiver.PackageDelivered();
-                    ship.cargo.RemoveAt(i);
+            Location loc = null;
+            foreach(var kv in ship.cargo) {
+                if(kv.Key == this) {
+                    foreach(var p in kv.Value) {
+                        p.receiver.PackageDelivered(p);
+                        loc = this;
+                    }
                 }
+                break;
             }
+            if(loc != null)
+                ship.cargo.Remove(loc);
         }
     }
 
     public virtual void LoadPackages(Ship ship) { }
 
     private void Rotate() {
-        var rot = transform.rotation.eulerAngles;
-        transform.rotation = Quaternion.Euler(rot.x, rot.y, rot.z + (rotateLeft ? (rotationSpeed * Time.deltaTime) : -(rotationSpeed * Time.deltaTime)));
+        //var rot = transform.rotation.eulerAngles;
+        //transform.rotation = Quaternion.Euler(rot.x, rot.y, rot.z + (rotateLeft ? (rotationSpeed * Time.deltaTime) : -(rotationSpeed * Time.deltaTime)));
+
+        transform.RotateAround(rotationTarget.position, Vector3.forward,
+            (rotateLeft ? (rotationSpeed * Time.deltaTime) : -(rotationSpeed * Time.deltaTime)));
     }
 
-    public static Location GetNearestLocation(Vector2 pos) {
-        var locations = GameObject.FindObjectsOfType<Location>();
-        foreach(var l in locations) {
-            if(l.tag != "Hub Station") return l;
+    public virtual void OnTriggerEnter2D(Collider2D col) {
+        if(col.tag == "Delivery Zone Collider") {
+            var sf = col.GetComponentInParent<HubStation>();
+            if(!shipingFacilities.Contains(sf)) {
+                shipingFacilities.Add(sf);
+                HubStation.alldeliveryLocations.Add(this);
+            }
         }
-        return locations[0];
     }
 
     public static Vector2[] ToVectorArray(List<Location> locs) {
@@ -75,11 +87,23 @@ public class Location : GameCommandHandler, ISelectable {
         return tl.ToArray();
     }
 
-    public virtual void OnTriggerEnter2D(Collider2D col) {
-        if(col.tag == "Delivery Zone Collider") {
-            var sf = col.GetComponentInParent<HubStation>();
-            if(!shipingFacilities.Contains(sf))
-                shipingFacilities.Add(sf);
+    public static string[] ToStringArray(List<Location> locs) {
+        var tl = new List<string>();
+        foreach(var l in locs) {
+            tl.Add(l.name);
         }
+        return tl.ToArray();
+    }
+
+    public static Location GetLocation(string name) {
+        foreach(var l in Location.discoveredLocations) {
+            if(l.name == name) return l;
+        }
+
+        foreach(var l in HubStation.allHubStations) {
+            if(l.name == name) return l;
+        }
+
+        return null;
     }
 }

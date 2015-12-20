@@ -35,10 +35,10 @@ public class GamePlayer : GameCommandHandler {
                 var hit = Physics2D.Raycast(pos, Vector2.zero);
                 if(hit.collider == null) {
                     var packet = new CommandPacket() {
-                        senderId = name,
+                        dataString = name,
                         uuids = this.uuids,
                         command = GameCommand.Move,
-                        commandData = pos
+                        dataVector = pos
                     };
 
                     SendCommandPacket(packet);
@@ -82,17 +82,17 @@ public class GamePlayer : GameCommandHandler {
         selectedUnits = selections;
 
         //camera should update here
-        Camera.main.GetComponent<CameraFollow>().targets = selectedUnits;
+        Camera.main.GetComponent<CameraFollow>().SetTargets(selectedUnits);
     }
 
     public void DisplayBanner(Vector2 characterIndex, string text, Banner.BannerType bannerType) {
         if(isServer) RpcDisplayBanner(characterIndex, text, bannerType);
-        else PopUp.DisplayBanner(ClientManager.GenerateClient(characterIndex).profilePic, text, bannerType);
+        else PopUp.DisplayBanner(ClientManager.GetClient(characterIndex).profilePic, text, bannerType);
     }
 
     [ClientRpc]
     public void RpcDisplayBanner(Vector2 characterIndex, string text, Banner.BannerType bannerType) {
-        PopUp.DisplayBanner(ClientManager.GenerateClient(characterIndex).profilePic, text, bannerType);
+        PopUp.DisplayBanner(ClientManager.GetClient(characterIndex).profilePic, text, bannerType);
     }
 
     public override void OnStartLocalPlayer() {

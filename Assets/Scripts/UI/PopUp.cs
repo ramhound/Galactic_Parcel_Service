@@ -3,14 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 public class PopUp : MonoBehaviour {
     private static PopUp instance;
-    public Banner banner;
+    public GameObject bannerPrefab;
 
     private void Awake() { instance = this; }
 
-    public static Banner DisplayBanner(Sprite pic, string text, Banner.BannerType type) {
-        instance.banner.CreateBanner(pic, text, type);
-        instance.banner.gameObject.SetActive(true);
-        return instance.banner;
+    public static void DisplayBanner(Sprite pic, string text, Banner.BannerType type) {
+        //return instance.banner;
+
+        var go = GameObject.Instantiate(instance.bannerPrefab);
+        var banner = go.GetComponent<Banner>();
+        banner.CreateBanner(pic, text, type);
+        banner.transform.SetParent(instance.transform);
+    }
+
+    private void Update() {
+        if(Banner.bannerQueue.Count > 0 && !Banner.bannerQueue[0].isShowing) {
+            Banner.bannerQueue[0].DisplayBanner();
+        }
     }
 }
 

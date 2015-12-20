@@ -19,18 +19,18 @@ MonoBehaviour:
       name: Dev
       bundleIdentifier: com.mygame.dev
       productName: My Game Dev
-    - isActive: 1
+    - isActive: 0
       name: Beta
       bundleIdentifier: com.mygame.beta
       productName: My Game Beta
-    - isActive: 1
+    - isActive: 0
       name: Release
       bundleIdentifier: com.mygame
       productName: My Game
   m_platforms:
     m_plateformAndroid:
       m_platformProperties:
-        m_isSupported: 0
+        m_isSupported: 1
         m_distributionPlatformList:
         - isActive: 1
           name: Google Play
@@ -232,7 +232,7 @@ MonoBehaviour:
     globalCustomDefines: 
     overwriteScenes: 1
     useSymlinkLibraries: 0
-    checkAndroidKeystorePasswords: 0
+    checkAndroidKeystorePasswords: 1
   m_projectConfigurations:
     configurationList: []
     configurationIndex: 0

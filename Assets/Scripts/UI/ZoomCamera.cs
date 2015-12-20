@@ -28,7 +28,7 @@ public class ZoomCamera : MonoBehaviour {
 
             float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
 
-            OnScroll(gameObject, deltaMagnitudeDiff);
+            OnScroll(gameObject, -deltaMagnitudeDiff / 100f);
         }
     }
 

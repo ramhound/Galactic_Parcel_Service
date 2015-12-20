@@ -1,5 +1,22 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &110438
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 408696}
+  - 114: {fileID: 11471974}
+  - 58: {fileID: 5879152}
+  m_Layer: 11
+  m_Name: Selection Collider
+  m_TagString: Selection Collider
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &179128
 GameObject:
   m_ObjectHideFlags: 0
@@ -31,10 +48,23 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 179128}
   m_LocalRotation: {x: 0, y: 0, z: -1, w: -1.62920685e-07}
-  m_LocalPosition: {x: -101.127411, y: -85.3834152, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 408696}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!4 &408696
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110438}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 402036}
   m_RootOrder: 0
 --- !u!50 &5020818
 Rigidbody2D:
@@ -52,6 +82,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &5879152
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110438}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 5
 --- !u!60 &6027164
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -119,10 +162,10 @@ MonoBehaviour:
   priority: 1
   smoothType: 0
   subdivisions: 2
-  iterations: 2
-  strength: .772000015
+  iterations: 10
+  strength: 0
   uniformLength: 1
-  maxSegmentLength: 10
+  maxSegmentLength: 1000
   bezierTangentLength: .400000006
   offset: .200000003
   factor: .100000001
@@ -139,14 +182,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   commandRate: 1
   currentCommand: 0
-  commandSenderId: 
-  commandData: {x: 0, y: 0, z: 0}
+  dataString: 
+  dataVector: {x: 0, y: 0, z: 0}
   type: 0
   hubStation: {fileID: 0}
   shipController: {fileID: 11467462}
-  dockedLocation: {fileID: 0}
+  destinationTarget: {fileID: 0}
+  shipUI: {fileID: 0}
   cargoSize: 3
   atHub: 0
+  distTicks: 0
 --- !u!114 &11463186
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -186,10 +231,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 304aed5fafc464a49b099bc4c57e4e2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  body2D: {fileID: 0}
   speed: 300
   rotationSpeed: 3
   endPointDistance: .100000001
   pathRefreshRate: .100000001
+--- !u!114 &11471974
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f35071a4fbf2be46930a55efbd6dd29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ship: {fileID: 11450188}
 --- !u!114 &11473794
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -259,7 +317,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: shipController
@@ -267,11 +325,11 @@ Prefab:
       objectReference: {fileID: 11467462}
     - target: {fileID: 0}
       propertyPath: maxSegmentLength
-      value: 10
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: strength
-      value: .772000015
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: speed
@@ -288,6 +346,46 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: cargoSize
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Radius
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: shipUI
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: priority
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: uniformLength
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: smoothType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: iterations
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Selection Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
